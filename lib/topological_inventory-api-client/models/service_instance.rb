@@ -18,6 +18,8 @@ module TopologicalInventoryApiClient
 
     attr_accessor :created_at
 
+    attr_accessor :external_url
+
     # Extra information about this object in JSON format
     attr_accessor :extra
 
@@ -56,6 +58,7 @@ module TopologicalInventoryApiClient
       {
         :'archived_at' => :'archived_at',
         :'created_at' => :'created_at',
+        :'external_url' => :'external_url',
         :'extra' => :'extra',
         :'id' => :'id',
         :'last_seen_at' => :'last_seen_at',
@@ -77,6 +80,7 @@ module TopologicalInventoryApiClient
       {
         :'archived_at' => :'DateTime',
         :'created_at' => :'DateTime',
+        :'external_url' => :'String',
         :'extra' => :'String',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
@@ -107,6 +111,10 @@ module TopologicalInventoryApiClient
 
       if attributes.has_key?(:'created_at')
         self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.has_key?(:'external_url')
+        self.external_url = attributes[:'external_url']
       end
 
       if attributes.has_key?(:'extra')
@@ -272,6 +280,7 @@ module TopologicalInventoryApiClient
       self.class == o.class &&
           archived_at == o.archived_at &&
           created_at == o.created_at &&
+          external_url == o.external_url &&
           extra == o.extra &&
           id == o.id &&
           last_seen_at == o.last_seen_at &&
@@ -296,7 +305,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [archived_at, created_at, extra, id, last_seen_at, name, service_offering_id, service_plan_id, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, subscription_id, updated_at].hash
+      [archived_at, created_at, external_url, extra, id, last_seen_at, name, service_offering_id, service_plan_id, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, subscription_id, updated_at].hash
     end
 
     # Builds the object from hash

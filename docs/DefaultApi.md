@@ -92,6 +92,7 @@ Method | HTTP request | Description
 [**show_service_instance**](DefaultApi.md#show_service_instance) | **GET** /service_instances/{id} | Show an existing ServiceInstance
 [**show_service_offering**](DefaultApi.md#show_service_offering) | **GET** /service_offerings/{id} | Show an existing ServiceOffering
 [**show_service_offering_icon**](DefaultApi.md#show_service_offering_icon) | **GET** /service_offering_icons/{id} | Show an existing ServiceOfferingIcon
+[**show_service_offering_icon_0**](DefaultApi.md#show_service_offering_icon_0) | **GET** /service_offering_icons/{id}/icon_data | Show an existing ServiceOfferingIcon
 [**show_service_plan**](DefaultApi.md#show_service_plan) | **GET** /service_plans/{id} | Show an existing ServicePlan
 [**show_source**](DefaultApi.md#show_source) | **GET** /sources/{id} | Show an existing Source
 [**show_source_type**](DefaultApi.md#show_source_type) | **GET** /source_types/{id} | Show an existing SourceType
@@ -4928,6 +4929,57 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+
+# **show_service_offering_icon_0**
+> String show_service_offering_icon_0(id)
+
+Show an existing ServiceOfferingIcon
+
+Returns a ServiceOfferingIcon object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ServiceOfferingIcon
+  result = api_instance.show_service_offering_icon_0(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_service_offering_icon_0: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: image/*
 
 
 
