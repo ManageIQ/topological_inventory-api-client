@@ -5951,6 +5951,63 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # Show an existing ServiceOfferingIcon
+    # Returns a ServiceOfferingIcon object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def show_service_offering_icon_0(id, opts = {})
+      data, _status_code, _headers = show_service_offering_icon_0_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing ServiceOfferingIcon
+    # Returns a ServiceOfferingIcon object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
+    def show_service_offering_icon_0_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_service_offering_icon_0 ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_service_offering_icon_0"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_service_offering_icon_0, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/service_offering_icons/{id}/icon_data'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['image/*'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'String')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_service_offering_icon_0\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show an existing ServicePlan
     # Returns a ServicePlan object
     # @param id ID of the resource

@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived_at** | **DateTime** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
+**external_url** | **String** |  | [optional] 
 **extra** | **String** | Extra information about this object in JSON format | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **last_seen_at** | **DateTime** |  | [optional] 
