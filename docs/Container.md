@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cpu_request** | **Float** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
+**last_seen_at** | **DateTime** |  | [optional] 
 **memory_limit** | **Integer** |  | [optional] 
 **memory_request** | **Integer** |  | [optional] 
 **name** | **String** |  | [optional] 

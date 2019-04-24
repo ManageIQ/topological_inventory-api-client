@@ -1,14 +1,12 @@
-# TopologicalInventoryApiClient::Tag
+# TopologicalInventoryApiClient::ApplicationType
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **DateTime** |  | [optional] 
-**description** | **String** |  | [optional] 
+**display_name** | **String** |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
 **name** | **String** |  | [optional] 
-**namespace** | **String** |  | [optional] 
-**value** | **String** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] 
 
 

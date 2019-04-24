@@ -1,17 +1,21 @@
 # TopologicalInventoryApiClient::DefaultApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/api/topological-inventory/v0.1*
+All URIs are relative to *https://cloud.redhat.com//api/topological-inventory/v1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_application**](DefaultApi.md#create_application) | **POST** /applications | Create a new Application
 [**create_authentication**](DefaultApi.md#create_authentication) | **POST** /authentications | Create a new Authentication
 [**create_endpoint**](DefaultApi.md#create_endpoint) | **POST** /endpoints | Create a new Endpoint
 [**create_source**](DefaultApi.md#create_source) | **POST** /sources | Create a new Source
 [**create_source_type**](DefaultApi.md#create_source_type) | **POST** /source_types | Create a new SourceType
+[**delete_application**](DefaultApi.md#delete_application) | **DELETE** /applications/{id} | Delete an existing Application
 [**delete_authentication**](DefaultApi.md#delete_authentication) | **DELETE** /authentications/{id} | Delete an existing Authentication
 [**delete_endpoint**](DefaultApi.md#delete_endpoint) | **DELETE** /endpoints/{id} | Delete an existing Endpoint
 [**delete_source**](DefaultApi.md#delete_source) | **DELETE** /sources/{id} | Delete an existing Source
 [**get_documentation**](DefaultApi.md#get_documentation) | **GET** /openapi.json | Return this API document in JSON format
+[**list_application_types**](DefaultApi.md#list_application_types) | **GET** /application_types | List ApplicationTypes
+[**list_applications**](DefaultApi.md#list_applications) | **GET** /applications | List Applications
 [**list_authentications**](DefaultApi.md#list_authentications) | **GET** /authentications | List Authentications
 [**list_container_group_containers**](DefaultApi.md#list_container_group_containers) | **GET** /container_groups/{id}/containers | List Containers for ContainerGroup
 [**list_container_group_tags**](DefaultApi.md#list_container_group_tags) | **GET** /container_groups/{id}/tags | List Tags for ContainerGroup
@@ -42,6 +46,7 @@ Method | HTTP request | Description
 [**list_service_offerings**](DefaultApi.md#list_service_offerings) | **GET** /service_offerings | List ServiceOfferings
 [**list_service_plan_service_instances**](DefaultApi.md#list_service_plan_service_instances) | **GET** /service_plans/{id}/service_instances | List ServiceInstances for ServicePlan
 [**list_service_plans**](DefaultApi.md#list_service_plans) | **GET** /service_plans | List ServicePlans
+[**list_source_applications**](DefaultApi.md#list_source_applications) | **GET** /sources/{id}/applications | List Applications for Source
 [**list_source_availabilities**](DefaultApi.md#list_source_availabilities) | **GET** /sources/{id}/availabilities | List Availabilities for Source
 [**list_source_container_groups**](DefaultApi.md#list_source_container_groups) | **GET** /sources/{id}/container_groups | List ContainerGroups for Source
 [**list_source_container_images**](DefaultApi.md#list_source_container_images) | **GET** /sources/{id}/container_images | List ContainerImages for Source
@@ -78,6 +83,8 @@ Method | HTTP request | Description
 [**list_volume_types**](DefaultApi.md#list_volume_types) | **GET** /volume_types | List VolumeTypes
 [**list_volumes**](DefaultApi.md#list_volumes) | **GET** /volumes | List Volumes
 [**order_service_plan**](DefaultApi.md#order_service_plan) | **POST** /service_plans/{id}/order | Order an existing ServicePlan
+[**show_application**](DefaultApi.md#show_application) | **GET** /applications/{id} | Show an existing Application
+[**show_application_type**](DefaultApi.md#show_application_type) | **GET** /application_types/{id} | Show an existing ApplicationType
 [**show_authentication**](DefaultApi.md#show_authentication) | **GET** /authentications/{id} | Show an existing Authentication
 [**show_container**](DefaultApi.md#show_container) | **GET** /containers/{id} | Show an existing Container
 [**show_container_group**](DefaultApi.md#show_container_group) | **GET** /container_groups/{id} | Show an existing ContainerGroup
@@ -92,7 +99,7 @@ Method | HTTP request | Description
 [**show_service_instance**](DefaultApi.md#show_service_instance) | **GET** /service_instances/{id} | Show an existing ServiceInstance
 [**show_service_offering**](DefaultApi.md#show_service_offering) | **GET** /service_offerings/{id} | Show an existing ServiceOffering
 [**show_service_offering_icon**](DefaultApi.md#show_service_offering_icon) | **GET** /service_offering_icons/{id} | Show an existing ServiceOfferingIcon
-[**show_service_offering_icon_0**](DefaultApi.md#show_service_offering_icon_0) | **GET** /service_offering_icons/{id}/icon_data | Show an existing ServiceOfferingIcon
+[**show_service_offering_icon_icon_data**](DefaultApi.md#show_service_offering_icon_icon_data) | **GET** /service_offering_icons/{id}/icon_data | Show an existing ServiceOfferingIcon IconData
 [**show_service_plan**](DefaultApi.md#show_service_plan) | **GET** /service_plans/{id} | Show an existing ServicePlan
 [**show_source**](DefaultApi.md#show_source) | **GET** /sources/{id} | Show an existing Source
 [**show_source_type**](DefaultApi.md#show_source_type) | **GET** /source_types/{id} | Show an existing SourceType
@@ -108,8 +115,59 @@ Method | HTTP request | Description
 [**update_task**](DefaultApi.md#update_task) | **PATCH** /tasks/{id} | Update an existing Task
 
 
+# **create_application**
+> Array&lt;Application&gt; create_application(application)
+
+Create a new Application
+
+Creates a Application object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+application = TopologicalInventoryApiClient::Application.new # Application | Application attributes to create
+
+begin
+  #Create a new Application
+  result = api_instance.create_application(application)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->create_application: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application** | [**Application**](Application.md)| Application attributes to create | 
+
+### Return type
+
+[**Array&lt;Application&gt;**](Application.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **create_authentication**
-> Object create_authentication(authentication)
+> Array&lt;Authentication&gt; create_authentication(authentication)
 
 Create a new Authentication
 
@@ -146,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;Authentication&gt;**](Authentication.md)
 
 ### Authorization
 
@@ -160,7 +218,7 @@ Name | Type | Description  | Notes
 
 
 # **create_endpoint**
-> Object create_endpoint(endpoint)
+> Array&lt;Endpoint&gt; create_endpoint(endpoint)
 
 Create a new Endpoint
 
@@ -197,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;Endpoint&gt;**](Endpoint.md)
 
 ### Authorization
 
@@ -211,7 +269,7 @@ Name | Type | Description  | Notes
 
 
 # **create_source**
-> Object create_source(source)
+> Array&lt;Source&gt; create_source(source)
 
 Create a new Source
 
@@ -248,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;Source&gt;**](Source.md)
 
 ### Authorization
 
@@ -262,7 +320,7 @@ Name | Type | Description  | Notes
 
 
 # **create_source_type**
-> Object create_source_type(source_type)
+> Array&lt;SourceType&gt; create_source_type(source_type)
 
 Create a new SourceType
 
@@ -299,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Array&lt;SourceType&gt;**](SourceType.md)
 
 ### Authorization
 
@@ -309,6 +367,56 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+
+
+# **delete_application**
+> delete_application(id)
+
+Delete an existing Application
+
+Deletes a Application object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Delete an existing Application
+  api_instance.delete_application(id)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->delete_application: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 
 
@@ -506,6 +614,120 @@ nil (empty response body)
 
 
 
+# **list_application_types**
+> ApplicationTypesCollection list_application_types(opts)
+
+List ApplicationTypes
+
+Returns an array of ApplicationType objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ApplicationTypes
+  result = api_instance.list_application_types(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_application_types: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ApplicationTypesCollection**](ApplicationTypesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_applications**
+> ApplicationsCollection list_applications(opts)
+
+List Applications
+
+Returns an array of Application objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Applications
+  result = api_instance.list_applications(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_applications: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ApplicationsCollection**](ApplicationsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **list_authentications**
 > AuthenticationsCollection list_authentications(opts)
 
@@ -527,7 +749,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -545,6 +768,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -583,7 +807,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -602,6 +827,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -640,7 +866,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -659,6 +886,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -696,7 +924,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -714,6 +943,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -752,7 +982,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -771,6 +1002,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -808,7 +1040,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -826,6 +1059,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -864,7 +1098,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -883,6 +1118,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -921,7 +1157,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -940,6 +1177,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -977,7 +1215,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -995,6 +1234,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1033,7 +1273,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1052,6 +1293,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1090,7 +1332,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1109,6 +1352,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1147,7 +1391,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1166,6 +1411,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1204,7 +1450,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1223,6 +1470,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1260,7 +1508,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1278,6 +1527,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1315,7 +1565,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1333,6 +1584,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1371,7 +1623,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1390,6 +1643,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1427,7 +1681,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1445,6 +1700,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1482,7 +1738,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1500,6 +1757,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1538,7 +1796,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1557,6 +1816,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1594,7 +1854,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1612,6 +1873,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1649,7 +1911,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1667,6 +1930,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1704,7 +1968,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1722,6 +1987,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1759,7 +2025,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1777,6 +2044,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1814,7 +2082,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1832,6 +2101,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1870,7 +2140,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1889,6 +2160,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1927,7 +2199,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -1946,6 +2219,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -1984,7 +2258,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2003,6 +2278,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2040,7 +2316,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2058,6 +2335,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2096,7 +2374,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2115,6 +2394,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2152,7 +2432,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2170,10 +2451,70 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
 [**ServicePlansCollection**](ServicePlansCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_applications**
+> ApplicationsCollection list_source_applications(id, opts)
+
+List Applications for Source
+
+Returns an array of Application objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Applications for Source
+  result = api_instance.list_source_applications(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_applications: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ApplicationsCollection**](ApplicationsCollection.md)
 
 ### Authorization
 
@@ -2208,7 +2549,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2227,6 +2569,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2265,7 +2608,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2284,6 +2628,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2322,7 +2667,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2341,6 +2687,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2379,7 +2726,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2398,6 +2746,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2436,7 +2785,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2455,6 +2805,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2493,7 +2844,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2512,6 +2864,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2550,7 +2903,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2569,6 +2923,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2607,7 +2962,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2626,6 +2982,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2664,7 +3021,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2683,6 +3041,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2721,7 +3080,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2740,6 +3100,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2778,7 +3139,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2797,6 +3159,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2835,7 +3198,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2854,6 +3218,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2892,7 +3257,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2911,6 +3277,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -2949,7 +3316,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -2968,6 +3336,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3005,7 +3374,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3023,6 +3393,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3061,7 +3432,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3080,6 +3452,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3118,7 +3491,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3137,6 +3511,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3175,7 +3550,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3194,6 +3570,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3231,7 +3608,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3249,6 +3627,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3287,7 +3666,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3306,6 +3686,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3344,7 +3725,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3363,6 +3745,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3401,7 +3784,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3420,6 +3804,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3458,7 +3843,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3477,6 +3863,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3515,7 +3902,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3534,6 +3922,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3572,7 +3961,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3591,6 +3981,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3629,7 +4020,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3648,6 +4040,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3685,7 +4078,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3703,6 +4097,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3740,7 +4135,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3758,6 +4154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3796,7 +4193,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3815,6 +4213,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3853,7 +4252,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3872,6 +4272,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3910,7 +4311,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3929,6 +4331,7 @@ Name | Type | Description  | Notes
  **id** | **String**| ID of the resource | 
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -3966,7 +4369,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -3984,6 +4388,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -4021,7 +4426,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -4039,6 +4445,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -4076,7 +4483,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -4094,6 +4502,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -4131,7 +4540,8 @@ end
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
-  offset: 0 # Integer | The number of items to skip before starting to collect the result set.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
 }
 
 begin
@@ -4149,6 +4559,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
 
 ### Return type
 
@@ -4214,7 +4625,109 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
+
+
+
+# **show_application**
+> Application show_application(id)
+
+Show an existing Application
+
+Returns a Application object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing Application
+  result = api_instance.show_application(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_application: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**Application**](Application.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_application_type**
+> ApplicationType show_application_type(id)
+
+Show an existing ApplicationType
+
+Returns a ApplicationType object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ApplicationType
+  result = api_instance.show_application_type(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_application_type: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**ApplicationType**](ApplicationType.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 
@@ -4932,12 +5445,12 @@ Name | Type | Description  | Notes
 
 
 
-# **show_service_offering_icon_0**
-> String show_service_offering_icon_0(id)
+# **show_service_offering_icon_icon_data**
+> File show_service_offering_icon_icon_data(id)
 
-Show an existing ServiceOfferingIcon
+Show an existing ServiceOfferingIcon IconData
 
-Returns a ServiceOfferingIcon object
+Returns a ServiceOfferingIcon IconData
 
 ### Example
 ```ruby
@@ -4954,11 +5467,11 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
 
 begin
-  #Show an existing ServiceOfferingIcon
-  result = api_instance.show_service_offering_icon_0(id)
+  #Show an existing ServiceOfferingIcon IconData
+  result = api_instance.show_service_offering_icon_icon_data(id)
   p result
 rescue TopologicalInventoryApiClient::ApiError => e
-  puts "Exception when calling DefaultApi->show_service_offering_icon_0: #{e}"
+  puts "Exception when calling DefaultApi->show_service_offering_icon_icon_data: #{e}"
 end
 ```
 
@@ -4970,7 +5483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+**File**
 
 ### Authorization
 

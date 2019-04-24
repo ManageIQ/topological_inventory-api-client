@@ -13,41 +13,31 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module TopologicalInventoryApiClient
-  class VolumeType
-    attr_accessor :archived_at
+  class Application
+    # ID of the resource
+    attr_accessor :application_type_id
 
     attr_accessor :created_at
-
-    attr_accessor :description
-
-    attr_accessor :extra
 
     # ID of the resource
     attr_accessor :id
 
-    attr_accessor :last_seen_at
-
-    attr_accessor :name
-
     # ID of the resource
     attr_accessor :source_id
 
-    attr_accessor :source_ref
+    # ID of the resource
+    attr_accessor :tenant_id
 
     attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'archived_at' => :'archived_at',
+        :'application_type_id' => :'application_type_id',
         :'created_at' => :'created_at',
-        :'description' => :'description',
-        :'extra' => :'extra',
         :'id' => :'id',
-        :'last_seen_at' => :'last_seen_at',
-        :'name' => :'name',
         :'source_id' => :'source_id',
-        :'source_ref' => :'source_ref',
+        :'tenant_id' => :'tenant_id',
         :'updated_at' => :'updated_at'
       }
     end
@@ -55,15 +45,11 @@ module TopologicalInventoryApiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'archived_at' => :'DateTime',
+        :'application_type_id' => :'String',
         :'created_at' => :'DateTime',
-        :'description' => :'String',
-        :'extra' => :'String',
         :'id' => :'String',
-        :'last_seen_at' => :'DateTime',
-        :'name' => :'String',
         :'source_id' => :'String',
-        :'source_ref' => :'String',
+        :'tenant_id' => :'String',
         :'updated_at' => :'DateTime'
       }
     end
@@ -76,40 +62,24 @@ module TopologicalInventoryApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'archived_at')
-        self.archived_at = attributes[:'archived_at']
+      if attributes.has_key?(:'application_type_id')
+        self.application_type_id = attributes[:'application_type_id']
       end
 
       if attributes.has_key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
 
-      if attributes.has_key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.has_key?(:'extra')
-        self.extra = attributes[:'extra']
-      end
-
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'last_seen_at')
-        self.last_seen_at = attributes[:'last_seen_at']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
       end
 
       if attributes.has_key?(:'source_id')
         self.source_id = attributes[:'source_id']
       end
 
-      if attributes.has_key?(:'source_ref')
-        self.source_ref = attributes[:'source_ref']
+      if attributes.has_key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
       end
 
       if attributes.has_key?(:'updated_at')
@@ -121,6 +91,10 @@ module TopologicalInventoryApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if !@application_type_id.nil? && @application_type_id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "application_type_id", must conform to the pattern /^\d+$/.')
+      end
+
       if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
         invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
       end
@@ -129,15 +103,31 @@ module TopologicalInventoryApiClient
         invalid_properties.push('invalid value for "source_id", must conform to the pattern /^\d+$/.')
       end
 
+      if !@tenant_id.nil? && @tenant_id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "tenant_id", must conform to the pattern /^\d+$/.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !@application_type_id.nil? && @application_type_id !~ Regexp.new(/^\d+$/)
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
+      return false if !@tenant_id.nil? && @tenant_id !~ Regexp.new(/^\d+$/)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] application_type_id Value to be assigned
+    def application_type_id=(application_type_id)
+      if !application_type_id.nil? && application_type_id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "application_type_id", must conform to the pattern /^\d+$/.'
+      end
+
+      @application_type_id = application_type_id
     end
 
     # Custom attribute writer method with validation
@@ -160,20 +150,26 @@ module TopologicalInventoryApiClient
       @source_id = source_id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] tenant_id Value to be assigned
+    def tenant_id=(tenant_id)
+      if !tenant_id.nil? && tenant_id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "tenant_id", must conform to the pattern /^\d+$/.'
+      end
+
+      @tenant_id = tenant_id
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          archived_at == o.archived_at &&
+          application_type_id == o.application_type_id &&
           created_at == o.created_at &&
-          description == o.description &&
-          extra == o.extra &&
           id == o.id &&
-          last_seen_at == o.last_seen_at &&
-          name == o.name &&
           source_id == o.source_id &&
-          source_ref == o.source_ref &&
+          tenant_id == o.tenant_id &&
           updated_at == o.updated_at
     end
 
@@ -186,7 +182,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [archived_at, created_at, description, extra, id, last_seen_at, name, source_id, source_ref, updated_at].hash
+      [application_type_id, created_at, id, source_id, tenant_id, updated_at].hash
     end
 
     # Builds the object from hash
