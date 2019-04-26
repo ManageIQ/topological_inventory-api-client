@@ -1,14 +1,13 @@
-# TopologicalInventoryApiClient::ServiceOfferingIcon
+# TopologicalInventoryApiClient::Application
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**application_type_id** | **String** | ID of the resource | [optional] 
 **created_at** | **DateTime** |  | [optional] 
-**data** | **String** | Raw icon data | [optional] 
 **id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
 **source_id** | **String** | ID of the resource | [optional] 
-**source_ref** | **String** |  | [optional] 
+**tenant_id** | **String** | ID of the resource | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 
 
