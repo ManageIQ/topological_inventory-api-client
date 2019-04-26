@@ -19,11 +19,6 @@ module TopologicalInventoryApiClient
     # ID of the resource
     attr_accessor :id
 
-    attr_accessor :name
-
-    # ID of the resource
-    attr_accessor :source_type_id
-
     # ID of the resource
     attr_accessor :tenant_id
 
@@ -31,19 +26,14 @@ module TopologicalInventoryApiClient
 
     attr_accessor :updated_at
 
-    attr_accessor :version
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'created_at' => :'created_at',
         :'id' => :'id',
-        :'name' => :'name',
-        :'source_type_id' => :'source_type_id',
         :'tenant_id' => :'tenant_id',
         :'uid' => :'uid',
-        :'updated_at' => :'updated_at',
-        :'version' => :'version'
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -52,12 +42,9 @@ module TopologicalInventoryApiClient
       {
         :'created_at' => :'DateTime',
         :'id' => :'String',
-        :'name' => :'String',
-        :'source_type_id' => :'String',
         :'tenant_id' => :'String',
         :'uid' => :'String',
-        :'updated_at' => :'DateTime',
-        :'version' => :'String'
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -77,14 +64,6 @@ module TopologicalInventoryApiClient
         self.id = attributes[:'id']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.has_key?(:'source_type_id')
-        self.source_type_id = attributes[:'source_type_id']
-      end
-
       if attributes.has_key?(:'tenant_id')
         self.tenant_id = attributes[:'tenant_id']
       end
@@ -96,10 +75,6 @@ module TopologicalInventoryApiClient
       if attributes.has_key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
-
-      if attributes.has_key?(:'version')
-        self.version = attributes[:'version']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -108,10 +83,6 @@ module TopologicalInventoryApiClient
       invalid_properties = Array.new
       if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
         invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
-      end
-
-      if !@source_type_id.nil? && @source_type_id !~ Regexp.new(/^\d+$/)
-        invalid_properties.push('invalid value for "source_type_id", must conform to the pattern /^\d+$/.')
       end
 
       if !@tenant_id.nil? && @tenant_id !~ Regexp.new(/^\d+$/)
@@ -125,7 +96,6 @@ module TopologicalInventoryApiClient
     # @return true if the model is valid
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
-      return false if !@source_type_id.nil? && @source_type_id !~ Regexp.new(/^\d+$/)
       return false if !@tenant_id.nil? && @tenant_id !~ Regexp.new(/^\d+$/)
       true
     end
@@ -138,16 +108,6 @@ module TopologicalInventoryApiClient
       end
 
       @id = id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] source_type_id Value to be assigned
-    def source_type_id=(source_type_id)
-      if !source_type_id.nil? && source_type_id !~ Regexp.new(/^\d+$/)
-        fail ArgumentError, 'invalid value for "source_type_id", must conform to the pattern /^\d+$/.'
-      end
-
-      @source_type_id = source_type_id
     end
 
     # Custom attribute writer method with validation
@@ -167,12 +127,9 @@ module TopologicalInventoryApiClient
       self.class == o.class &&
           created_at == o.created_at &&
           id == o.id &&
-          name == o.name &&
-          source_type_id == o.source_type_id &&
           tenant_id == o.tenant_id &&
           uid == o.uid &&
-          updated_at == o.updated_at &&
-          version == o.version
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -184,7 +141,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created_at, id, name, source_type_id, tenant_id, uid, updated_at, version].hash
+      [created_at, id, tenant_id, uid, updated_at].hash
     end
 
     # Builds the object from hash
