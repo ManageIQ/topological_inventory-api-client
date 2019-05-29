@@ -4,8 +4,6 @@ All URIs are relative to *https://cloud.redhat.com//api/topological-inventory/v1
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_source**](DefaultApi.md#create_source) | **POST** /sources | Create a new Source
-[**delete_source**](DefaultApi.md#delete_source) | **DELETE** /sources/{id} | Delete an existing Source
 [**get_documentation**](DefaultApi.md#get_documentation) | **GET** /openapi.json | Return this API document in JSON format
 [**list_container_group_containers**](DefaultApi.md#list_container_group_containers) | **GET** /container_groups/{id}/containers | List Containers for ContainerGroup
 [**list_container_group_tags**](DefaultApi.md#list_container_group_tags) | **GET** /container_groups/{id}/tags | List Tags for ContainerGroup
@@ -87,109 +85,7 @@ Method | HTTP request | Description
 [**show_volume**](DefaultApi.md#show_volume) | **GET** /volumes/{id} | Show an existing Volume
 [**show_volume_attachment**](DefaultApi.md#show_volume_attachment) | **GET** /volume_attachments/{id} | Show an existing VolumeAttachment
 [**show_volume_type**](DefaultApi.md#show_volume_type) | **GET** /volume_types/{id} | Show an existing VolumeType
-[**update_source**](DefaultApi.md#update_source) | **PATCH** /sources/{id} | Update an existing Source
 [**update_task**](DefaultApi.md#update_task) | **PATCH** /tasks/{id} | Update an existing Task
-
-
-# **create_source**
-> Array&lt;Source&gt; create_source(source)
-
-Create a new Source
-
-Creates a Source object
-
-### Example
-```ruby
-# load the gem
-require 'topological_inventory-api-client'
-# setup authorization
-TopologicalInventoryApiClient.configure do |config|
-  # Configure HTTP basic authorization: UserSecurity
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TopologicalInventoryApiClient::DefaultApi.new
-source = TopologicalInventoryApiClient::Source.new # Source | Source attributes to create
-
-begin
-  #Create a new Source
-  result = api_instance.create_source(source)
-  p result
-rescue TopologicalInventoryApiClient::ApiError => e
-  puts "Exception when calling DefaultApi->create_source: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **source** | [**Source**](Source.md)| Source attributes to create | 
-
-### Return type
-
-[**Array&lt;Source&gt;**](Source.md)
-
-### Authorization
-
-[UserSecurity](../README.md#UserSecurity)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **delete_source**
-> delete_source(id)
-
-Delete an existing Source
-
-Deletes a Source object
-
-### Example
-```ruby
-# load the gem
-require 'topological_inventory-api-client'
-# setup authorization
-TopologicalInventoryApiClient.configure do |config|
-  # Configure HTTP basic authorization: UserSecurity
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TopologicalInventoryApiClient::DefaultApi.new
-id = 'id_example' # String | ID of the resource
-
-begin
-  #Delete an existing Source
-  api_instance.delete_source(id)
-rescue TopologicalInventoryApiClient::ApiError => e
-  puts "Exception when calling DefaultApi->delete_source: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the resource | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[UserSecurity](../README.md#UserSecurity)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 
 
 # **get_documentation**
@@ -4739,58 +4635,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-
-
-# **update_source**
-> update_source(id, source)
-
-Update an existing Source
-
-Updates a Source object
-
-### Example
-```ruby
-# load the gem
-require 'topological_inventory-api-client'
-# setup authorization
-TopologicalInventoryApiClient.configure do |config|
-  # Configure HTTP basic authorization: UserSecurity
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
-end
-
-api_instance = TopologicalInventoryApiClient::DefaultApi.new
-id = 'id_example' # String | ID of the resource
-source = TopologicalInventoryApiClient::Source.new # Source | Source attributes to update
-
-begin
-  #Update an existing Source
-  api_instance.update_source(id, source)
-rescue TopologicalInventoryApiClient::ApiError => e
-  puts "Exception when calling DefaultApi->update_source: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the resource | 
- **source** | [**Source**](Source.md)| Source attributes to update | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[UserSecurity](../README.md#UserSecurity)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
 
 
 
