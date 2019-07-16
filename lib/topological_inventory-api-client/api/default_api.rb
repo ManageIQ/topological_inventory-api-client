@@ -61,6 +61,152 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Hosts for Cluster
+    # Returns an array of Host objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [HostsCollection]
+    def list_cluster_hosts(id, opts = {})
+      data, _status_code, _headers = list_cluster_hosts_with_http_info(id, opts)
+      data
+    end
+
+    # List Hosts for Cluster
+    # Returns an array of Host objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(HostsCollection, Fixnum, Hash)>] HostsCollection data, response status code and response headers
+    def list_cluster_hosts_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_cluster_hosts ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_cluster_hosts"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_cluster_hosts, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_cluster_hosts, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_cluster_hosts, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_cluster_hosts, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/clusters/{id}/hosts'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'HostsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_cluster_hosts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Clusters
+    # Returns an array of Cluster objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ClustersCollection]
+    def list_clusters(opts = {})
+      data, _status_code, _headers = list_clusters_with_http_info(opts)
+      data
+    end
+
+    # List Clusters
+    # Returns an array of Cluster objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ClustersCollection, Fixnum, Hash)>] ClustersCollection data, response status code and response headers
+    def list_clusters_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_clusters ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_clusters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_clusters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_clusters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/clusters'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ClustersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_clusters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List Containers for ContainerGroup
     # Returns an array of Container objects
     # @param id ID of the resource
@@ -1317,6 +1463,74 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Datastores
+    # Returns an array of Datastore objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [DatastoresCollection]
+    def list_datastores(opts = {})
+      data, _status_code, _headers = list_datastores_with_http_info(opts)
+      data
+    end
+
+    # List Datastores
+    # Returns an array of Datastore objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(DatastoresCollection, Fixnum, Hash)>] DatastoresCollection data, response status code and response headers
+    def list_datastores_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_datastores ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_datastores, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_datastores, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_datastores, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/datastores'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DatastoresCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_datastores\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List Flavors
     # Returns an array of Flavor objects
     # @param [Hash] opts the optional parameters
@@ -1381,6 +1595,74 @@ module TopologicalInventoryApiClient
         :return_type => 'FlavorsCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_flavors\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Hosts
+    # Returns an array of Host objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [HostsCollection]
+    def list_hosts(opts = {})
+      data, _status_code, _headers = list_hosts_with_http_info(opts)
+      data
+    end
+
+    # List Hosts
+    # Returns an array of Host objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(HostsCollection, Fixnum, Hash)>] HostsCollection data, response status code and response headers
+    def list_hosts_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_hosts ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_hosts, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_hosts, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_hosts, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/hosts'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'HostsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_hosts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2115,6 +2397,84 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Clusters for Source
+    # Returns an array of Cluster objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ClustersCollection]
+    def list_source_clusters(id, opts = {})
+      data, _status_code, _headers = list_source_clusters_with_http_info(id, opts)
+      data
+    end
+
+    # List Clusters for Source
+    # Returns an array of Cluster objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ClustersCollection, Fixnum, Hash)>] ClustersCollection data, response status code and response headers
+    def list_source_clusters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_clusters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_clusters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_clusters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_clusters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_clusters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_clusters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/clusters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ClustersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_clusters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ContainerGroups for Source
     # Returns an array of ContainerGroup objects
     # @param id ID of the resource
@@ -2579,6 +2939,162 @@ module TopologicalInventoryApiClient
         :return_type => 'ContainersCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_source_containers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Datastores for Source
+    # Returns an array of Datastore objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [DatastoresCollection]
+    def list_source_datastores(id, opts = {})
+      data, _status_code, _headers = list_source_datastores_with_http_info(id, opts)
+      data
+    end
+
+    # List Datastores for Source
+    # Returns an array of Datastore objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(DatastoresCollection, Fixnum, Hash)>] DatastoresCollection data, response status code and response headers
+    def list_source_datastores_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_datastores ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_datastores"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_datastores, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_datastores, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_datastores, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_datastores, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/datastores'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DatastoresCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_datastores\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Hosts for Source
+    # Returns an array of Host objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [HostsCollection]
+    def list_source_hosts(id, opts = {})
+      data, _status_code, _headers = list_source_hosts_with_http_info(id, opts)
+      data
+    end
+
+    # List Hosts for Source
+    # Returns an array of Host objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(HostsCollection, Fixnum, Hash)>] HostsCollection data, response status code and response headers
+    def list_source_hosts_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_hosts ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_hosts"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_hosts, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_hosts, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_hosts, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_hosts, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/hosts'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'HostsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_hosts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -4450,6 +4966,114 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # Perform a GraphQL Query
+    # Performs a GraphQL Query
+    # @param [Hash] opts the optional parameters
+    # @option opts [InlineObject] :inline_object 
+    # @return [GraphQLResponse]
+    def post_graph_ql(opts = {})
+      data, _status_code, _headers = post_graph_ql_with_http_info(opts)
+      data
+    end
+
+    # Perform a GraphQL Query
+    # Performs a GraphQL Query
+    # @param [Hash] opts the optional parameters
+    # @option opts [InlineObject] :inline_object 
+    # @return [Array<(GraphQLResponse, Fixnum, Hash)>] GraphQLResponse data, response status code and response headers
+    def post_graph_ql_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.post_graph_ql ...'
+      end
+      # resource path
+      local_var_path = '/graphql'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'inline_object'])
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GraphQLResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#post_graph_ql\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing Cluster
+    # Returns a Cluster object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Cluster]
+    def show_cluster(id, opts = {})
+      data, _status_code, _headers = show_cluster_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing Cluster
+    # Returns a Cluster object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Cluster, Fixnum, Hash)>] Cluster data, response status code and response headers
+    def show_cluster_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_cluster ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_cluster"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_cluster, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/clusters/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Cluster')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_cluster\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show an existing Container
     # Returns a Container object
     # @param id ID of the resource
@@ -4849,6 +5473,63 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # Show an existing Datastore
+    # Returns a Datastore object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Datastore]
+    def show_datastore(id, opts = {})
+      data, _status_code, _headers = show_datastore_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing Datastore
+    # Returns a Datastore object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Datastore, Fixnum, Hash)>] Datastore data, response status code and response headers
+    def show_datastore_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_datastore ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_datastore"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_datastore, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/datastores/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Datastore')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_datastore\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show an existing Flavor
     # Returns a Flavor object
     # @param id ID of the resource
@@ -4902,6 +5583,63 @@ module TopologicalInventoryApiClient
         :return_type => 'Flavor')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#show_flavor\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing Host
+    # Returns a Host object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Host]
+    def show_host(id, opts = {})
+      data, _status_code, _headers = show_host_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing Host
+    # Returns a Host object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Host, Fixnum, Hash)>] Host data, response status code and response headers
+    def show_host_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_host ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_host"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_host, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/hosts/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Host')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_host\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
