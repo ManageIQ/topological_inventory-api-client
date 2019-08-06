@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **display_name** | **String** |  | [optional] 
 **distributor** | **String** |  | [optional] 
 **documentation_url** | **String** |  | [optional] 
-**extra** | **String** | Extra information about this object in JSON format | [optional] 
+**extra** | [**Object**](.md) | Extra information about this object in JSON format | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **last_seen_at** | **DateTime** |  | [optional] 
 **long_description** | **String** |  | [optional] 

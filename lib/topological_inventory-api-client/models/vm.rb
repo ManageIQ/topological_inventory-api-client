@@ -98,7 +98,7 @@ module TopologicalInventoryApiClient
         :'cpus' => :'Integer',
         :'created_at' => :'DateTime',
         :'description' => :'String',
-        :'extra' => :'String',
+        :'extra' => :'Object',
         :'flavor_id' => :'String',
         :'host_inventory_uuid' => :'String',
         :'hostname' => :'String',

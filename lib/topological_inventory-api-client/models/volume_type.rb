@@ -58,7 +58,7 @@ module TopologicalInventoryApiClient
         :'archived_at' => :'DateTime',
         :'created_at' => :'DateTime',
         :'description' => :'String',
-        :'extra' => :'String',
+        :'extra' => :'Object',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
         :'name' => :'String',

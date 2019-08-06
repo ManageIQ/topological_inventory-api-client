@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **created_at** | **DateTime** |  | [optional] 
 **disk_count** | **Integer** | The number of default disks | [optional] 
 **disk_size** | **Integer** | Size of the default disks in bytes | [optional] 
-**extra** | **String** |  | [optional] 
+**extra** | [**Object**](.md) |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **last_seen_at** | **DateTime** |  | [optional] 
 **memory** | **Integer** | Amount of RAM in bytes | [optional] 

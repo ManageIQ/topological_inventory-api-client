@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **cpus** | **Integer** | Total number of CPUs | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **description** | **String** | Description of the Vm | [optional] 
-**extra** | **String** |  | [optional] 
+**extra** | [**Object**](.md) |  | [optional] 
 **flavor_id** | **String** | ID of the resource | [optional] 
 **host_inventory_uuid** | **String** |  | [optional] 
 **hostname** | **String** |  | [optional] 

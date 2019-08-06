@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **create_json_schema** | [**Object**](.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **description** | **String** |  | [optional] 
-**extra** | **String** | Extra information about this object in JSON format | [optional] 
+**extra** | [**Object**](.md) | Extra information about this object in JSON format | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **last_seen_at** | **DateTime** |  | [optional] 
 **name** | **String** |  | [optional] 
