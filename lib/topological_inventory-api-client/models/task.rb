@@ -49,7 +49,7 @@ module TopologicalInventoryApiClient
     def self.openapi_types
       {
         :'completed_at' => :'DateTime',
-        :'context' => :'String',
+        :'context' => :'Object',
         :'created_at' => :'DateTime',
         :'id' => :'String',
         :'name' => :'String',

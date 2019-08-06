@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **completed_at** | **DateTime** |  | [optional] 
-**context** | **String** |  | [optional] 
+**context** | [**Object**](.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **id** | **String** | ID of the resource | [optional] 
 **name** | **String** |  | [optional] 
