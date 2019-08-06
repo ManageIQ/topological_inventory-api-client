@@ -96,7 +96,7 @@ module TopologicalInventoryApiClient
         :'display_name' => :'String',
         :'distributor' => :'String',
         :'documentation_url' => :'String',
-        :'extra' => :'String',
+        :'extra' => :'Object',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
         :'long_description' => :'String',

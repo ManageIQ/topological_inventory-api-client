@@ -16,17 +16,25 @@ module TopologicalInventoryApiClient
   class CollectionMetadata
     attr_accessor :count
 
+    attr_accessor :offset
+
+    attr_accessor :limit
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count'
+        :'count' => :'count',
+        :'offset' => :'offset',
+        :'limit' => :'limit'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'count' => :'Integer'
+        :'count' => :'Integer',
+        :'offset' => :'Integer',
+        :'limit' => :'Integer'
       }
     end
 
@@ -40,6 +48,14 @@ module TopologicalInventoryApiClient
 
       if attributes.has_key?(:'count')
         self.count = attributes[:'count']
+      end
+
+      if attributes.has_key?(:'offset')
+        self.offset = attributes[:'offset']
+      end
+
+      if attributes.has_key?(:'limit')
+        self.limit = attributes[:'limit']
       end
     end
 
@@ -61,7 +77,9 @@ module TopologicalInventoryApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count
+          count == o.count &&
+          offset == o.offset &&
+          limit == o.limit
     end
 
     # @see the `==` method
@@ -73,7 +91,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count].hash
+      [count, offset, limit].hash
     end
 
     # Builds the object from hash

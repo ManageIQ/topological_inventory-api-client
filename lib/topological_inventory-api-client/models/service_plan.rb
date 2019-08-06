@@ -87,7 +87,7 @@ module TopologicalInventoryApiClient
         :'create_json_schema' => :'Object',
         :'created_at' => :'DateTime',
         :'description' => :'String',
-        :'extra' => :'String',
+        :'extra' => :'Object',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
         :'name' => :'String',

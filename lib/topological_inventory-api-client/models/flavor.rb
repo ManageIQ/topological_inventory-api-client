@@ -73,7 +73,7 @@ module TopologicalInventoryApiClient
         :'created_at' => :'DateTime',
         :'disk_count' => :'Integer',
         :'disk_size' => :'Integer',
-        :'extra' => :'String',
+        :'extra' => :'Object',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
         :'memory' => :'Integer',

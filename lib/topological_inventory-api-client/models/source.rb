@@ -19,9 +19,6 @@ module TopologicalInventoryApiClient
     # ID of the resource
     attr_accessor :id
 
-    # ID of the resource
-    attr_accessor :tenant_id
-
     attr_accessor :uid
 
     attr_accessor :updated_at
@@ -31,7 +28,6 @@ module TopologicalInventoryApiClient
       {
         :'created_at' => :'created_at',
         :'id' => :'id',
-        :'tenant_id' => :'tenant_id',
         :'uid' => :'uid',
         :'updated_at' => :'updated_at'
       }
@@ -42,7 +38,6 @@ module TopologicalInventoryApiClient
       {
         :'created_at' => :'DateTime',
         :'id' => :'String',
-        :'tenant_id' => :'String',
         :'uid' => :'String',
         :'updated_at' => :'DateTime'
       }
@@ -64,10 +59,6 @@ module TopologicalInventoryApiClient
         self.id = attributes[:'id']
       end
 
-      if attributes.has_key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.has_key?(:'uid')
         self.uid = attributes[:'uid']
       end
@@ -85,10 +76,6 @@ module TopologicalInventoryApiClient
         invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
       end
 
-      if !@tenant_id.nil? && @tenant_id !~ Regexp.new(/^\d+$/)
-        invalid_properties.push('invalid value for "tenant_id", must conform to the pattern /^\d+$/.')
-      end
-
       invalid_properties
     end
 
@@ -96,7 +83,6 @@ module TopologicalInventoryApiClient
     # @return true if the model is valid
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
-      return false if !@tenant_id.nil? && @tenant_id !~ Regexp.new(/^\d+$/)
       true
     end
 
@@ -110,16 +96,6 @@ module TopologicalInventoryApiClient
       @id = id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id !~ Regexp.new(/^\d+$/)
-        fail ArgumentError, 'invalid value for "tenant_id", must conform to the pattern /^\d+$/.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -127,7 +103,6 @@ module TopologicalInventoryApiClient
       self.class == o.class &&
           created_at == o.created_at &&
           id == o.id &&
-          tenant_id == o.tenant_id &&
           uid == o.uid &&
           updated_at == o.updated_at
     end
@@ -141,7 +116,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created_at, id, tenant_id, uid, updated_at].hash
+      [created_at, id, uid, updated_at].hash
     end
 
     # Builds the object from hash
