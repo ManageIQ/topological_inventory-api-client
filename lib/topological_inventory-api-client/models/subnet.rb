@@ -13,8 +13,10 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module TopologicalInventoryApiClient
-  class Volume
+  class Subnet
     attr_accessor :archived_at
+
+    attr_accessor :cidr
 
     attr_accessor :created_at
 
@@ -28,10 +30,10 @@ module TopologicalInventoryApiClient
     attr_accessor :name
 
     # ID of the resource
-    attr_accessor :orchestration_stack_id
+    attr_accessor :network_id
 
-    # Size of the volume in bytes
-    attr_accessor :size
+    # ID of the resource
+    attr_accessor :orchestration_stack_id
 
     attr_accessor :source_created_at
 
@@ -45,36 +47,33 @@ module TopologicalInventoryApiClient
     # ID of the resource
     attr_accessor :source_region_id
 
-    attr_accessor :state
+    attr_accessor :status
 
     # ID of the resource
     attr_accessor :subscription_id
 
     attr_accessor :updated_at
 
-    # ID of the resource
-    attr_accessor :volume_type_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'archived_at' => :'archived_at',
+        :'cidr' => :'cidr',
         :'created_at' => :'created_at',
         :'extra' => :'extra',
         :'id' => :'id',
         :'last_seen_at' => :'last_seen_at',
         :'name' => :'name',
+        :'network_id' => :'network_id',
         :'orchestration_stack_id' => :'orchestration_stack_id',
-        :'size' => :'size',
         :'source_created_at' => :'source_created_at',
         :'source_deleted_at' => :'source_deleted_at',
         :'source_id' => :'source_id',
         :'source_ref' => :'source_ref',
         :'source_region_id' => :'source_region_id',
-        :'state' => :'state',
+        :'status' => :'status',
         :'subscription_id' => :'subscription_id',
-        :'updated_at' => :'updated_at',
-        :'volume_type_id' => :'volume_type_id'
+        :'updated_at' => :'updated_at'
       }
     end
 
@@ -82,22 +81,22 @@ module TopologicalInventoryApiClient
     def self.openapi_types
       {
         :'archived_at' => :'DateTime',
+        :'cidr' => :'String',
         :'created_at' => :'DateTime',
         :'extra' => :'Object',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
         :'name' => :'String',
+        :'network_id' => :'String',
         :'orchestration_stack_id' => :'String',
-        :'size' => :'Integer',
         :'source_created_at' => :'DateTime',
         :'source_deleted_at' => :'DateTime',
         :'source_id' => :'String',
         :'source_ref' => :'String',
         :'source_region_id' => :'String',
-        :'state' => :'String',
+        :'status' => :'String',
         :'subscription_id' => :'String',
-        :'updated_at' => :'DateTime',
-        :'volume_type_id' => :'String'
+        :'updated_at' => :'DateTime'
       }
     end
 
@@ -111,6 +110,10 @@ module TopologicalInventoryApiClient
 
       if attributes.has_key?(:'archived_at')
         self.archived_at = attributes[:'archived_at']
+      end
+
+      if attributes.has_key?(:'cidr')
+        self.cidr = attributes[:'cidr']
       end
 
       if attributes.has_key?(:'created_at')
@@ -133,12 +136,12 @@ module TopologicalInventoryApiClient
         self.name = attributes[:'name']
       end
 
-      if attributes.has_key?(:'orchestration_stack_id')
-        self.orchestration_stack_id = attributes[:'orchestration_stack_id']
+      if attributes.has_key?(:'network_id')
+        self.network_id = attributes[:'network_id']
       end
 
-      if attributes.has_key?(:'size')
-        self.size = attributes[:'size']
+      if attributes.has_key?(:'orchestration_stack_id')
+        self.orchestration_stack_id = attributes[:'orchestration_stack_id']
       end
 
       if attributes.has_key?(:'source_created_at')
@@ -161,8 +164,8 @@ module TopologicalInventoryApiClient
         self.source_region_id = attributes[:'source_region_id']
       end
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
       end
 
       if attributes.has_key?(:'subscription_id')
@@ -172,10 +175,6 @@ module TopologicalInventoryApiClient
       if attributes.has_key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
-
-      if attributes.has_key?(:'volume_type_id')
-        self.volume_type_id = attributes[:'volume_type_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -184,6 +183,10 @@ module TopologicalInventoryApiClient
       invalid_properties = Array.new
       if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
         invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
+      end
+
+      if !@network_id.nil? && @network_id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "network_id", must conform to the pattern /^\d+$/.')
       end
 
       if !@orchestration_stack_id.nil? && @orchestration_stack_id !~ Regexp.new(/^\d+$/)
@@ -202,10 +205,6 @@ module TopologicalInventoryApiClient
         invalid_properties.push('invalid value for "subscription_id", must conform to the pattern /^\d+$/.')
       end
 
-      if !@volume_type_id.nil? && @volume_type_id !~ Regexp.new(/^\d+$/)
-        invalid_properties.push('invalid value for "volume_type_id", must conform to the pattern /^\d+$/.')
-      end
-
       invalid_properties
     end
 
@@ -213,11 +212,11 @@ module TopologicalInventoryApiClient
     # @return true if the model is valid
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
+      return false if !@network_id.nil? && @network_id !~ Regexp.new(/^\d+$/)
       return false if !@orchestration_stack_id.nil? && @orchestration_stack_id !~ Regexp.new(/^\d+$/)
       return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
       return false if !@source_region_id.nil? && @source_region_id !~ Regexp.new(/^\d+$/)
       return false if !@subscription_id.nil? && @subscription_id !~ Regexp.new(/^\d+$/)
-      return false if !@volume_type_id.nil? && @volume_type_id !~ Regexp.new(/^\d+$/)
       true
     end
 
@@ -229,6 +228,16 @@ module TopologicalInventoryApiClient
       end
 
       @id = id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] network_id Value to be assigned
+    def network_id=(network_id)
+      if !network_id.nil? && network_id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "network_id", must conform to the pattern /^\d+$/.'
+      end
+
+      @network_id = network_id
     end
 
     # Custom attribute writer method with validation
@@ -271,38 +280,28 @@ module TopologicalInventoryApiClient
       @subscription_id = subscription_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] volume_type_id Value to be assigned
-    def volume_type_id=(volume_type_id)
-      if !volume_type_id.nil? && volume_type_id !~ Regexp.new(/^\d+$/)
-        fail ArgumentError, 'invalid value for "volume_type_id", must conform to the pattern /^\d+$/.'
-      end
-
-      @volume_type_id = volume_type_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           archived_at == o.archived_at &&
+          cidr == o.cidr &&
           created_at == o.created_at &&
           extra == o.extra &&
           id == o.id &&
           last_seen_at == o.last_seen_at &&
           name == o.name &&
+          network_id == o.network_id &&
           orchestration_stack_id == o.orchestration_stack_id &&
-          size == o.size &&
           source_created_at == o.source_created_at &&
           source_deleted_at == o.source_deleted_at &&
           source_id == o.source_id &&
           source_ref == o.source_ref &&
           source_region_id == o.source_region_id &&
-          state == o.state &&
+          status == o.status &&
           subscription_id == o.subscription_id &&
-          updated_at == o.updated_at &&
-          volume_type_id == o.volume_type_id
+          updated_at == o.updated_at
     end
 
     # @see the `==` method
@@ -314,7 +313,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [archived_at, created_at, extra, id, last_seen_at, name, orchestration_stack_id, size, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, state, subscription_id, updated_at, volume_type_id].hash
+      [archived_at, cidr, created_at, extra, id, last_seen_at, name, network_id, orchestration_stack_id, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, status, subscription_id, updated_at].hash
     end
 
     # Builds the object from hash

@@ -59,6 +59,12 @@ module TopologicalInventoryApiClient
 
     attr_accessor :source_ref
 
+    # ID of the resource
+    attr_accessor :source_region_id
+
+    # ID of the resource
+    attr_accessor :subscription_id
+
     # Cross-Source Unique Reference
     attr_accessor :uid_ems
 
@@ -86,6 +92,8 @@ module TopologicalInventoryApiClient
         :'source_deleted_at' => :'source_deleted_at',
         :'source_id' => :'source_id',
         :'source_ref' => :'source_ref',
+        :'source_region_id' => :'source_region_id',
+        :'subscription_id' => :'subscription_id',
         :'uid_ems' => :'uid_ems',
         :'updated_at' => :'updated_at'
       }
@@ -113,6 +121,8 @@ module TopologicalInventoryApiClient
         :'source_deleted_at' => :'DateTime',
         :'source_id' => :'String',
         :'source_ref' => :'String',
+        :'source_region_id' => :'String',
+        :'subscription_id' => :'String',
         :'uid_ems' => :'String',
         :'updated_at' => :'DateTime'
       }
@@ -204,6 +214,14 @@ module TopologicalInventoryApiClient
         self.source_ref = attributes[:'source_ref']
       end
 
+      if attributes.has_key?(:'source_region_id')
+        self.source_region_id = attributes[:'source_region_id']
+      end
+
+      if attributes.has_key?(:'subscription_id')
+        self.subscription_id = attributes[:'subscription_id']
+      end
+
       if attributes.has_key?(:'uid_ems')
         self.uid_ems = attributes[:'uid_ems']
       end
@@ -233,6 +251,14 @@ module TopologicalInventoryApiClient
         invalid_properties.push('invalid value for "source_id", must conform to the pattern /^\d+$/.')
       end
 
+      if !@source_region_id.nil? && @source_region_id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "source_region_id", must conform to the pattern /^\d+$/.')
+      end
+
+      if !@subscription_id.nil? && @subscription_id !~ Regexp.new(/^\d+$/)
+        invalid_properties.push('invalid value for "subscription_id", must conform to the pattern /^\d+$/.')
+      end
+
       invalid_properties
     end
 
@@ -243,6 +269,8 @@ module TopologicalInventoryApiClient
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       return false if !@orchestration_stack_id.nil? && @orchestration_stack_id !~ Regexp.new(/^\d+$/)
       return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
+      return false if !@source_region_id.nil? && @source_region_id !~ Regexp.new(/^\d+$/)
+      return false if !@subscription_id.nil? && @subscription_id !~ Regexp.new(/^\d+$/)
       true
     end
 
@@ -286,6 +314,26 @@ module TopologicalInventoryApiClient
       @source_id = source_id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] source_region_id Value to be assigned
+    def source_region_id=(source_region_id)
+      if !source_region_id.nil? && source_region_id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "source_region_id", must conform to the pattern /^\d+$/.'
+      end
+
+      @source_region_id = source_region_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] subscription_id Value to be assigned
+    def subscription_id=(subscription_id)
+      if !subscription_id.nil? && subscription_id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, 'invalid value for "subscription_id", must conform to the pattern /^\d+$/.'
+      end
+
+      @subscription_id = subscription_id
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -310,6 +358,8 @@ module TopologicalInventoryApiClient
           source_deleted_at == o.source_deleted_at &&
           source_id == o.source_id &&
           source_ref == o.source_ref &&
+          source_region_id == o.source_region_id &&
+          subscription_id == o.subscription_id &&
           uid_ems == o.uid_ems &&
           updated_at == o.updated_at
     end
@@ -323,7 +373,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [archived_at, cpus, created_at, description, extra, flavor_id, host_inventory_uuid, hostname, id, last_seen_at, mac_addresses, memory, name, orchestration_stack_id, power_state, source_created_at, source_deleted_at, source_id, source_ref, uid_ems, updated_at].hash
+      [archived_at, cpus, created_at, description, extra, flavor_id, host_inventory_uuid, hostname, id, last_seen_at, mac_addresses, memory, name, orchestration_stack_id, power_state, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, subscription_id, uid_ems, updated_at].hash
     end
 
     # Builds the object from hash
