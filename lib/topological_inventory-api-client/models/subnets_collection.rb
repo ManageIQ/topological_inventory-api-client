@@ -13,37 +13,28 @@ OpenAPI Generator version: 3.3.4
 require 'date'
 
 module TopologicalInventoryApiClient
-  class Source
-    attr_accessor :created_at
+  class SubnetsCollection
+    attr_accessor :meta
 
-    # ID of the resource
-    attr_accessor :id
+    attr_accessor :links
 
-    attr_accessor :refresh_status
-
-    attr_accessor :uid
-
-    attr_accessor :updated_at
+    attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'created_at' => :'created_at',
-        :'id' => :'id',
-        :'refresh_status' => :'refresh_status',
-        :'uid' => :'uid',
-        :'updated_at' => :'updated_at'
+        :'meta' => :'meta',
+        :'links' => :'links',
+        :'data' => :'data'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'created_at' => :'DateTime',
-        :'id' => :'String',
-        :'refresh_status' => :'String',
-        :'uid' => :'String',
-        :'updated_at' => :'DateTime'
+        :'meta' => :'CollectionMetadata',
+        :'links' => :'CollectionLinks',
+        :'data' => :'Array<Subnet>'
       }
     end
 
@@ -55,24 +46,18 @@ module TopologicalInventoryApiClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'created_at')
-        self.created_at = attributes[:'created_at']
+      if attributes.has_key?(:'meta')
+        self.meta = attributes[:'meta']
       end
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.has_key?(:'links')
+        self.links = attributes[:'links']
       end
 
-      if attributes.has_key?(:'refresh_status')
-        self.refresh_status = attributes[:'refresh_status']
-      end
-
-      if attributes.has_key?(:'uid')
-        self.uid = attributes[:'uid']
-      end
-
-      if attributes.has_key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
+      if attributes.has_key?(:'data')
+        if (value = attributes[:'data']).is_a?(Array)
+          self.data = value
+        end
       end
     end
 
@@ -80,28 +65,13 @@ module TopologicalInventoryApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
-        invalid_properties.push('invalid value for "id", must conform to the pattern /^\d+$/.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] id Value to be assigned
-    def id=(id)
-      if !id.nil? && id !~ Regexp.new(/^\d+$/)
-        fail ArgumentError, 'invalid value for "id", must conform to the pattern /^\d+$/.'
-      end
-
-      @id = id
     end
 
     # Checks equality by comparing each attribute.
@@ -109,11 +79,9 @@ module TopologicalInventoryApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          created_at == o.created_at &&
-          id == o.id &&
-          refresh_status == o.refresh_status &&
-          uid == o.uid &&
-          updated_at == o.updated_at
+          meta == o.meta &&
+          links == o.links &&
+          data == o.data
     end
 
     # @see the `==` method
@@ -125,7 +93,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [created_at, id, refresh_status, uid, updated_at].hash
+      [meta, links, data].hash
     end
 
     # Builds the object from hash

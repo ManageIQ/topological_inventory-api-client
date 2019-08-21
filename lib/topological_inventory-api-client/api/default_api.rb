@@ -1667,6 +1667,1146 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Tags for Ipaddress
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [TagsCollection]
+    def list_ipaddress_tags(id, opts = {})
+      data, _status_code, _headers = list_ipaddress_tags_with_http_info(id, opts)
+      data
+    end
+
+    # List Tags for Ipaddress
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(TagsCollection, Fixnum, Hash)>] TagsCollection data, response status code and response headers
+    def list_ipaddress_tags_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_ipaddress_tags ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_ipaddress_tags"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_ipaddress_tags, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_ipaddress_tags, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_ipaddress_tags, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_ipaddress_tags, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/ipaddresses/{id}/tags'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TagsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_ipaddress_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Ipaddresses
+    # Returns an array of Ipaddress objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_ipaddresses(opts = {})
+      data, _status_code, _headers = list_ipaddresses_with_http_info(opts)
+      data
+    end
+
+    # List Ipaddresses
+    # Returns an array of Ipaddress objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_ipaddresses_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_ipaddresses ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/ipaddresses'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Ipaddresses for NetworkAdapter
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_network_adapter_ipaddresses(id, opts = {})
+      data, _status_code, _headers = list_network_adapter_ipaddresses_with_http_info(id, opts)
+      data
+    end
+
+    # List Ipaddresses for NetworkAdapter
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_network_adapter_ipaddresses_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_network_adapter_ipaddresses ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_network_adapter_ipaddresses"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_network_adapter_ipaddresses, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_adapter_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_adapter_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_network_adapter_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/network_adapters/{id}/ipaddresses'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_network_adapter_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Tags for NetworkAdapter
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [TagsCollection]
+    def list_network_adapter_tags(id, opts = {})
+      data, _status_code, _headers = list_network_adapter_tags_with_http_info(id, opts)
+      data
+    end
+
+    # List Tags for NetworkAdapter
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(TagsCollection, Fixnum, Hash)>] TagsCollection data, response status code and response headers
+    def list_network_adapter_tags_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_network_adapter_tags ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_network_adapter_tags"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_network_adapter_tags, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_adapter_tags, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_adapter_tags, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_network_adapter_tags, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/network_adapters/{id}/tags'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TagsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_network_adapter_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters
+    # Returns an array of NetworkAdapter objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_network_adapters(opts = {})
+      data, _status_code, _headers = list_network_adapters_with_http_info(opts)
+      data
+    end
+
+    # List NetworkAdapters
+    # Returns an array of NetworkAdapter objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_network_adapters_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_network_adapters ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/network_adapters'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subnets for Network
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubnetsCollection]
+    def list_network_subnets(id, opts = {})
+      data, _status_code, _headers = list_network_subnets_with_http_info(id, opts)
+      data
+    end
+
+    # List Subnets for Network
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubnetsCollection, Fixnum, Hash)>] SubnetsCollection data, response status code and response headers
+    def list_network_subnets_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_network_subnets ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_network_subnets"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_network_subnets, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_subnets, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_subnets, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_network_subnets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/networks/{id}/subnets'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubnetsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_network_subnets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Tags for Network
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [TagsCollection]
+    def list_network_tags(id, opts = {})
+      data, _status_code, _headers = list_network_tags_with_http_info(id, opts)
+      data
+    end
+
+    # List Tags for Network
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(TagsCollection, Fixnum, Hash)>] TagsCollection data, response status code and response headers
+    def list_network_tags_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_network_tags ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_network_tags"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_network_tags, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_tags, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_network_tags, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_network_tags, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/networks/{id}/tags'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TagsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_network_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Networks
+    # Returns an array of Network objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworksCollection]
+    def list_networks(opts = {})
+      data, _status_code, _headers = list_networks_with_http_info(opts)
+      data
+    end
+
+    # List Networks
+    # Returns an array of Network objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworksCollection, Fixnum, Hash)>] NetworksCollection data, response status code and response headers
+    def list_networks_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_networks ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_networks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_networks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_networks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/networks'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_networks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Ipaddresses for OrchestrationStack
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_orchestration_stack_ipaddresses(id, opts = {})
+      data, _status_code, _headers = list_orchestration_stack_ipaddresses_with_http_info(id, opts)
+      data
+    end
+
+    # List Ipaddresses for OrchestrationStack
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_orchestration_stack_ipaddresses_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_orchestration_stack_ipaddresses ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_orchestration_stack_ipaddresses"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_orchestration_stack_ipaddresses, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_orchestration_stack_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/orchestration_stacks/{id}/ipaddresses'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stack_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters for OrchestrationStack
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_orchestration_stack_network_adapters(id, opts = {})
+      data, _status_code, _headers = list_orchestration_stack_network_adapters_with_http_info(id, opts)
+      data
+    end
+
+    # List NetworkAdapters for OrchestrationStack
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_orchestration_stack_network_adapters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_orchestration_stack_network_adapters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_orchestration_stack_network_adapters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_orchestration_stack_network_adapters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_orchestration_stack_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/orchestration_stacks/{id}/network_adapters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stack_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Networks for OrchestrationStack
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworksCollection]
+    def list_orchestration_stack_networks(id, opts = {})
+      data, _status_code, _headers = list_orchestration_stack_networks_with_http_info(id, opts)
+      data
+    end
+
+    # List Networks for OrchestrationStack
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworksCollection, Fixnum, Hash)>] NetworksCollection data, response status code and response headers
+    def list_orchestration_stack_networks_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_orchestration_stack_networks ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_orchestration_stack_networks"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_orchestration_stack_networks, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_networks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_networks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_orchestration_stack_networks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/orchestration_stacks/{id}/networks'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stack_networks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SecurityGroups for OrchestrationStack
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SecurityGroupsCollection]
+    def list_orchestration_stack_security_groups(id, opts = {})
+      data, _status_code, _headers = list_orchestration_stack_security_groups_with_http_info(id, opts)
+      data
+    end
+
+    # List SecurityGroups for OrchestrationStack
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SecurityGroupsCollection, Fixnum, Hash)>] SecurityGroupsCollection data, response status code and response headers
+    def list_orchestration_stack_security_groups_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_orchestration_stack_security_groups ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_orchestration_stack_security_groups"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_orchestration_stack_security_groups, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_security_groups, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_security_groups, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_orchestration_stack_security_groups, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/orchestration_stacks/{id}/security_groups'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroupsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stack_security_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subnets for OrchestrationStack
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubnetsCollection]
+    def list_orchestration_stack_subnets(id, opts = {})
+      data, _status_code, _headers = list_orchestration_stack_subnets_with_http_info(id, opts)
+      data
+    end
+
+    # List Subnets for OrchestrationStack
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubnetsCollection, Fixnum, Hash)>] SubnetsCollection data, response status code and response headers
+    def list_orchestration_stack_subnets_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_orchestration_stack_subnets ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_orchestration_stack_subnets"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_orchestration_stack_subnets, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_subnets, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_subnets, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_orchestration_stack_subnets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/orchestration_stacks/{id}/subnets'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubnetsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stack_subnets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Vms for OrchestrationStack
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VmsCollection]
+    def list_orchestration_stack_vms(id, opts = {})
+      data, _status_code, _headers = list_orchestration_stack_vms_with_http_info(id, opts)
+      data
+    end
+
+    # List Vms for OrchestrationStack
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VmsCollection, Fixnum, Hash)>] VmsCollection data, response status code and response headers
+    def list_orchestration_stack_vms_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_orchestration_stack_vms ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_orchestration_stack_vms"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_orchestration_stack_vms, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_vms, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_vms, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_orchestration_stack_vms, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/orchestration_stacks/{id}/vms'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VmsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stack_vms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Volumes for OrchestrationStack
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VolumesCollection]
+    def list_orchestration_stack_volumes(id, opts = {})
+      data, _status_code, _headers = list_orchestration_stack_volumes_with_http_info(id, opts)
+      data
+    end
+
+    # List Volumes for OrchestrationStack
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VolumesCollection, Fixnum, Hash)>] VolumesCollection data, response status code and response headers
+    def list_orchestration_stack_volumes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_orchestration_stack_volumes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_orchestration_stack_volumes"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_orchestration_stack_volumes, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_volumes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_orchestration_stack_volumes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_orchestration_stack_volumes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/orchestration_stacks/{id}/volumes'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VolumesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stack_volumes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List OrchestrationStacks
     # Returns an array of OrchestrationStack objects
     # @param [Hash] opts the optional parameters
@@ -1731,6 +2871,230 @@ module TopologicalInventoryApiClient
         :return_type => 'OrchestrationStacksCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_orchestration_stacks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Tags for SecurityGroup
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [TagsCollection]
+    def list_security_group_tags(id, opts = {})
+      data, _status_code, _headers = list_security_group_tags_with_http_info(id, opts)
+      data
+    end
+
+    # List Tags for SecurityGroup
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(TagsCollection, Fixnum, Hash)>] TagsCollection data, response status code and response headers
+    def list_security_group_tags_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_security_group_tags ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_security_group_tags"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_security_group_tags, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_security_group_tags, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_security_group_tags, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_security_group_tags, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/security_groups/{id}/tags'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TagsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_security_group_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Vms for SecurityGroup
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VmsCollection]
+    def list_security_group_vms(id, opts = {})
+      data, _status_code, _headers = list_security_group_vms_with_http_info(id, opts)
+      data
+    end
+
+    # List Vms for SecurityGroup
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VmsCollection, Fixnum, Hash)>] VmsCollection data, response status code and response headers
+    def list_security_group_vms_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_security_group_vms ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_security_group_vms"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_security_group_vms, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_security_group_vms, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_security_group_vms, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_security_group_vms, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/security_groups/{id}/vms'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VmsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_security_group_vms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SecurityGroups
+    # Returns an array of SecurityGroup objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SecurityGroupsCollection]
+    def list_security_groups(opts = {})
+      data, _status_code, _headers = list_security_groups_with_http_info(opts)
+      data
+    end
+
+    # List SecurityGroups
+    # Returns an array of SecurityGroup objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SecurityGroupsCollection, Fixnum, Hash)>] SecurityGroupsCollection data, response status code and response headers
+    def list_security_groups_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_security_groups ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_security_groups, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_security_groups, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_security_groups, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/security_groups'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroupsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_security_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3099,6 +4463,240 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Ipaddresses for Source
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_source_ipaddresses(id, opts = {})
+      data, _status_code, _headers = list_source_ipaddresses_with_http_info(id, opts)
+      data
+    end
+
+    # List Ipaddresses for Source
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_source_ipaddresses_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_ipaddresses ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_ipaddresses"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_ipaddresses, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/ipaddresses'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters for Source
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_source_network_adapters(id, opts = {})
+      data, _status_code, _headers = list_source_network_adapters_with_http_info(id, opts)
+      data
+    end
+
+    # List NetworkAdapters for Source
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_source_network_adapters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_network_adapters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_network_adapters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_network_adapters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/network_adapters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Networks for Source
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworksCollection]
+    def list_source_networks(id, opts = {})
+      data, _status_code, _headers = list_source_networks_with_http_info(id, opts)
+      data
+    end
+
+    # List Networks for Source
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworksCollection, Fixnum, Hash)>] NetworksCollection data, response status code and response headers
+    def list_source_networks_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_networks ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_networks"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_networks, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_networks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_networks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_networks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/networks'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_networks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List OrchestrationStacks for Source
     # Returns an array of OrchestrationStack objects
     # @param id ID of the resource
@@ -3173,6 +4771,1010 @@ module TopologicalInventoryApiClient
         :return_type => 'OrchestrationStacksCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_source_orchestration_stacks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Ipaddresses for SourceRegion
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_source_region_ipaddresses(id, opts = {})
+      data, _status_code, _headers = list_source_region_ipaddresses_with_http_info(id, opts)
+      data
+    end
+
+    # List Ipaddresses for SourceRegion
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_source_region_ipaddresses_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_ipaddresses ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_ipaddresses"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_ipaddresses, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/ipaddresses'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters for SourceRegion
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_source_region_network_adapters(id, opts = {})
+      data, _status_code, _headers = list_source_region_network_adapters_with_http_info(id, opts)
+      data
+    end
+
+    # List NetworkAdapters for SourceRegion
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_source_region_network_adapters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_network_adapters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_network_adapters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_network_adapters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/network_adapters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Networks for SourceRegion
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworksCollection]
+    def list_source_region_networks(id, opts = {})
+      data, _status_code, _headers = list_source_region_networks_with_http_info(id, opts)
+      data
+    end
+
+    # List Networks for SourceRegion
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworksCollection, Fixnum, Hash)>] NetworksCollection data, response status code and response headers
+    def list_source_region_networks_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_networks ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_networks"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_networks, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_networks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_networks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_networks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/networks'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_networks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List OrchestrationStacks for SourceRegion
+    # Returns an array of OrchestrationStack objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [OrchestrationStacksCollection]
+    def list_source_region_orchestration_stacks(id, opts = {})
+      data, _status_code, _headers = list_source_region_orchestration_stacks_with_http_info(id, opts)
+      data
+    end
+
+    # List OrchestrationStacks for SourceRegion
+    # Returns an array of OrchestrationStack objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(OrchestrationStacksCollection, Fixnum, Hash)>] OrchestrationStacksCollection data, response status code and response headers
+    def list_source_region_orchestration_stacks_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_orchestration_stacks ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_orchestration_stacks"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_orchestration_stacks, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_orchestration_stacks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_orchestration_stacks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_orchestration_stacks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/orchestration_stacks'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'OrchestrationStacksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_orchestration_stacks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SecurityGroups for SourceRegion
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SecurityGroupsCollection]
+    def list_source_region_security_groups(id, opts = {})
+      data, _status_code, _headers = list_source_region_security_groups_with_http_info(id, opts)
+      data
+    end
+
+    # List SecurityGroups for SourceRegion
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SecurityGroupsCollection, Fixnum, Hash)>] SecurityGroupsCollection data, response status code and response headers
+    def list_source_region_security_groups_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_security_groups ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_security_groups"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_security_groups, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_security_groups, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_security_groups, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_security_groups, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/security_groups'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroupsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_security_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceInstances for SourceRegion
+    # Returns an array of ServiceInstance objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInstancesCollection]
+    def list_source_region_service_instances(id, opts = {})
+      data, _status_code, _headers = list_source_region_service_instances_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceInstances for SourceRegion
+    # Returns an array of ServiceInstance objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInstancesCollection, Fixnum, Hash)>] ServiceInstancesCollection data, response status code and response headers
+    def list_source_region_service_instances_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_service_instances ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_service_instances"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_service_instances, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_service_instances, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_service_instances, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_service_instances, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/service_instances'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ServiceInstancesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_service_instances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceOfferings for SourceRegion
+    # Returns an array of ServiceOffering objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceOfferingsCollection]
+    def list_source_region_service_offerings(id, opts = {})
+      data, _status_code, _headers = list_source_region_service_offerings_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceOfferings for SourceRegion
+    # Returns an array of ServiceOffering objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceOfferingsCollection, Fixnum, Hash)>] ServiceOfferingsCollection data, response status code and response headers
+    def list_source_region_service_offerings_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_service_offerings ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_service_offerings"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_service_offerings, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_service_offerings, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_service_offerings, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_service_offerings, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/service_offerings'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ServiceOfferingsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_service_offerings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServicePlans for SourceRegion
+    # Returns an array of ServicePlan objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServicePlansCollection]
+    def list_source_region_service_plans(id, opts = {})
+      data, _status_code, _headers = list_source_region_service_plans_with_http_info(id, opts)
+      data
+    end
+
+    # List ServicePlans for SourceRegion
+    # Returns an array of ServicePlan objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServicePlansCollection, Fixnum, Hash)>] ServicePlansCollection data, response status code and response headers
+    def list_source_region_service_plans_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_service_plans ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_service_plans"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_service_plans, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_service_plans, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_service_plans, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_service_plans, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/service_plans'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ServicePlansCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_service_plans\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subnets for SourceRegion
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubnetsCollection]
+    def list_source_region_subnets(id, opts = {})
+      data, _status_code, _headers = list_source_region_subnets_with_http_info(id, opts)
+      data
+    end
+
+    # List Subnets for SourceRegion
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubnetsCollection, Fixnum, Hash)>] SubnetsCollection data, response status code and response headers
+    def list_source_region_subnets_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_subnets ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_subnets"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_subnets, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_subnets, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_subnets, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_subnets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/subnets'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubnetsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_subnets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Vms for SourceRegion
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VmsCollection]
+    def list_source_region_vms(id, opts = {})
+      data, _status_code, _headers = list_source_region_vms_with_http_info(id, opts)
+      data
+    end
+
+    # List Vms for SourceRegion
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VmsCollection, Fixnum, Hash)>] VmsCollection data, response status code and response headers
+    def list_source_region_vms_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_vms ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_vms"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_vms, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_vms, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_vms, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_vms, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/vms'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VmsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_vms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Volumes for SourceRegion
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VolumesCollection]
+    def list_source_region_volumes(id, opts = {})
+      data, _status_code, _headers = list_source_region_volumes_with_http_info(id, opts)
+      data
+    end
+
+    # List Volumes for SourceRegion
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VolumesCollection, Fixnum, Hash)>] VolumesCollection data, response status code and response headers
+    def list_source_region_volumes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_region_volumes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_region_volumes"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_region_volumes, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_volumes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_region_volumes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_region_volumes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}/volumes'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VolumesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_region_volumes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SourceRegions
+    # Returns an array of SourceRegion objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SourceRegionsCollection]
+    def list_source_regions(opts = {})
+      data, _status_code, _headers = list_source_regions_with_http_info(opts)
+      data
+    end
+
+    # List SourceRegions
+    # Returns an array of SourceRegion objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SourceRegionsCollection, Fixnum, Hash)>] SourceRegionsCollection data, response status code and response headers
+    def list_source_regions_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_regions ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_regions, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_regions, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_regions, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/source_regions'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SourceRegionsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_regions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SecurityGroups for Source
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SecurityGroupsCollection]
+    def list_source_security_groups(id, opts = {})
+      data, _status_code, _headers = list_source_security_groups_with_http_info(id, opts)
+      data
+    end
+
+    # List SecurityGroups for Source
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SecurityGroupsCollection, Fixnum, Hash)>] SecurityGroupsCollection data, response status code and response headers
+    def list_source_security_groups_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_security_groups ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_security_groups"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_security_groups, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_security_groups, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_security_groups, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_security_groups, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/security_groups'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroupsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_security_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3407,6 +6009,240 @@ module TopologicalInventoryApiClient
         :return_type => 'ServicePlansCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_source_service_plans\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SourceRegions for Source
+    # Returns an array of SourceRegion objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SourceRegionsCollection]
+    def list_source_source_regions(id, opts = {})
+      data, _status_code, _headers = list_source_source_regions_with_http_info(id, opts)
+      data
+    end
+
+    # List SourceRegions for Source
+    # Returns an array of SourceRegion objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SourceRegionsCollection, Fixnum, Hash)>] SourceRegionsCollection data, response status code and response headers
+    def list_source_source_regions_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_source_regions ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_source_regions"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_source_regions, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_source_regions, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_source_regions, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_source_regions, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/source_regions'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SourceRegionsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_source_regions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subnets for Source
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubnetsCollection]
+    def list_source_subnets(id, opts = {})
+      data, _status_code, _headers = list_source_subnets_with_http_info(id, opts)
+      data
+    end
+
+    # List Subnets for Source
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubnetsCollection, Fixnum, Hash)>] SubnetsCollection data, response status code and response headers
+    def list_source_subnets_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_subnets ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_subnets"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_subnets, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_subnets, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_subnets, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_subnets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/subnets'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubnetsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_subnets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subscriptions for Source
+    # Returns an array of Subscription objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubscriptionsCollection]
+    def list_source_subscriptions(id, opts = {})
+      data, _status_code, _headers = list_source_subscriptions_with_http_info(id, opts)
+      data
+    end
+
+    # List Subscriptions for Source
+    # Returns an array of Subscription objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubscriptionsCollection, Fixnum, Hash)>] SubscriptionsCollection data, response status code and response headers
+    def list_source_subscriptions_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_subscriptions ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_subscriptions"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_subscriptions, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_subscriptions, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_subscriptions, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_subscriptions, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/subscriptions'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubscriptionsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_subscriptions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3709,6 +6545,1234 @@ module TopologicalInventoryApiClient
         :return_type => 'SourcesCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_sources\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Ipaddresses for Subnet
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_subnet_ipaddresses(id, opts = {})
+      data, _status_code, _headers = list_subnet_ipaddresses_with_http_info(id, opts)
+      data
+    end
+
+    # List Ipaddresses for Subnet
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_subnet_ipaddresses_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subnet_ipaddresses ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subnet_ipaddresses"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subnet_ipaddresses, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnet_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnet_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subnet_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subnets/{id}/ipaddresses'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subnet_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters for Subnet
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_subnet_network_adapters(id, opts = {})
+      data, _status_code, _headers = list_subnet_network_adapters_with_http_info(id, opts)
+      data
+    end
+
+    # List NetworkAdapters for Subnet
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_subnet_network_adapters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subnet_network_adapters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subnet_network_adapters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subnet_network_adapters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnet_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnet_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subnet_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subnets/{id}/network_adapters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subnet_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Tags for Subnet
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [TagsCollection]
+    def list_subnet_tags(id, opts = {})
+      data, _status_code, _headers = list_subnet_tags_with_http_info(id, opts)
+      data
+    end
+
+    # List Tags for Subnet
+    # Returns an array of Tag objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(TagsCollection, Fixnum, Hash)>] TagsCollection data, response status code and response headers
+    def list_subnet_tags_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subnet_tags ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subnet_tags"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subnet_tags, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnet_tags, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnet_tags, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subnet_tags, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subnets/{id}/tags'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'TagsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subnet_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subnets
+    # Returns an array of Subnet objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubnetsCollection]
+    def list_subnets(opts = {})
+      data, _status_code, _headers = list_subnets_with_http_info(opts)
+      data
+    end
+
+    # List Subnets
+    # Returns an array of Subnet objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubnetsCollection, Fixnum, Hash)>] SubnetsCollection data, response status code and response headers
+    def list_subnets_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subnets ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnets, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subnets, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subnets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subnets'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubnetsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subnets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Ipaddresses for Subscription
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_subscription_ipaddresses(id, opts = {})
+      data, _status_code, _headers = list_subscription_ipaddresses_with_http_info(id, opts)
+      data
+    end
+
+    # List Ipaddresses for Subscription
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_subscription_ipaddresses_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_ipaddresses ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_ipaddresses"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_ipaddresses, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/ipaddresses'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters for Subscription
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_subscription_network_adapters(id, opts = {})
+      data, _status_code, _headers = list_subscription_network_adapters_with_http_info(id, opts)
+      data
+    end
+
+    # List NetworkAdapters for Subscription
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_subscription_network_adapters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_network_adapters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_network_adapters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_network_adapters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/network_adapters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Networks for Subscription
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworksCollection]
+    def list_subscription_networks(id, opts = {})
+      data, _status_code, _headers = list_subscription_networks_with_http_info(id, opts)
+      data
+    end
+
+    # List Networks for Subscription
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworksCollection, Fixnum, Hash)>] NetworksCollection data, response status code and response headers
+    def list_subscription_networks_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_networks ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_networks"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_networks, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_networks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_networks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_networks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/networks'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_networks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List OrchestrationStacks for Subscription
+    # Returns an array of OrchestrationStack objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [OrchestrationStacksCollection]
+    def list_subscription_orchestration_stacks(id, opts = {})
+      data, _status_code, _headers = list_subscription_orchestration_stacks_with_http_info(id, opts)
+      data
+    end
+
+    # List OrchestrationStacks for Subscription
+    # Returns an array of OrchestrationStack objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(OrchestrationStacksCollection, Fixnum, Hash)>] OrchestrationStacksCollection data, response status code and response headers
+    def list_subscription_orchestration_stacks_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_orchestration_stacks ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_orchestration_stacks"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_orchestration_stacks, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_orchestration_stacks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_orchestration_stacks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_orchestration_stacks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/orchestration_stacks'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'OrchestrationStacksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_orchestration_stacks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SecurityGroups for Subscription
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SecurityGroupsCollection]
+    def list_subscription_security_groups(id, opts = {})
+      data, _status_code, _headers = list_subscription_security_groups_with_http_info(id, opts)
+      data
+    end
+
+    # List SecurityGroups for Subscription
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SecurityGroupsCollection, Fixnum, Hash)>] SecurityGroupsCollection data, response status code and response headers
+    def list_subscription_security_groups_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_security_groups ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_security_groups"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_security_groups, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_security_groups, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_security_groups, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_security_groups, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/security_groups'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroupsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_security_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceInstances for Subscription
+    # Returns an array of ServiceInstance objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInstancesCollection]
+    def list_subscription_service_instances(id, opts = {})
+      data, _status_code, _headers = list_subscription_service_instances_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceInstances for Subscription
+    # Returns an array of ServiceInstance objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInstancesCollection, Fixnum, Hash)>] ServiceInstancesCollection data, response status code and response headers
+    def list_subscription_service_instances_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_service_instances ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_service_instances"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_service_instances, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_service_instances, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_service_instances, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_service_instances, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/service_instances'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ServiceInstancesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_service_instances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceOfferings for Subscription
+    # Returns an array of ServiceOffering objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceOfferingsCollection]
+    def list_subscription_service_offerings(id, opts = {})
+      data, _status_code, _headers = list_subscription_service_offerings_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceOfferings for Subscription
+    # Returns an array of ServiceOffering objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceOfferingsCollection, Fixnum, Hash)>] ServiceOfferingsCollection data, response status code and response headers
+    def list_subscription_service_offerings_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_service_offerings ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_service_offerings"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_service_offerings, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_service_offerings, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_service_offerings, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_service_offerings, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/service_offerings'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ServiceOfferingsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_service_offerings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServicePlans for Subscription
+    # Returns an array of ServicePlan objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServicePlansCollection]
+    def list_subscription_service_plans(id, opts = {})
+      data, _status_code, _headers = list_subscription_service_plans_with_http_info(id, opts)
+      data
+    end
+
+    # List ServicePlans for Subscription
+    # Returns an array of ServicePlan objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServicePlansCollection, Fixnum, Hash)>] ServicePlansCollection data, response status code and response headers
+    def list_subscription_service_plans_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_service_plans ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_service_plans"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_service_plans, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_service_plans, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_service_plans, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_service_plans, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/service_plans'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ServicePlansCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_service_plans\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subnets for Subscription
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubnetsCollection]
+    def list_subscription_subnets(id, opts = {})
+      data, _status_code, _headers = list_subscription_subnets_with_http_info(id, opts)
+      data
+    end
+
+    # List Subnets for Subscription
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubnetsCollection, Fixnum, Hash)>] SubnetsCollection data, response status code and response headers
+    def list_subscription_subnets_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_subnets ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_subnets"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_subnets, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_subnets, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_subnets, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_subnets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/subnets'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubnetsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_subnets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Vms for Subscription
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VmsCollection]
+    def list_subscription_vms(id, opts = {})
+      data, _status_code, _headers = list_subscription_vms_with_http_info(id, opts)
+      data
+    end
+
+    # List Vms for Subscription
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VmsCollection, Fixnum, Hash)>] VmsCollection data, response status code and response headers
+    def list_subscription_vms_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_vms ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_vms"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_vms, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_vms, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_vms, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_vms, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/vms'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VmsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_vms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Volumes for Subscription
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VolumesCollection]
+    def list_subscription_volumes(id, opts = {})
+      data, _status_code, _headers = list_subscription_volumes_with_http_info(id, opts)
+      data
+    end
+
+    # List Volumes for Subscription
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VolumesCollection, Fixnum, Hash)>] VolumesCollection data, response status code and response headers
+    def list_subscription_volumes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscription_volumes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_subscription_volumes"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_subscription_volumes, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_volumes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscription_volumes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscription_volumes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}/volumes'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VolumesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscription_volumes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subscriptions
+    # Returns an array of Subscription objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubscriptionsCollection]
+    def list_subscriptions(opts = {})
+      data, _status_code, _headers = list_subscriptions_with_http_info(opts)
+      data
+    end
+
+    # List Subscriptions
+    # Returns an array of Subscription objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubscriptionsCollection, Fixnum, Hash)>] SubscriptionsCollection data, response status code and response headers
+    def list_subscriptions_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_subscriptions ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscriptions, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_subscriptions, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_subscriptions, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/subscriptions'
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubscriptionsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_subscriptions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -4103,6 +8167,318 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Ipaddresses for Tag
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [IpaddressesCollection]
+    def list_tag_ipaddresses(id, opts = {})
+      data, _status_code, _headers = list_tag_ipaddresses_with_http_info(id, opts)
+      data
+    end
+
+    # List Ipaddresses for Tag
+    # Returns an array of Ipaddress objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(IpaddressesCollection, Fixnum, Hash)>] IpaddressesCollection data, response status code and response headers
+    def list_tag_ipaddresses_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_tag_ipaddresses ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_tag_ipaddresses"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_tag_ipaddresses, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_ipaddresses, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_ipaddresses, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_tag_ipaddresses, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/tags/{id}/ipaddresses'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IpaddressesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_tag_ipaddresses\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters for Tag
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_tag_network_adapters(id, opts = {})
+      data, _status_code, _headers = list_tag_network_adapters_with_http_info(id, opts)
+      data
+    end
+
+    # List NetworkAdapters for Tag
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_tag_network_adapters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_tag_network_adapters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_tag_network_adapters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_tag_network_adapters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_tag_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/tags/{id}/network_adapters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_tag_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Networks for Tag
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworksCollection]
+    def list_tag_networks(id, opts = {})
+      data, _status_code, _headers = list_tag_networks_with_http_info(id, opts)
+      data
+    end
+
+    # List Networks for Tag
+    # Returns an array of Network objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworksCollection, Fixnum, Hash)>] NetworksCollection data, response status code and response headers
+    def list_tag_networks_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_tag_networks ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_tag_networks"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_tag_networks, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_networks, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_networks, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_tag_networks, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/tags/{id}/networks'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworksCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_tag_networks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SecurityGroups for Tag
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SecurityGroupsCollection]
+    def list_tag_security_groups(id, opts = {})
+      data, _status_code, _headers = list_tag_security_groups_with_http_info(id, opts)
+      data
+    end
+
+    # List SecurityGroups for Tag
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SecurityGroupsCollection, Fixnum, Hash)>] SecurityGroupsCollection data, response status code and response headers
+    def list_tag_security_groups_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_tag_security_groups ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_tag_security_groups"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_tag_security_groups, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_security_groups, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_security_groups, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_tag_security_groups, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/tags/{id}/security_groups'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroupsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_tag_security_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ServiceOfferings for Tag
     # Returns an array of ServiceOffering objects
     # @param id ID of the resource
@@ -4177,6 +8553,84 @@ module TopologicalInventoryApiClient
         :return_type => 'ServiceOfferingsCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_tag_service_offerings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Subnets for Tag
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SubnetsCollection]
+    def list_tag_subnets(id, opts = {})
+      data, _status_code, _headers = list_tag_subnets_with_http_info(id, opts)
+      data
+    end
+
+    # List Subnets for Tag
+    # Returns an array of Subnet objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SubnetsCollection, Fixnum, Hash)>] SubnetsCollection data, response status code and response headers
+    def list_tag_subnets_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_tag_subnets ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_tag_subnets"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_tag_subnets, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_subnets, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_subnets, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_tag_subnets, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/tags/{id}/subnets'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SubnetsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_tag_subnets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -4391,6 +8845,162 @@ module TopologicalInventoryApiClient
         :return_type => 'TasksCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_tasks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List NetworkAdapters for Vm
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [NetworkAdaptersCollection]
+    def list_vm_network_adapters(id, opts = {})
+      data, _status_code, _headers = list_vm_network_adapters_with_http_info(id, opts)
+      data
+    end
+
+    # List NetworkAdapters for Vm
+    # Returns an array of NetworkAdapter objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(NetworkAdaptersCollection, Fixnum, Hash)>] NetworkAdaptersCollection data, response status code and response headers
+    def list_vm_network_adapters_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_vm_network_adapters ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_vm_network_adapters"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_vm_network_adapters, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_vm_network_adapters, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_vm_network_adapters, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_vm_network_adapters, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/vms/{id}/network_adapters'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdaptersCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_vm_network_adapters\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List SecurityGroups for Vm
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [SecurityGroupsCollection]
+    def list_vm_security_groups(id, opts = {})
+      data, _status_code, _headers = list_vm_security_groups_with_http_info(id, opts)
+      data
+    end
+
+    # List SecurityGroups for Vm
+    # Returns an array of SecurityGroup objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(SecurityGroupsCollection, Fixnum, Hash)>] SecurityGroupsCollection data, response status code and response headers
+    def list_vm_security_groups_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_vm_security_groups ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_vm_security_groups"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_vm_security_groups, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_vm_security_groups, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_vm_security_groups, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_vm_security_groups, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/vms/{id}/security_groups'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroupsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_vm_security_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -4765,6 +9375,84 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Volumes for VolumeType
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VolumesCollection]
+    def list_volume_type_volumes(id, opts = {})
+      data, _status_code, _headers = list_volume_type_volumes_with_http_info(id, opts)
+      data
+    end
+
+    # List Volumes for VolumeType
+    # Returns an array of Volume objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VolumesCollection, Fixnum, Hash)>] VolumesCollection data, response status code and response headers
+    def list_volume_type_volumes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_volume_type_volumes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_volume_type_volumes"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_volume_type_volumes, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_volume_type_volumes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_volume_type_volumes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_volume_type_volumes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/volume_types/{id}/volumes'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VolumesCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_volume_type_volumes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List VolumeTypes
     # Returns an array of VolumeType objects
     # @param [Hash] opts the optional parameters
@@ -4833,6 +9521,84 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List Vms for Volume
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [VmsCollection]
+    def list_volume_vms(id, opts = {})
+      data, _status_code, _headers = list_volume_vms_with_http_info(id, opts)
+      data
+    end
+
+    # List Vms for Volume
+    # Returns an array of Vm objects
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(VmsCollection, Fixnum, Hash)>] VmsCollection data, response status code and response headers
+    def list_volume_vms_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_volume_vms ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_volume_vms"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_volume_vms, must conform to the pattern /^\d+$/."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_volume_vms, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_volume_vms, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_volume_vms, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/volumes/{id}/vms'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'VmsCollection')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_volume_vms\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List Volumes
     # Returns an array of Volume objects
     # @param [Hash] opts the optional parameters
@@ -4897,6 +9663,71 @@ module TopologicalInventoryApiClient
         :return_type => 'VolumesCollection')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_volumes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Order an existing ServiceOffering
+    # Returns a Task id
+    # @param id ID of the resource
+    # @param order_parameters Order parameters defining the service and provider control
+    # @param [Hash] opts the optional parameters
+    # @return [InlineResponse200]
+    def order_service_offering(id, order_parameters, opts = {})
+      data, _status_code, _headers = order_service_offering_with_http_info(id, order_parameters, opts)
+      data
+    end
+
+    # Order an existing ServiceOffering
+    # Returns a Task id
+    # @param id ID of the resource
+    # @param order_parameters Order parameters defining the service and provider control
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
+    def order_service_offering_with_http_info(id, order_parameters, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.order_service_offering ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.order_service_offering"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.order_service_offering, must conform to the pattern /^\d+$/."
+      end
+
+      # verify the required parameter 'order_parameters' is set
+      if @api_client.config.client_side_validation && order_parameters.nil?
+        fail ArgumentError, "Missing the required parameter 'order_parameters' when calling DefaultApi.order_service_offering"
+      end
+      # resource path
+      local_var_path = '/service_offerings/{id}/order'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(order_parameters)
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'InlineResponse200')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#order_service_offering\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5644,6 +10475,177 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # Show an existing Ipaddress
+    # Returns a Ipaddress object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Ipaddress]
+    def show_ipaddress(id, opts = {})
+      data, _status_code, _headers = show_ipaddress_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing Ipaddress
+    # Returns a Ipaddress object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Ipaddress, Fixnum, Hash)>] Ipaddress data, response status code and response headers
+    def show_ipaddress_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_ipaddress ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_ipaddress"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_ipaddress, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/ipaddresses/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Ipaddress')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_ipaddress\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing Network
+    # Returns a Network object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Network]
+    def show_network(id, opts = {})
+      data, _status_code, _headers = show_network_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing Network
+    # Returns a Network object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Network, Fixnum, Hash)>] Network data, response status code and response headers
+    def show_network_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_network ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_network"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_network, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/networks/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Network')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_network\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing NetworkAdapter
+    # Returns a NetworkAdapter object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [NetworkAdapter]
+    def show_network_adapter(id, opts = {})
+      data, _status_code, _headers = show_network_adapter_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing NetworkAdapter
+    # Returns a NetworkAdapter object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(NetworkAdapter, Fixnum, Hash)>] NetworkAdapter data, response status code and response headers
+    def show_network_adapter_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_network_adapter ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_network_adapter"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_network_adapter, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/network_adapters/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'NetworkAdapter')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_network_adapter\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show an existing OrchestrationStack
     # Returns a OrchestrationStack object
     # @param id ID of the resource
@@ -5697,6 +10699,63 @@ module TopologicalInventoryApiClient
         :return_type => 'OrchestrationStack')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#show_orchestration_stack\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing SecurityGroup
+    # Returns a SecurityGroup object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [SecurityGroup]
+    def show_security_group(id, opts = {})
+      data, _status_code, _headers = show_security_group_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing SecurityGroup
+    # Returns a SecurityGroup object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SecurityGroup, Fixnum, Hash)>] SecurityGroup data, response status code and response headers
+    def show_security_group_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_security_group ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_security_group"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_security_group, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/security_groups/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SecurityGroup')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_security_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -6039,6 +11098,177 @@ module TopologicalInventoryApiClient
         :return_type => 'Source')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#show_source\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing SourceRegion
+    # Returns a SourceRegion object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [SourceRegion]
+    def show_source_region(id, opts = {})
+      data, _status_code, _headers = show_source_region_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing SourceRegion
+    # Returns a SourceRegion object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(SourceRegion, Fixnum, Hash)>] SourceRegion data, response status code and response headers
+    def show_source_region_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_source_region ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_source_region"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_source_region, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/source_regions/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'SourceRegion')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_source_region\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing Subnet
+    # Returns a Subnet object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Subnet]
+    def show_subnet(id, opts = {})
+      data, _status_code, _headers = show_subnet_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing Subnet
+    # Returns a Subnet object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Subnet, Fixnum, Hash)>] Subnet data, response status code and response headers
+    def show_subnet_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_subnet ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_subnet"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_subnet, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/subnets/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Subnet')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_subnet\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing Subscription
+    # Returns a Subscription object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Subscription]
+    def show_subscription(id, opts = {})
+      data, _status_code, _headers = show_subscription_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing Subscription
+    # Returns a Subscription object
+    # @param id ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Subscription, Fixnum, Hash)>] Subscription data, response status code and response headers
+    def show_subscription_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_subscription ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_subscription"
+      end
+      if @api_client.config.client_side_validation && id !~ Regexp.new(/^\d+$/)
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_subscription, must conform to the pattern /^\d+$/."
+      end
+
+      # resource path
+      local_var_path = '/subscriptions/{id}'.sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['UserSecurity']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Subscription')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_subscription\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

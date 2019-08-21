@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id** | **String** | ID of the resource | [optional] 
 **last_seen_at** | **DateTime** |  | [optional] 
 **name** | **String** |  | [optional] 
+**orchestration_stack_id** | **String** | ID of the resource | [optional] 
 **size** | **Integer** | Size of the volume in bytes | [optional] 
 **source_created_at** | **DateTime** |  | [optional] 
 **source_deleted_at** | **DateTime** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **source_ref** | **String** |  | [optional] 
 **source_region_id** | **String** | ID of the resource | [optional] 
 **state** | **String** |  | [optional] 
+**subscription_id** | **String** | ID of the resource | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 **volume_type_id** | **String** | ID of the resource | [optional] 
 

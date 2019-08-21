@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **source_deleted_at** | **DateTime** |  | [optional] 
 **source_id** | **String** | ID of the resource | [optional] 
 **source_ref** | **String** |  | [optional] 
+**source_region_id** | **String** | ID of the resource | [optional] 
+**subscription_id** | **String** | ID of the resource | [optional] 
 **uid_ems** | **String** | Cross-Source Unique Reference | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
 

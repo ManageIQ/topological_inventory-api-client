@@ -27,7 +27,25 @@ Method | HTTP request | Description
 [**list_datastores**](DefaultApi.md#list_datastores) | **GET** /datastores | List Datastores
 [**list_flavors**](DefaultApi.md#list_flavors) | **GET** /flavors | List Flavors
 [**list_hosts**](DefaultApi.md#list_hosts) | **GET** /hosts | List Hosts
+[**list_ipaddress_tags**](DefaultApi.md#list_ipaddress_tags) | **GET** /ipaddresses/{id}/tags | List Tags for Ipaddress
+[**list_ipaddresses**](DefaultApi.md#list_ipaddresses) | **GET** /ipaddresses | List Ipaddresses
+[**list_network_adapter_ipaddresses**](DefaultApi.md#list_network_adapter_ipaddresses) | **GET** /network_adapters/{id}/ipaddresses | List Ipaddresses for NetworkAdapter
+[**list_network_adapter_tags**](DefaultApi.md#list_network_adapter_tags) | **GET** /network_adapters/{id}/tags | List Tags for NetworkAdapter
+[**list_network_adapters**](DefaultApi.md#list_network_adapters) | **GET** /network_adapters | List NetworkAdapters
+[**list_network_subnets**](DefaultApi.md#list_network_subnets) | **GET** /networks/{id}/subnets | List Subnets for Network
+[**list_network_tags**](DefaultApi.md#list_network_tags) | **GET** /networks/{id}/tags | List Tags for Network
+[**list_networks**](DefaultApi.md#list_networks) | **GET** /networks | List Networks
+[**list_orchestration_stack_ipaddresses**](DefaultApi.md#list_orchestration_stack_ipaddresses) | **GET** /orchestration_stacks/{id}/ipaddresses | List Ipaddresses for OrchestrationStack
+[**list_orchestration_stack_network_adapters**](DefaultApi.md#list_orchestration_stack_network_adapters) | **GET** /orchestration_stacks/{id}/network_adapters | List NetworkAdapters for OrchestrationStack
+[**list_orchestration_stack_networks**](DefaultApi.md#list_orchestration_stack_networks) | **GET** /orchestration_stacks/{id}/networks | List Networks for OrchestrationStack
+[**list_orchestration_stack_security_groups**](DefaultApi.md#list_orchestration_stack_security_groups) | **GET** /orchestration_stacks/{id}/security_groups | List SecurityGroups for OrchestrationStack
+[**list_orchestration_stack_subnets**](DefaultApi.md#list_orchestration_stack_subnets) | **GET** /orchestration_stacks/{id}/subnets | List Subnets for OrchestrationStack
+[**list_orchestration_stack_vms**](DefaultApi.md#list_orchestration_stack_vms) | **GET** /orchestration_stacks/{id}/vms | List Vms for OrchestrationStack
+[**list_orchestration_stack_volumes**](DefaultApi.md#list_orchestration_stack_volumes) | **GET** /orchestration_stacks/{id}/volumes | List Volumes for OrchestrationStack
 [**list_orchestration_stacks**](DefaultApi.md#list_orchestration_stacks) | **GET** /orchestration_stacks | List OrchestrationStacks
+[**list_security_group_tags**](DefaultApi.md#list_security_group_tags) | **GET** /security_groups/{id}/tags | List Tags for SecurityGroup
+[**list_security_group_vms**](DefaultApi.md#list_security_group_vms) | **GET** /security_groups/{id}/vms | List Vms for SecurityGroup
+[**list_security_groups**](DefaultApi.md#list_security_groups) | **GET** /security_groups | List SecurityGroups
 [**list_service_instances**](DefaultApi.md#list_service_instances) | **GET** /service_instances | List ServiceInstances
 [**list_service_offering_icons**](DefaultApi.md#list_service_offering_icons) | **GET** /service_offering_icons | List ServiceOfferingIcons
 [**list_service_offering_service_instances**](DefaultApi.md#list_service_offering_service_instances) | **GET** /service_offerings/{id}/service_instances | List ServiceInstances for ServiceOffering
@@ -46,30 +64,75 @@ Method | HTTP request | Description
 [**list_source_containers**](DefaultApi.md#list_source_containers) | **GET** /sources/{id}/containers | List Containers for Source
 [**list_source_datastores**](DefaultApi.md#list_source_datastores) | **GET** /sources/{id}/datastores | List Datastores for Source
 [**list_source_hosts**](DefaultApi.md#list_source_hosts) | **GET** /sources/{id}/hosts | List Hosts for Source
+[**list_source_ipaddresses**](DefaultApi.md#list_source_ipaddresses) | **GET** /sources/{id}/ipaddresses | List Ipaddresses for Source
+[**list_source_network_adapters**](DefaultApi.md#list_source_network_adapters) | **GET** /sources/{id}/network_adapters | List NetworkAdapters for Source
+[**list_source_networks**](DefaultApi.md#list_source_networks) | **GET** /sources/{id}/networks | List Networks for Source
 [**list_source_orchestration_stacks**](DefaultApi.md#list_source_orchestration_stacks) | **GET** /sources/{id}/orchestration_stacks | List OrchestrationStacks for Source
+[**list_source_region_ipaddresses**](DefaultApi.md#list_source_region_ipaddresses) | **GET** /source_regions/{id}/ipaddresses | List Ipaddresses for SourceRegion
+[**list_source_region_network_adapters**](DefaultApi.md#list_source_region_network_adapters) | **GET** /source_regions/{id}/network_adapters | List NetworkAdapters for SourceRegion
+[**list_source_region_networks**](DefaultApi.md#list_source_region_networks) | **GET** /source_regions/{id}/networks | List Networks for SourceRegion
+[**list_source_region_orchestration_stacks**](DefaultApi.md#list_source_region_orchestration_stacks) | **GET** /source_regions/{id}/orchestration_stacks | List OrchestrationStacks for SourceRegion
+[**list_source_region_security_groups**](DefaultApi.md#list_source_region_security_groups) | **GET** /source_regions/{id}/security_groups | List SecurityGroups for SourceRegion
+[**list_source_region_service_instances**](DefaultApi.md#list_source_region_service_instances) | **GET** /source_regions/{id}/service_instances | List ServiceInstances for SourceRegion
+[**list_source_region_service_offerings**](DefaultApi.md#list_source_region_service_offerings) | **GET** /source_regions/{id}/service_offerings | List ServiceOfferings for SourceRegion
+[**list_source_region_service_plans**](DefaultApi.md#list_source_region_service_plans) | **GET** /source_regions/{id}/service_plans | List ServicePlans for SourceRegion
+[**list_source_region_subnets**](DefaultApi.md#list_source_region_subnets) | **GET** /source_regions/{id}/subnets | List Subnets for SourceRegion
+[**list_source_region_vms**](DefaultApi.md#list_source_region_vms) | **GET** /source_regions/{id}/vms | List Vms for SourceRegion
+[**list_source_region_volumes**](DefaultApi.md#list_source_region_volumes) | **GET** /source_regions/{id}/volumes | List Volumes for SourceRegion
+[**list_source_regions**](DefaultApi.md#list_source_regions) | **GET** /source_regions | List SourceRegions
+[**list_source_security_groups**](DefaultApi.md#list_source_security_groups) | **GET** /sources/{id}/security_groups | List SecurityGroups for Source
 [**list_source_service_instances**](DefaultApi.md#list_source_service_instances) | **GET** /sources/{id}/service_instances | List ServiceInstances for Source
 [**list_source_service_offerings**](DefaultApi.md#list_source_service_offerings) | **GET** /sources/{id}/service_offerings | List ServiceOfferings for Source
 [**list_source_service_plans**](DefaultApi.md#list_source_service_plans) | **GET** /sources/{id}/service_plans | List ServicePlans for Source
+[**list_source_source_regions**](DefaultApi.md#list_source_source_regions) | **GET** /sources/{id}/source_regions | List SourceRegions for Source
+[**list_source_subnets**](DefaultApi.md#list_source_subnets) | **GET** /sources/{id}/subnets | List Subnets for Source
+[**list_source_subscriptions**](DefaultApi.md#list_source_subscriptions) | **GET** /sources/{id}/subscriptions | List Subscriptions for Source
 [**list_source_vms**](DefaultApi.md#list_source_vms) | **GET** /sources/{id}/vms | List Vms for Source
 [**list_source_volume_types**](DefaultApi.md#list_source_volume_types) | **GET** /sources/{id}/volume_types | List VolumeTypes for Source
 [**list_source_volumes**](DefaultApi.md#list_source_volumes) | **GET** /sources/{id}/volumes | List Volumes for Source
 [**list_sources**](DefaultApi.md#list_sources) | **GET** /sources | List Sources
+[**list_subnet_ipaddresses**](DefaultApi.md#list_subnet_ipaddresses) | **GET** /subnets/{id}/ipaddresses | List Ipaddresses for Subnet
+[**list_subnet_network_adapters**](DefaultApi.md#list_subnet_network_adapters) | **GET** /subnets/{id}/network_adapters | List NetworkAdapters for Subnet
+[**list_subnet_tags**](DefaultApi.md#list_subnet_tags) | **GET** /subnets/{id}/tags | List Tags for Subnet
+[**list_subnets**](DefaultApi.md#list_subnets) | **GET** /subnets | List Subnets
+[**list_subscription_ipaddresses**](DefaultApi.md#list_subscription_ipaddresses) | **GET** /subscriptions/{id}/ipaddresses | List Ipaddresses for Subscription
+[**list_subscription_network_adapters**](DefaultApi.md#list_subscription_network_adapters) | **GET** /subscriptions/{id}/network_adapters | List NetworkAdapters for Subscription
+[**list_subscription_networks**](DefaultApi.md#list_subscription_networks) | **GET** /subscriptions/{id}/networks | List Networks for Subscription
+[**list_subscription_orchestration_stacks**](DefaultApi.md#list_subscription_orchestration_stacks) | **GET** /subscriptions/{id}/orchestration_stacks | List OrchestrationStacks for Subscription
+[**list_subscription_security_groups**](DefaultApi.md#list_subscription_security_groups) | **GET** /subscriptions/{id}/security_groups | List SecurityGroups for Subscription
+[**list_subscription_service_instances**](DefaultApi.md#list_subscription_service_instances) | **GET** /subscriptions/{id}/service_instances | List ServiceInstances for Subscription
+[**list_subscription_service_offerings**](DefaultApi.md#list_subscription_service_offerings) | **GET** /subscriptions/{id}/service_offerings | List ServiceOfferings for Subscription
+[**list_subscription_service_plans**](DefaultApi.md#list_subscription_service_plans) | **GET** /subscriptions/{id}/service_plans | List ServicePlans for Subscription
+[**list_subscription_subnets**](DefaultApi.md#list_subscription_subnets) | **GET** /subscriptions/{id}/subnets | List Subnets for Subscription
+[**list_subscription_vms**](DefaultApi.md#list_subscription_vms) | **GET** /subscriptions/{id}/vms | List Vms for Subscription
+[**list_subscription_volumes**](DefaultApi.md#list_subscription_volumes) | **GET** /subscriptions/{id}/volumes | List Volumes for Subscription
+[**list_subscriptions**](DefaultApi.md#list_subscriptions) | **GET** /subscriptions | List Subscriptions
 [**list_tag_container_groups**](DefaultApi.md#list_tag_container_groups) | **GET** /tags/{id}/container_groups | List ContainerGroups for Tag
 [**list_tag_container_images**](DefaultApi.md#list_tag_container_images) | **GET** /tags/{id}/container_images | List ContainerImages for Tag
 [**list_tag_container_nodes**](DefaultApi.md#list_tag_container_nodes) | **GET** /tags/{id}/container_nodes | List ContainerNodes for Tag
 [**list_tag_container_projects**](DefaultApi.md#list_tag_container_projects) | **GET** /tags/{id}/container_projects | List ContainerProjects for Tag
 [**list_tag_container_templates**](DefaultApi.md#list_tag_container_templates) | **GET** /tags/{id}/container_templates | List ContainerTemplates for Tag
+[**list_tag_ipaddresses**](DefaultApi.md#list_tag_ipaddresses) | **GET** /tags/{id}/ipaddresses | List Ipaddresses for Tag
+[**list_tag_network_adapters**](DefaultApi.md#list_tag_network_adapters) | **GET** /tags/{id}/network_adapters | List NetworkAdapters for Tag
+[**list_tag_networks**](DefaultApi.md#list_tag_networks) | **GET** /tags/{id}/networks | List Networks for Tag
+[**list_tag_security_groups**](DefaultApi.md#list_tag_security_groups) | **GET** /tags/{id}/security_groups | List SecurityGroups for Tag
 [**list_tag_service_offerings**](DefaultApi.md#list_tag_service_offerings) | **GET** /tags/{id}/service_offerings | List ServiceOfferings for Tag
+[**list_tag_subnets**](DefaultApi.md#list_tag_subnets) | **GET** /tags/{id}/subnets | List Subnets for Tag
 [**list_tag_vms**](DefaultApi.md#list_tag_vms) | **GET** /tags/{id}/vms | List Vms for Tag
 [**list_tags**](DefaultApi.md#list_tags) | **GET** /tags | List Tags
 [**list_tasks**](DefaultApi.md#list_tasks) | **GET** /tasks | List Tasks
+[**list_vm_network_adapters**](DefaultApi.md#list_vm_network_adapters) | **GET** /vms/{id}/network_adapters | List NetworkAdapters for Vm
+[**list_vm_security_groups**](DefaultApi.md#list_vm_security_groups) | **GET** /vms/{id}/security_groups | List SecurityGroups for Vm
 [**list_vm_tags**](DefaultApi.md#list_vm_tags) | **GET** /vms/{id}/tags | List Tags for Vm
 [**list_vm_volume_attachments**](DefaultApi.md#list_vm_volume_attachments) | **GET** /vms/{id}/volume_attachments | List VolumeAttachments for Vm
 [**list_vm_volumes**](DefaultApi.md#list_vm_volumes) | **GET** /vms/{id}/volumes | List Volumes for Vm
 [**list_vms**](DefaultApi.md#list_vms) | **GET** /vms | List Vms
 [**list_volume_attachments**](DefaultApi.md#list_volume_attachments) | **GET** /volume_attachments | List VolumeAttachments
+[**list_volume_type_volumes**](DefaultApi.md#list_volume_type_volumes) | **GET** /volume_types/{id}/volumes | List Volumes for VolumeType
 [**list_volume_types**](DefaultApi.md#list_volume_types) | **GET** /volume_types | List VolumeTypes
+[**list_volume_vms**](DefaultApi.md#list_volume_vms) | **GET** /volumes/{id}/vms | List Vms for Volume
 [**list_volumes**](DefaultApi.md#list_volumes) | **GET** /volumes | List Volumes
+[**order_service_offering**](DefaultApi.md#order_service_offering) | **POST** /service_offerings/{id}/order | Order an existing ServiceOffering
 [**order_service_plan**](DefaultApi.md#order_service_plan) | **POST** /service_plans/{id}/order | Order an existing ServicePlan
 [**post_graph_ql**](DefaultApi.md#post_graph_ql) | **POST** /graphql | Perform a GraphQL Query
 [**show_cluster**](DefaultApi.md#show_cluster) | **GET** /clusters/{id} | Show an existing Cluster
@@ -83,13 +146,20 @@ Method | HTTP request | Description
 [**show_datastore**](DefaultApi.md#show_datastore) | **GET** /datastores/{id} | Show an existing Datastore
 [**show_flavor**](DefaultApi.md#show_flavor) | **GET** /flavors/{id} | Show an existing Flavor
 [**show_host**](DefaultApi.md#show_host) | **GET** /hosts/{id} | Show an existing Host
+[**show_ipaddress**](DefaultApi.md#show_ipaddress) | **GET** /ipaddresses/{id} | Show an existing Ipaddress
+[**show_network**](DefaultApi.md#show_network) | **GET** /networks/{id} | Show an existing Network
+[**show_network_adapter**](DefaultApi.md#show_network_adapter) | **GET** /network_adapters/{id} | Show an existing NetworkAdapter
 [**show_orchestration_stack**](DefaultApi.md#show_orchestration_stack) | **GET** /orchestration_stacks/{id} | Show an existing OrchestrationStack
+[**show_security_group**](DefaultApi.md#show_security_group) | **GET** /security_groups/{id} | Show an existing SecurityGroup
 [**show_service_instance**](DefaultApi.md#show_service_instance) | **GET** /service_instances/{id} | Show an existing ServiceInstance
 [**show_service_offering**](DefaultApi.md#show_service_offering) | **GET** /service_offerings/{id} | Show an existing ServiceOffering
 [**show_service_offering_icon**](DefaultApi.md#show_service_offering_icon) | **GET** /service_offering_icons/{id} | Show an existing ServiceOfferingIcon
 [**show_service_offering_icon_icon_data**](DefaultApi.md#show_service_offering_icon_icon_data) | **GET** /service_offering_icons/{id}/icon_data | Show an existing ServiceOfferingIcon IconData
 [**show_service_plan**](DefaultApi.md#show_service_plan) | **GET** /service_plans/{id} | Show an existing ServicePlan
 [**show_source**](DefaultApi.md#show_source) | **GET** /sources/{id} | Show an existing Source
+[**show_source_region**](DefaultApi.md#show_source_region) | **GET** /source_regions/{id} | Show an existing SourceRegion
+[**show_subnet**](DefaultApi.md#show_subnet) | **GET** /subnets/{id} | Show an existing Subnet
+[**show_subscription**](DefaultApi.md#show_subscription) | **GET** /subscriptions/{id} | Show an existing Subscription
 [**show_tag**](DefaultApi.md#show_tag) | **GET** /tags/{id} | Show an existing Tag
 [**show_task**](DefaultApi.md#show_task) | **GET** /tasks/{id} | Show an existing Task
 [**show_vm**](DefaultApi.md#show_vm) | **GET** /vms/{id} | Show an existing Vm
@@ -1419,6 +1489,885 @@ Name | Type | Description  | Notes
 
 
 
+# **list_ipaddress_tags**
+> TagsCollection list_ipaddress_tags(id, opts)
+
+List Tags for Ipaddress
+
+Returns an array of Tag objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Tags for Ipaddress
+  result = api_instance.list_ipaddress_tags(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_ipaddress_tags: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**TagsCollection**](TagsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_ipaddresses**
+> IpaddressesCollection list_ipaddresses(opts)
+
+List Ipaddresses
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses
+  result = api_instance.list_ipaddresses(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_network_adapter_ipaddresses**
+> IpaddressesCollection list_network_adapter_ipaddresses(id, opts)
+
+List Ipaddresses for NetworkAdapter
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses for NetworkAdapter
+  result = api_instance.list_network_adapter_ipaddresses(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_network_adapter_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_network_adapter_tags**
+> TagsCollection list_network_adapter_tags(id, opts)
+
+List Tags for NetworkAdapter
+
+Returns an array of Tag objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Tags for NetworkAdapter
+  result = api_instance.list_network_adapter_tags(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_network_adapter_tags: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**TagsCollection**](TagsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_network_adapters**
+> NetworkAdaptersCollection list_network_adapters(opts)
+
+List NetworkAdapters
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters
+  result = api_instance.list_network_adapters(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_network_subnets**
+> SubnetsCollection list_network_subnets(id, opts)
+
+List Subnets for Network
+
+Returns an array of Subnet objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subnets for Network
+  result = api_instance.list_network_subnets(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_network_subnets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubnetsCollection**](SubnetsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_network_tags**
+> TagsCollection list_network_tags(id, opts)
+
+List Tags for Network
+
+Returns an array of Tag objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Tags for Network
+  result = api_instance.list_network_tags(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_network_tags: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**TagsCollection**](TagsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_networks**
+> NetworksCollection list_networks(opts)
+
+List Networks
+
+Returns an array of Network objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Networks
+  result = api_instance.list_networks(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_networks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworksCollection**](NetworksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_orchestration_stack_ipaddresses**
+> IpaddressesCollection list_orchestration_stack_ipaddresses(id, opts)
+
+List Ipaddresses for OrchestrationStack
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses for OrchestrationStack
+  result = api_instance.list_orchestration_stack_ipaddresses(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_orchestration_stack_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_orchestration_stack_network_adapters**
+> NetworkAdaptersCollection list_orchestration_stack_network_adapters(id, opts)
+
+List NetworkAdapters for OrchestrationStack
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters for OrchestrationStack
+  result = api_instance.list_orchestration_stack_network_adapters(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_orchestration_stack_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_orchestration_stack_networks**
+> NetworksCollection list_orchestration_stack_networks(id, opts)
+
+List Networks for OrchestrationStack
+
+Returns an array of Network objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Networks for OrchestrationStack
+  result = api_instance.list_orchestration_stack_networks(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_orchestration_stack_networks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworksCollection**](NetworksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_orchestration_stack_security_groups**
+> SecurityGroupsCollection list_orchestration_stack_security_groups(id, opts)
+
+List SecurityGroups for OrchestrationStack
+
+Returns an array of SecurityGroup objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SecurityGroups for OrchestrationStack
+  result = api_instance.list_orchestration_stack_security_groups(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_orchestration_stack_security_groups: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SecurityGroupsCollection**](SecurityGroupsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_orchestration_stack_subnets**
+> SubnetsCollection list_orchestration_stack_subnets(id, opts)
+
+List Subnets for OrchestrationStack
+
+Returns an array of Subnet objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subnets for OrchestrationStack
+  result = api_instance.list_orchestration_stack_subnets(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_orchestration_stack_subnets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubnetsCollection**](SubnetsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_orchestration_stack_vms**
+> VmsCollection list_orchestration_stack_vms(id, opts)
+
+List Vms for OrchestrationStack
+
+Returns an array of Vm objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Vms for OrchestrationStack
+  result = api_instance.list_orchestration_stack_vms(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_orchestration_stack_vms: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VmsCollection**](VmsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_orchestration_stack_volumes**
+> VolumesCollection list_orchestration_stack_volumes(id, opts)
+
+List Volumes for OrchestrationStack
+
+Returns an array of Volume objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Volumes for OrchestrationStack
+  result = api_instance.list_orchestration_stack_volumes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_orchestration_stack_volumes: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VolumesCollection**](VolumesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **list_orchestration_stacks**
 > OrchestrationStacksCollection list_orchestration_stacks(opts)
 
@@ -1464,6 +2413,181 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrchestrationStacksCollection**](OrchestrationStacksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_security_group_tags**
+> TagsCollection list_security_group_tags(id, opts)
+
+List Tags for SecurityGroup
+
+Returns an array of Tag objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Tags for SecurityGroup
+  result = api_instance.list_security_group_tags(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_security_group_tags: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**TagsCollection**](TagsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_security_group_vms**
+> VmsCollection list_security_group_vms(id, opts)
+
+List Vms for SecurityGroup
+
+Returns an array of Vm objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Vms for SecurityGroup
+  result = api_instance.list_security_group_vms(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_security_group_vms: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VmsCollection**](VmsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_security_groups**
+> SecurityGroupsCollection list_security_groups(opts)
+
+List SecurityGroups
+
+Returns an array of SecurityGroup objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SecurityGroups
+  result = api_instance.list_security_groups(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_security_groups: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SecurityGroupsCollection**](SecurityGroupsCollection.md)
 
 ### Authorization
 
@@ -2530,6 +3654,183 @@ Name | Type | Description  | Notes
 
 
 
+# **list_source_ipaddresses**
+> IpaddressesCollection list_source_ipaddresses(id, opts)
+
+List Ipaddresses for Source
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses for Source
+  result = api_instance.list_source_ipaddresses(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_network_adapters**
+> NetworkAdaptersCollection list_source_network_adapters(id, opts)
+
+List NetworkAdapters for Source
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters for Source
+  result = api_instance.list_source_network_adapters(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_networks**
+> NetworksCollection list_source_networks(id, opts)
+
+List Networks for Source
+
+Returns an array of Network objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Networks for Source
+  result = api_instance.list_source_networks(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_networks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworksCollection**](NetworksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **list_source_orchestration_stacks**
 > OrchestrationStacksCollection list_source_orchestration_stacks(id, opts)
 
@@ -2577,6 +3878,771 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrchestrationStacksCollection**](OrchestrationStacksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_ipaddresses**
+> IpaddressesCollection list_source_region_ipaddresses(id, opts)
+
+List Ipaddresses for SourceRegion
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses for SourceRegion
+  result = api_instance.list_source_region_ipaddresses(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_network_adapters**
+> NetworkAdaptersCollection list_source_region_network_adapters(id, opts)
+
+List NetworkAdapters for SourceRegion
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters for SourceRegion
+  result = api_instance.list_source_region_network_adapters(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_networks**
+> NetworksCollection list_source_region_networks(id, opts)
+
+List Networks for SourceRegion
+
+Returns an array of Network objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Networks for SourceRegion
+  result = api_instance.list_source_region_networks(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_networks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworksCollection**](NetworksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_orchestration_stacks**
+> OrchestrationStacksCollection list_source_region_orchestration_stacks(id, opts)
+
+List OrchestrationStacks for SourceRegion
+
+Returns an array of OrchestrationStack objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List OrchestrationStacks for SourceRegion
+  result = api_instance.list_source_region_orchestration_stacks(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_orchestration_stacks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**OrchestrationStacksCollection**](OrchestrationStacksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_security_groups**
+> SecurityGroupsCollection list_source_region_security_groups(id, opts)
+
+List SecurityGroups for SourceRegion
+
+Returns an array of SecurityGroup objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SecurityGroups for SourceRegion
+  result = api_instance.list_source_region_security_groups(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_security_groups: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SecurityGroupsCollection**](SecurityGroupsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_service_instances**
+> ServiceInstancesCollection list_source_region_service_instances(id, opts)
+
+List ServiceInstances for SourceRegion
+
+Returns an array of ServiceInstance objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInstances for SourceRegion
+  result = api_instance.list_source_region_service_instances(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_service_instances: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInstancesCollection**](ServiceInstancesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_service_offerings**
+> ServiceOfferingsCollection list_source_region_service_offerings(id, opts)
+
+List ServiceOfferings for SourceRegion
+
+Returns an array of ServiceOffering objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceOfferings for SourceRegion
+  result = api_instance.list_source_region_service_offerings(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_service_offerings: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceOfferingsCollection**](ServiceOfferingsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_service_plans**
+> ServicePlansCollection list_source_region_service_plans(id, opts)
+
+List ServicePlans for SourceRegion
+
+Returns an array of ServicePlan objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServicePlans for SourceRegion
+  result = api_instance.list_source_region_service_plans(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_service_plans: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServicePlansCollection**](ServicePlansCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_subnets**
+> SubnetsCollection list_source_region_subnets(id, opts)
+
+List Subnets for SourceRegion
+
+Returns an array of Subnet objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subnets for SourceRegion
+  result = api_instance.list_source_region_subnets(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_subnets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubnetsCollection**](SubnetsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_vms**
+> VmsCollection list_source_region_vms(id, opts)
+
+List Vms for SourceRegion
+
+Returns an array of Vm objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Vms for SourceRegion
+  result = api_instance.list_source_region_vms(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_vms: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VmsCollection**](VmsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_region_volumes**
+> VolumesCollection list_source_region_volumes(id, opts)
+
+List Volumes for SourceRegion
+
+Returns an array of Volume objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Volumes for SourceRegion
+  result = api_instance.list_source_region_volumes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_region_volumes: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VolumesCollection**](VolumesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_regions**
+> SourceRegionsCollection list_source_regions(opts)
+
+List SourceRegions
+
+Returns an array of SourceRegion objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SourceRegions
+  result = api_instance.list_source_regions(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_regions: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SourceRegionsCollection**](SourceRegionsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_security_groups**
+> SecurityGroupsCollection list_source_security_groups(id, opts)
+
+List SecurityGroups for Source
+
+Returns an array of SecurityGroup objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SecurityGroups for Source
+  result = api_instance.list_source_security_groups(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_security_groups: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SecurityGroupsCollection**](SecurityGroupsCollection.md)
 
 ### Authorization
 
@@ -2754,6 +4820,183 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServicePlansCollection**](ServicePlansCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_source_regions**
+> SourceRegionsCollection list_source_source_regions(id, opts)
+
+List SourceRegions for Source
+
+Returns an array of SourceRegion objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SourceRegions for Source
+  result = api_instance.list_source_source_regions(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_source_regions: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SourceRegionsCollection**](SourceRegionsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_subnets**
+> SubnetsCollection list_source_subnets(id, opts)
+
+List Subnets for Source
+
+Returns an array of Subnet objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subnets for Source
+  result = api_instance.list_source_subnets(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_subnets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubnetsCollection**](SubnetsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_source_subscriptions**
+> SubscriptionsCollection list_source_subscriptions(id, opts)
+
+List Subscriptions for Source
+
+Returns an array of Subscription objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subscriptions for Source
+  result = api_instance.list_source_subscriptions(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_subscriptions: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubscriptionsCollection**](SubscriptionsCollection.md)
 
 ### Authorization
 
@@ -2988,6 +5231,946 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SourcesCollection**](SourcesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subnet_ipaddresses**
+> IpaddressesCollection list_subnet_ipaddresses(id, opts)
+
+List Ipaddresses for Subnet
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses for Subnet
+  result = api_instance.list_subnet_ipaddresses(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subnet_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subnet_network_adapters**
+> NetworkAdaptersCollection list_subnet_network_adapters(id, opts)
+
+List NetworkAdapters for Subnet
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters for Subnet
+  result = api_instance.list_subnet_network_adapters(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subnet_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subnet_tags**
+> TagsCollection list_subnet_tags(id, opts)
+
+List Tags for Subnet
+
+Returns an array of Tag objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Tags for Subnet
+  result = api_instance.list_subnet_tags(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subnet_tags: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**TagsCollection**](TagsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subnets**
+> SubnetsCollection list_subnets(opts)
+
+List Subnets
+
+Returns an array of Subnet objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subnets
+  result = api_instance.list_subnets(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subnets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubnetsCollection**](SubnetsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_ipaddresses**
+> IpaddressesCollection list_subscription_ipaddresses(id, opts)
+
+List Ipaddresses for Subscription
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses for Subscription
+  result = api_instance.list_subscription_ipaddresses(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_network_adapters**
+> NetworkAdaptersCollection list_subscription_network_adapters(id, opts)
+
+List NetworkAdapters for Subscription
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters for Subscription
+  result = api_instance.list_subscription_network_adapters(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_networks**
+> NetworksCollection list_subscription_networks(id, opts)
+
+List Networks for Subscription
+
+Returns an array of Network objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Networks for Subscription
+  result = api_instance.list_subscription_networks(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_networks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworksCollection**](NetworksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_orchestration_stacks**
+> OrchestrationStacksCollection list_subscription_orchestration_stacks(id, opts)
+
+List OrchestrationStacks for Subscription
+
+Returns an array of OrchestrationStack objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List OrchestrationStacks for Subscription
+  result = api_instance.list_subscription_orchestration_stacks(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_orchestration_stacks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**OrchestrationStacksCollection**](OrchestrationStacksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_security_groups**
+> SecurityGroupsCollection list_subscription_security_groups(id, opts)
+
+List SecurityGroups for Subscription
+
+Returns an array of SecurityGroup objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SecurityGroups for Subscription
+  result = api_instance.list_subscription_security_groups(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_security_groups: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SecurityGroupsCollection**](SecurityGroupsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_service_instances**
+> ServiceInstancesCollection list_subscription_service_instances(id, opts)
+
+List ServiceInstances for Subscription
+
+Returns an array of ServiceInstance objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInstances for Subscription
+  result = api_instance.list_subscription_service_instances(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_service_instances: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInstancesCollection**](ServiceInstancesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_service_offerings**
+> ServiceOfferingsCollection list_subscription_service_offerings(id, opts)
+
+List ServiceOfferings for Subscription
+
+Returns an array of ServiceOffering objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceOfferings for Subscription
+  result = api_instance.list_subscription_service_offerings(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_service_offerings: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceOfferingsCollection**](ServiceOfferingsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_service_plans**
+> ServicePlansCollection list_subscription_service_plans(id, opts)
+
+List ServicePlans for Subscription
+
+Returns an array of ServicePlan objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServicePlans for Subscription
+  result = api_instance.list_subscription_service_plans(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_service_plans: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServicePlansCollection**](ServicePlansCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_subnets**
+> SubnetsCollection list_subscription_subnets(id, opts)
+
+List Subnets for Subscription
+
+Returns an array of Subnet objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subnets for Subscription
+  result = api_instance.list_subscription_subnets(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_subnets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubnetsCollection**](SubnetsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_vms**
+> VmsCollection list_subscription_vms(id, opts)
+
+List Vms for Subscription
+
+Returns an array of Vm objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Vms for Subscription
+  result = api_instance.list_subscription_vms(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_vms: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VmsCollection**](VmsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscription_volumes**
+> VolumesCollection list_subscription_volumes(id, opts)
+
+List Volumes for Subscription
+
+Returns an array of Volume objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Volumes for Subscription
+  result = api_instance.list_subscription_volumes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscription_volumes: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VolumesCollection**](VolumesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_subscriptions**
+> SubscriptionsCollection list_subscriptions(opts)
+
+List Subscriptions
+
+Returns an array of Subscription objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subscriptions
+  result = api_instance.list_subscriptions(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_subscriptions: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubscriptionsCollection**](SubscriptionsCollection.md)
 
 ### Authorization
 
@@ -3295,6 +6478,242 @@ Name | Type | Description  | Notes
 
 
 
+# **list_tag_ipaddresses**
+> IpaddressesCollection list_tag_ipaddresses(id, opts)
+
+List Ipaddresses for Tag
+
+Returns an array of Ipaddress objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Ipaddresses for Tag
+  result = api_instance.list_tag_ipaddresses(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_tag_ipaddresses: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**IpaddressesCollection**](IpaddressesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_tag_network_adapters**
+> NetworkAdaptersCollection list_tag_network_adapters(id, opts)
+
+List NetworkAdapters for Tag
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters for Tag
+  result = api_instance.list_tag_network_adapters(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_tag_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_tag_networks**
+> NetworksCollection list_tag_networks(id, opts)
+
+List Networks for Tag
+
+Returns an array of Network objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Networks for Tag
+  result = api_instance.list_tag_networks(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_tag_networks: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworksCollection**](NetworksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_tag_security_groups**
+> SecurityGroupsCollection list_tag_security_groups(id, opts)
+
+List SecurityGroups for Tag
+
+Returns an array of SecurityGroup objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SecurityGroups for Tag
+  result = api_instance.list_tag_security_groups(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_tag_security_groups: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SecurityGroupsCollection**](SecurityGroupsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **list_tag_service_offerings**
 > ServiceOfferingsCollection list_tag_service_offerings(id, opts)
 
@@ -3342,6 +6761,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceOfferingsCollection**](ServiceOfferingsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_tag_subnets**
+> SubnetsCollection list_tag_subnets(id, opts)
+
+List Subnets for Tag
+
+Returns an array of Subnet objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Subnets for Tag
+  result = api_instance.list_tag_subnets(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_tag_subnets: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SubnetsCollection**](SubnetsCollection.md)
 
 ### Authorization
 
@@ -3515,6 +6993,124 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TasksCollection**](TasksCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_vm_network_adapters**
+> NetworkAdaptersCollection list_vm_network_adapters(id, opts)
+
+List NetworkAdapters for Vm
+
+Returns an array of NetworkAdapter objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List NetworkAdapters for Vm
+  result = api_instance.list_vm_network_adapters(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_vm_network_adapters: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**NetworkAdaptersCollection**](NetworkAdaptersCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_vm_security_groups**
+> SecurityGroupsCollection list_vm_security_groups(id, opts)
+
+List SecurityGroups for Vm
+
+Returns an array of SecurityGroup objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List SecurityGroups for Vm
+  result = api_instance.list_vm_security_groups(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_vm_security_groups: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**SecurityGroupsCollection**](SecurityGroupsCollection.md)
 
 ### Authorization
 
@@ -3818,6 +7414,65 @@ Name | Type | Description  | Notes
 
 
 
+# **list_volume_type_volumes**
+> VolumesCollection list_volume_type_volumes(id, opts)
+
+List Volumes for VolumeType
+
+Returns an array of Volume objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Volumes for VolumeType
+  result = api_instance.list_volume_type_volumes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_volume_type_volumes: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VolumesCollection**](VolumesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **list_volume_types**
 > VolumeTypesCollection list_volume_types(opts)
 
@@ -3863,6 +7518,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VolumeTypesCollection**](VolumeTypesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list_volume_vms**
+> VmsCollection list_volume_vms(id, opts)
+
+List Vms for Volume
+
+Returns an array of Vm objects
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Vms for Volume
+  result = api_instance.list_volume_vms(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_volume_vms: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**VmsCollection**](VmsCollection.md)
 
 ### Authorization
 
@@ -3928,6 +7642,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **order_service_offering**
+> InlineResponse200 order_service_offering(id, order_parameters)
+
+Order an existing ServiceOffering
+
+Returns a Task id
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+order_parameters = TopologicalInventoryApiClient::OrderParameters.new # OrderParameters | Order parameters defining the service and provider control
+
+begin
+  #Order an existing ServiceOffering
+  result = api_instance.order_service_offering(id, order_parameters)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->order_service_offering: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **order_parameters** | [**OrderParameters**](OrderParameters.md)| Order parameters defining the service and provider control | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -4599,6 +8366,159 @@ Name | Type | Description  | Notes
 
 
 
+# **show_ipaddress**
+> Ipaddress show_ipaddress(id)
+
+Show an existing Ipaddress
+
+Returns a Ipaddress object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing Ipaddress
+  result = api_instance.show_ipaddress(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_ipaddress: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**Ipaddress**](Ipaddress.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_network**
+> Network show_network(id)
+
+Show an existing Network
+
+Returns a Network object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing Network
+  result = api_instance.show_network(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_network: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**Network**](Network.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_network_adapter**
+> NetworkAdapter show_network_adapter(id)
+
+Show an existing NetworkAdapter
+
+Returns a NetworkAdapter object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing NetworkAdapter
+  result = api_instance.show_network_adapter(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_network_adapter: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**NetworkAdapter**](NetworkAdapter.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **show_orchestration_stack**
 > OrchestrationStack show_orchestration_stack(id)
 
@@ -4638,6 +8558,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrchestrationStack**](OrchestrationStack.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_security_group**
+> SecurityGroup show_security_group(id)
+
+Show an existing SecurityGroup
+
+Returns a SecurityGroup object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing SecurityGroup
+  result = api_instance.show_security_group(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_security_group: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**SecurityGroup**](SecurityGroup.md)
 
 ### Authorization
 
@@ -4944,6 +8915,159 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Source**](Source.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_source_region**
+> SourceRegion show_source_region(id)
+
+Show an existing SourceRegion
+
+Returns a SourceRegion object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing SourceRegion
+  result = api_instance.show_source_region(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_source_region: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**SourceRegion**](SourceRegion.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_subnet**
+> Subnet show_subnet(id)
+
+Show an existing Subnet
+
+Returns a Subnet object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing Subnet
+  result = api_instance.show_subnet(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_subnet: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**Subnet**](Subnet.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **show_subscription**
+> Subscription show_subscription(id)
+
+Show an existing Subscription
+
+Returns a Subscription object
+
+### Example
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing Subscription
+  result = api_instance.show_subscription(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_subscription: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**Subscription**](Subscription.md)
 
 ### Authorization
 
