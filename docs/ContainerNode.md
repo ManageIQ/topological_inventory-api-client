@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::ContainerNode
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **addresses** | [**Object**](.md) |  | [optional] 
@@ -25,5 +26,34 @@ Name | Type | Description | Notes
 **source_id** | **String** | ID of the resource | [optional] 
 **source_ref** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::ContainerNode.new(addresses: null,
+                                 allocatable_cpus: null,
+                                 allocatable_memory: null,
+                                 allocatable_pods: null,
+                                 archived_at: null,
+                                 conditions: null,
+                                 cpus: 4,
+                                 created_at: null,
+                                 id: null,
+                                 last_seen_at: null,
+                                 lives_on_id: null,
+                                 lives_on_type: Vm,
+                                 memory: 4294967296,
+                                 name: Sample Group,
+                                 node_info: null,
+                                 pods: null,
+                                 resource_version: null,
+                                 source_created_at: null,
+                                 source_deleted_at: null,
+                                 source_id: null,
+                                 source_ref: null,
+                                 updated_at: null)
+```
 
 

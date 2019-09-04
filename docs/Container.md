@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::Container
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived_at** | **DateTime** |  | [optional] 
@@ -15,5 +16,24 @@ Name | Type | Description | Notes
 **memory_request** | **Integer** |  | [optional] 
 **name** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::Container.new(archived_at: null,
+                                 container_group_id: null,
+                                 container_image_id: null,
+                                 cpu_limit: null,
+                                 cpu_request: null,
+                                 created_at: null,
+                                 id: null,
+                                 last_seen_at: null,
+                                 memory_limit: null,
+                                 memory_request: null,
+                                 name: docker-build,
+                                 updated_at: null)
+```
 
 

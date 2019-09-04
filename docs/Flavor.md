@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::Flavor
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived_at** | **DateTime** |  | [optional] 
@@ -16,5 +17,25 @@ Name | Type | Description | Notes
 **source_id** | **String** | ID of the resource | [optional] 
 **source_ref** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::Flavor.new(archived_at: null,
+                                 cpus: 2,
+                                 created_at: null,
+                                 disk_count: 2,
+                                 disk_size: 17179869184,
+                                 extra: null,
+                                 id: null,
+                                 last_seen_at: null,
+                                 memory: 17179869184,
+                                 name: null,
+                                 source_id: null,
+                                 source_ref: null,
+                                 updated_at: null)
+```
 
 

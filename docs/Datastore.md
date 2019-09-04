@@ -1,9 +1,10 @@
 # TopologicalInventoryApiClient::Datastore
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessible** | **BOOLEAN** |  | [optional] 
+**accessible** | **Boolean** |  | [optional] 
 **archived_at** | **DateTime** |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **extra** | [**Object**](.md) |  | [optional] 
@@ -19,5 +20,28 @@ Name | Type | Description | Notes
 **status** | **String** |  | [optional] 
 **total_space** | **Integer** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::Datastore.new(accessible: null,
+                                 archived_at: null,
+                                 created_at: null,
+                                 extra: null,
+                                 free_space: null,
+                                 id: null,
+                                 last_seen_at: null,
+                                 location: null,
+                                 name: null,
+                                 source_created_at: null,
+                                 source_deleted_at: null,
+                                 source_id: null,
+                                 source_ref: null,
+                                 status: null,
+                                 total_space: null,
+                                 updated_at: null)
+```
 
 

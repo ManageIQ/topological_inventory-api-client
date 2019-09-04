@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::ContainerProject
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived_at** | **DateTime** |  | [optional] 
@@ -16,5 +17,25 @@ Name | Type | Description | Notes
 **source_ref** | **String** |  | [optional] 
 **status_phase** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::ContainerProject.new(archived_at: null,
+                                 created_at: null,
+                                 display_name: This is a sample display name for a project,
+                                 id: null,
+                                 last_seen_at: null,
+                                 name: Sample Project,
+                                 resource_version: null,
+                                 source_created_at: null,
+                                 source_deleted_at: null,
+                                 source_id: null,
+                                 source_ref: null,
+                                 status_phase: null,
+                                 updated_at: null)
+```
 
 
