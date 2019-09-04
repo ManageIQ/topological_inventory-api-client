@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::ContainerResourceQuota
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived_at** | **DateTime** |  | [optional] 
@@ -17,5 +18,26 @@ Name | Type | Description | Notes
 **spec** | [**Object**](.md) |  | [optional] 
 **status** | [**Object**](.md) |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::ContainerResourceQuota.new(archived_at: null,
+                                 container_project_id: null,
+                                 created_at: null,
+                                 id: null,
+                                 last_seen_at: null,
+                                 name: null,
+                                 resource_version: null,
+                                 source_created_at: null,
+                                 source_deleted_at: null,
+                                 source_id: null,
+                                 source_ref: null,
+                                 spec: null,
+                                 status: null,
+                                 updated_at: null)
+```
 
 

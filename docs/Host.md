@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::Host
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived_at** | **DateTime** |  | [optional] 
@@ -21,5 +22,30 @@ Name | Type | Description | Notes
 **source_ref** | **String** |  | [optional] 
 **uid_ems** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::Host.new(archived_at: null,
+                                 cluster_id: null,
+                                 cpus: null,
+                                 created_at: null,
+                                 description: null,
+                                 extra: null,
+                                 hostname: null,
+                                 id: null,
+                                 last_seen_at: null,
+                                 memory: null,
+                                 name: null,
+                                 power_state: null,
+                                 source_created_at: null,
+                                 source_deleted_at: null,
+                                 source_id: null,
+                                 source_ref: null,
+                                 uid_ems: null,
+                                 updated_at: null)
+```
 
 

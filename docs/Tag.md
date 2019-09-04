@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::Tag
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **DateTime** |  | [optional] 
@@ -10,5 +11,19 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **namespace** | **String** |  | [optional] 
 **value** | **String** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::Tag.new(created_at: null,
+                                 description: Instruction set architecture,
+                                 id: null,
+                                 last_seen_at: null,
+                                 name: architecture,
+                                 namespace: openshift,
+                                 value: null)
+```
 
 

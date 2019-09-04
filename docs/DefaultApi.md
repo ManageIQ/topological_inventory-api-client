@@ -169,12 +169,15 @@ Method | HTTP request | Description
 [**update_task**](DefaultApi.md#update_task) | **PATCH** /tasks/{id} | Update an existing Task
 
 
-# **get_documentation**
+
+## get_documentation
+
 > get_documentation
 
 Return this API document in JSON format
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -196,6 +199,7 @@ end
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -208,12 +212,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
+## list_cluster_hosts
 
-# **list_cluster_hosts**
 > HostsCollection list_cluster_hosts(id, opts)
 
 List Hosts for Cluster
@@ -221,6 +225,7 @@ List Hosts for Cluster
 Returns an array of Host objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -250,6 +255,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -267,12 +273,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_clusters
 
-# **list_clusters**
 > ClustersCollection list_clusters(opts)
 
 List Clusters
@@ -280,6 +286,7 @@ List Clusters
 Returns an array of Cluster objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -308,6 +315,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -324,12 +332,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_group_containers
 
-# **list_container_group_containers**
 > ContainersCollection list_container_group_containers(id, opts)
 
 List Containers for ContainerGroup
@@ -337,6 +345,7 @@ List Containers for ContainerGroup
 Returns an array of Container objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -366,6 +375,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -383,12 +393,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_group_tags
 
-# **list_container_group_tags**
 > TagsCollection list_container_group_tags(id, opts)
 
 List Tags for ContainerGroup
@@ -396,6 +406,7 @@ List Tags for ContainerGroup
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -425,6 +436,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -442,12 +454,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_groups
 
-# **list_container_groups**
 > ContainerGroupsCollection list_container_groups(opts)
 
 List ContainerGroups
@@ -455,6 +467,7 @@ List ContainerGroups
 Returns an array of ContainerGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -483,6 +496,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -499,12 +513,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_image_tags
 
-# **list_container_image_tags**
 > TagsCollection list_container_image_tags(id, opts)
 
 List Tags for ContainerImage
@@ -512,6 +526,7 @@ List Tags for ContainerImage
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -541,6 +556,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -558,12 +574,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_images
 
-# **list_container_images**
 > ContainerImagesCollection list_container_images(opts)
 
 List ContainerImages
@@ -571,6 +587,7 @@ List ContainerImages
 Returns an array of ContainerImage objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -599,6 +616,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -615,12 +633,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_node_container_groups
 
-# **list_container_node_container_groups**
 > ContainerGroupsCollection list_container_node_container_groups(id, opts)
 
 List ContainerGroups for ContainerNode
@@ -628,6 +646,7 @@ List ContainerGroups for ContainerNode
 Returns an array of ContainerGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -657,6 +676,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -674,12 +694,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_node_tags
 
-# **list_container_node_tags**
 > TagsCollection list_container_node_tags(id, opts)
 
 List Tags for ContainerNode
@@ -687,6 +707,7 @@ List Tags for ContainerNode
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -716,6 +737,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -733,12 +755,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_nodes
 
-# **list_container_nodes**
 > ContainerNodesCollection list_container_nodes(opts)
 
 List ContainerNodes
@@ -746,6 +768,7 @@ List ContainerNodes
 Returns an array of ContainerNode objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -774,6 +797,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -790,12 +814,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_project_container_groups
 
-# **list_container_project_container_groups**
 > ContainerGroupsCollection list_container_project_container_groups(id, opts)
 
 List ContainerGroups for ContainerProject
@@ -803,6 +827,7 @@ List ContainerGroups for ContainerProject
 Returns an array of ContainerGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -832,6 +857,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -849,12 +875,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_project_container_resource_quota
 
-# **list_container_project_container_resource_quota**
 > ContainerResourceQuotaCollection list_container_project_container_resource_quota(id, opts)
 
 List ContainerResourceQuota for ContainerProject
@@ -862,6 +888,7 @@ List ContainerResourceQuota for ContainerProject
 Returns an array of ContainerResourceQuota objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -891,6 +918,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -908,12 +936,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_project_container_templates
 
-# **list_container_project_container_templates**
 > ContainerTemplatesCollection list_container_project_container_templates(id, opts)
 
 List ContainerTemplates for ContainerProject
@@ -921,6 +949,7 @@ List ContainerTemplates for ContainerProject
 Returns an array of ContainerTemplate objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -950,6 +979,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -967,12 +997,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_project_tags
 
-# **list_container_project_tags**
 > TagsCollection list_container_project_tags(id, opts)
 
 List Tags for ContainerProject
@@ -980,6 +1010,7 @@ List Tags for ContainerProject
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1009,6 +1040,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1026,12 +1058,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_projects
 
-# **list_container_projects**
 > ContainerProjectsCollection list_container_projects(opts)
 
 List ContainerProjects
@@ -1039,6 +1071,7 @@ List ContainerProjects
 Returns an array of ContainerProject objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1067,6 +1100,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1083,12 +1117,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_resource_quota
 
-# **list_container_resource_quota**
 > ContainerResourceQuotaCollection list_container_resource_quota(opts)
 
 List ContainerResourceQuota
@@ -1096,6 +1130,7 @@ List ContainerResourceQuota
 Returns an array of ContainerResourceQuota objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1124,6 +1159,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1140,12 +1176,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_template_tags
 
-# **list_container_template_tags**
 > TagsCollection list_container_template_tags(id, opts)
 
 List Tags for ContainerTemplate
@@ -1153,6 +1189,7 @@ List Tags for ContainerTemplate
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1182,6 +1219,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1199,12 +1237,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_container_templates
 
-# **list_container_templates**
 > ContainerTemplatesCollection list_container_templates(opts)
 
 List ContainerTemplates
@@ -1212,6 +1250,7 @@ List ContainerTemplates
 Returns an array of ContainerTemplate objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1240,6 +1279,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1256,12 +1296,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_containers
 
-# **list_containers**
 > ContainersCollection list_containers(opts)
 
 List Containers
@@ -1269,6 +1309,7 @@ List Containers
 Returns an array of Container objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1297,6 +1338,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1313,12 +1355,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_datastores
 
-# **list_datastores**
 > DatastoresCollection list_datastores(opts)
 
 List Datastores
@@ -1326,6 +1368,7 @@ List Datastores
 Returns an array of Datastore objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1354,6 +1397,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1370,12 +1414,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_flavors
 
-# **list_flavors**
 > FlavorsCollection list_flavors(opts)
 
 List Flavors
@@ -1383,6 +1427,7 @@ List Flavors
 Returns an array of Flavor objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1411,6 +1456,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1427,12 +1473,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_hosts
 
-# **list_hosts**
 > HostsCollection list_hosts(opts)
 
 List Hosts
@@ -1440,6 +1486,7 @@ List Hosts
 Returns an array of Host objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1468,6 +1515,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1484,12 +1532,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_ipaddress_tags
 
-# **list_ipaddress_tags**
 > TagsCollection list_ipaddress_tags(id, opts)
 
 List Tags for Ipaddress
@@ -1497,6 +1545,7 @@ List Tags for Ipaddress
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1526,6 +1575,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1543,12 +1593,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_ipaddresses
 
-# **list_ipaddresses**
 > IpaddressesCollection list_ipaddresses(opts)
 
 List Ipaddresses
@@ -1556,6 +1606,7 @@ List Ipaddresses
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1584,6 +1635,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1600,12 +1652,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_network_adapter_ipaddresses
 
-# **list_network_adapter_ipaddresses**
 > IpaddressesCollection list_network_adapter_ipaddresses(id, opts)
 
 List Ipaddresses for NetworkAdapter
@@ -1613,6 +1665,7 @@ List Ipaddresses for NetworkAdapter
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1642,6 +1695,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1659,12 +1713,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_network_adapter_tags
 
-# **list_network_adapter_tags**
 > TagsCollection list_network_adapter_tags(id, opts)
 
 List Tags for NetworkAdapter
@@ -1672,6 +1726,7 @@ List Tags for NetworkAdapter
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1701,6 +1756,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1718,12 +1774,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_network_adapters
 
-# **list_network_adapters**
 > NetworkAdaptersCollection list_network_adapters(opts)
 
 List NetworkAdapters
@@ -1731,6 +1787,7 @@ List NetworkAdapters
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1759,6 +1816,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1775,12 +1833,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_network_subnets
 
-# **list_network_subnets**
 > SubnetsCollection list_network_subnets(id, opts)
 
 List Subnets for Network
@@ -1788,6 +1846,7 @@ List Subnets for Network
 Returns an array of Subnet objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1817,6 +1876,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1834,12 +1894,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_network_tags
 
-# **list_network_tags**
 > TagsCollection list_network_tags(id, opts)
 
 List Tags for Network
@@ -1847,6 +1907,7 @@ List Tags for Network
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1876,6 +1937,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -1893,12 +1955,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_networks
 
-# **list_networks**
 > NetworksCollection list_networks(opts)
 
 List Networks
@@ -1906,6 +1968,7 @@ List Networks
 Returns an array of Network objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1934,6 +1997,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -1950,12 +2014,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stack_ipaddresses
 
-# **list_orchestration_stack_ipaddresses**
 > IpaddressesCollection list_orchestration_stack_ipaddresses(id, opts)
 
 List Ipaddresses for OrchestrationStack
@@ -1963,6 +2027,7 @@ List Ipaddresses for OrchestrationStack
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -1992,6 +2057,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2009,12 +2075,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stack_network_adapters
 
-# **list_orchestration_stack_network_adapters**
 > NetworkAdaptersCollection list_orchestration_stack_network_adapters(id, opts)
 
 List NetworkAdapters for OrchestrationStack
@@ -2022,6 +2088,7 @@ List NetworkAdapters for OrchestrationStack
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2051,6 +2118,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2068,12 +2136,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stack_networks
 
-# **list_orchestration_stack_networks**
 > NetworksCollection list_orchestration_stack_networks(id, opts)
 
 List Networks for OrchestrationStack
@@ -2081,6 +2149,7 @@ List Networks for OrchestrationStack
 Returns an array of Network objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2110,6 +2179,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2127,12 +2197,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stack_security_groups
 
-# **list_orchestration_stack_security_groups**
 > SecurityGroupsCollection list_orchestration_stack_security_groups(id, opts)
 
 List SecurityGroups for OrchestrationStack
@@ -2140,6 +2210,7 @@ List SecurityGroups for OrchestrationStack
 Returns an array of SecurityGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2169,6 +2240,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2186,12 +2258,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stack_subnets
 
-# **list_orchestration_stack_subnets**
 > SubnetsCollection list_orchestration_stack_subnets(id, opts)
 
 List Subnets for OrchestrationStack
@@ -2199,6 +2271,7 @@ List Subnets for OrchestrationStack
 Returns an array of Subnet objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2228,6 +2301,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2245,12 +2319,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stack_vms
 
-# **list_orchestration_stack_vms**
 > VmsCollection list_orchestration_stack_vms(id, opts)
 
 List Vms for OrchestrationStack
@@ -2258,6 +2332,7 @@ List Vms for OrchestrationStack
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2287,6 +2362,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2304,12 +2380,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stack_volumes
 
-# **list_orchestration_stack_volumes**
 > VolumesCollection list_orchestration_stack_volumes(id, opts)
 
 List Volumes for OrchestrationStack
@@ -2317,6 +2393,7 @@ List Volumes for OrchestrationStack
 Returns an array of Volume objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2346,6 +2423,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2363,12 +2441,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_orchestration_stacks
 
-# **list_orchestration_stacks**
 > OrchestrationStacksCollection list_orchestration_stacks(opts)
 
 List OrchestrationStacks
@@ -2376,6 +2454,7 @@ List OrchestrationStacks
 Returns an array of OrchestrationStack objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2404,6 +2483,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -2420,12 +2500,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_security_group_tags
 
-# **list_security_group_tags**
 > TagsCollection list_security_group_tags(id, opts)
 
 List Tags for SecurityGroup
@@ -2433,6 +2513,7 @@ List Tags for SecurityGroup
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2462,6 +2543,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2479,12 +2561,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_security_group_vms
 
-# **list_security_group_vms**
 > VmsCollection list_security_group_vms(id, opts)
 
 List Vms for SecurityGroup
@@ -2492,6 +2574,7 @@ List Vms for SecurityGroup
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2521,6 +2604,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2538,12 +2622,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_security_groups
 
-# **list_security_groups**
 > SecurityGroupsCollection list_security_groups(opts)
 
 List SecurityGroups
@@ -2551,6 +2635,7 @@ List SecurityGroups
 Returns an array of SecurityGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2579,6 +2664,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -2595,12 +2681,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_instances
 
-# **list_service_instances**
 > ServiceInstancesCollection list_service_instances(opts)
 
 List ServiceInstances
@@ -2608,6 +2694,7 @@ List ServiceInstances
 Returns an array of ServiceInstance objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2636,6 +2723,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -2652,12 +2740,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_offering_icons
 
-# **list_service_offering_icons**
 > ServiceOfferingIconsCollection list_service_offering_icons(opts)
 
 List ServiceOfferingIcons
@@ -2665,6 +2753,7 @@ List ServiceOfferingIcons
 Returns an array of ServiceOfferingIcon objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2693,6 +2782,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -2709,12 +2799,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_offering_service_instances
 
-# **list_service_offering_service_instances**
 > ServiceInstancesCollection list_service_offering_service_instances(id, opts)
 
 List ServiceInstances for ServiceOffering
@@ -2722,6 +2812,7 @@ List ServiceInstances for ServiceOffering
 Returns an array of ServiceInstance objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2751,6 +2842,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2768,12 +2860,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_offering_service_plans
 
-# **list_service_offering_service_plans**
 > ServicePlansCollection list_service_offering_service_plans(id, opts)
 
 List ServicePlans for ServiceOffering
@@ -2781,6 +2873,7 @@ List ServicePlans for ServiceOffering
 Returns an array of ServicePlan objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2810,6 +2903,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2827,12 +2921,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_offering_tags
 
-# **list_service_offering_tags**
 > TagsCollection list_service_offering_tags(id, opts)
 
 List Tags for ServiceOffering
@@ -2840,6 +2934,7 @@ List Tags for ServiceOffering
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2869,6 +2964,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -2886,12 +2982,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_offerings
 
-# **list_service_offerings**
 > ServiceOfferingsCollection list_service_offerings(opts)
 
 List ServiceOfferings
@@ -2899,6 +2995,7 @@ List ServiceOfferings
 Returns an array of ServiceOffering objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2927,6 +3024,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -2943,12 +3041,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_plan_service_instances
 
-# **list_service_plan_service_instances**
 > ServiceInstancesCollection list_service_plan_service_instances(id, opts)
 
 List ServiceInstances for ServicePlan
@@ -2956,6 +3054,7 @@ List ServiceInstances for ServicePlan
 Returns an array of ServiceInstance objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -2985,6 +3084,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3002,12 +3102,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_service_plans
 
-# **list_service_plans**
 > ServicePlansCollection list_service_plans(opts)
 
 List ServicePlans
@@ -3015,6 +3115,7 @@ List ServicePlans
 Returns an array of ServicePlan objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3043,6 +3144,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -3059,12 +3161,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_availabilities
 
-# **list_source_availabilities**
 > AvailabilitiesCollection list_source_availabilities(id, opts)
 
 List Availabilities for Source
@@ -3072,6 +3174,7 @@ List Availabilities for Source
 Returns an array of Availability objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3101,6 +3204,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3118,12 +3222,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_clusters
 
-# **list_source_clusters**
 > ClustersCollection list_source_clusters(id, opts)
 
 List Clusters for Source
@@ -3131,6 +3235,7 @@ List Clusters for Source
 Returns an array of Cluster objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3160,6 +3265,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3177,12 +3283,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_container_groups
 
-# **list_source_container_groups**
 > ContainerGroupsCollection list_source_container_groups(id, opts)
 
 List ContainerGroups for Source
@@ -3190,6 +3296,7 @@ List ContainerGroups for Source
 Returns an array of ContainerGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3219,6 +3326,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3236,12 +3344,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_container_images
 
-# **list_source_container_images**
 > ContainerImagesCollection list_source_container_images(id, opts)
 
 List ContainerImages for Source
@@ -3249,6 +3357,7 @@ List ContainerImages for Source
 Returns an array of ContainerImage objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3278,6 +3387,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3295,12 +3405,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_container_nodes
 
-# **list_source_container_nodes**
 > ContainerNodesCollection list_source_container_nodes(id, opts)
 
 List ContainerNodes for Source
@@ -3308,6 +3418,7 @@ List ContainerNodes for Source
 Returns an array of ContainerNode objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3337,6 +3448,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3354,12 +3466,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_container_projects
 
-# **list_source_container_projects**
 > ContainerProjectsCollection list_source_container_projects(id, opts)
 
 List ContainerProjects for Source
@@ -3367,6 +3479,7 @@ List ContainerProjects for Source
 Returns an array of ContainerProject objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3396,6 +3509,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3413,12 +3527,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_container_templates
 
-# **list_source_container_templates**
 > ContainerTemplatesCollection list_source_container_templates(id, opts)
 
 List ContainerTemplates for Source
@@ -3426,6 +3540,7 @@ List ContainerTemplates for Source
 Returns an array of ContainerTemplate objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3455,6 +3570,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3472,12 +3588,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_containers
 
-# **list_source_containers**
 > ContainersCollection list_source_containers(id, opts)
 
 List Containers for Source
@@ -3485,6 +3601,7 @@ List Containers for Source
 Returns an array of Container objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3514,6 +3631,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3531,12 +3649,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_datastores
 
-# **list_source_datastores**
 > DatastoresCollection list_source_datastores(id, opts)
 
 List Datastores for Source
@@ -3544,6 +3662,7 @@ List Datastores for Source
 Returns an array of Datastore objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3573,6 +3692,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3590,12 +3710,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_hosts
 
-# **list_source_hosts**
 > HostsCollection list_source_hosts(id, opts)
 
 List Hosts for Source
@@ -3603,6 +3723,7 @@ List Hosts for Source
 Returns an array of Host objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3632,6 +3753,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3649,12 +3771,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_ipaddresses
 
-# **list_source_ipaddresses**
 > IpaddressesCollection list_source_ipaddresses(id, opts)
 
 List Ipaddresses for Source
@@ -3662,6 +3784,7 @@ List Ipaddresses for Source
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3691,6 +3814,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3708,12 +3832,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_network_adapters
 
-# **list_source_network_adapters**
 > NetworkAdaptersCollection list_source_network_adapters(id, opts)
 
 List NetworkAdapters for Source
@@ -3721,6 +3845,7 @@ List NetworkAdapters for Source
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3750,6 +3875,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3767,12 +3893,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_networks
 
-# **list_source_networks**
 > NetworksCollection list_source_networks(id, opts)
 
 List Networks for Source
@@ -3780,6 +3906,7 @@ List Networks for Source
 Returns an array of Network objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3809,6 +3936,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3826,12 +3954,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_orchestration_stacks
 
-# **list_source_orchestration_stacks**
 > OrchestrationStacksCollection list_source_orchestration_stacks(id, opts)
 
 List OrchestrationStacks for Source
@@ -3839,6 +3967,7 @@ List OrchestrationStacks for Source
 Returns an array of OrchestrationStack objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3868,6 +3997,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3885,12 +4015,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_ipaddresses
 
-# **list_source_region_ipaddresses**
 > IpaddressesCollection list_source_region_ipaddresses(id, opts)
 
 List Ipaddresses for SourceRegion
@@ -3898,6 +4028,7 @@ List Ipaddresses for SourceRegion
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3927,6 +4058,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -3944,12 +4076,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_network_adapters
 
-# **list_source_region_network_adapters**
 > NetworkAdaptersCollection list_source_region_network_adapters(id, opts)
 
 List NetworkAdapters for SourceRegion
@@ -3957,6 +4089,7 @@ List NetworkAdapters for SourceRegion
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -3986,6 +4119,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4003,12 +4137,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_networks
 
-# **list_source_region_networks**
 > NetworksCollection list_source_region_networks(id, opts)
 
 List Networks for SourceRegion
@@ -4016,6 +4150,7 @@ List Networks for SourceRegion
 Returns an array of Network objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4045,6 +4180,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4062,12 +4198,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_orchestration_stacks
 
-# **list_source_region_orchestration_stacks**
 > OrchestrationStacksCollection list_source_region_orchestration_stacks(id, opts)
 
 List OrchestrationStacks for SourceRegion
@@ -4075,6 +4211,7 @@ List OrchestrationStacks for SourceRegion
 Returns an array of OrchestrationStack objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4104,6 +4241,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4121,12 +4259,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_security_groups
 
-# **list_source_region_security_groups**
 > SecurityGroupsCollection list_source_region_security_groups(id, opts)
 
 List SecurityGroups for SourceRegion
@@ -4134,6 +4272,7 @@ List SecurityGroups for SourceRegion
 Returns an array of SecurityGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4163,6 +4302,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4180,12 +4320,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_service_instances
 
-# **list_source_region_service_instances**
 > ServiceInstancesCollection list_source_region_service_instances(id, opts)
 
 List ServiceInstances for SourceRegion
@@ -4193,6 +4333,7 @@ List ServiceInstances for SourceRegion
 Returns an array of ServiceInstance objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4222,6 +4363,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4239,12 +4381,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_service_offerings
 
-# **list_source_region_service_offerings**
 > ServiceOfferingsCollection list_source_region_service_offerings(id, opts)
 
 List ServiceOfferings for SourceRegion
@@ -4252,6 +4394,7 @@ List ServiceOfferings for SourceRegion
 Returns an array of ServiceOffering objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4281,6 +4424,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4298,12 +4442,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_service_plans
 
-# **list_source_region_service_plans**
 > ServicePlansCollection list_source_region_service_plans(id, opts)
 
 List ServicePlans for SourceRegion
@@ -4311,6 +4455,7 @@ List ServicePlans for SourceRegion
 Returns an array of ServicePlan objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4340,6 +4485,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4357,12 +4503,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_subnets
 
-# **list_source_region_subnets**
 > SubnetsCollection list_source_region_subnets(id, opts)
 
 List Subnets for SourceRegion
@@ -4370,6 +4516,7 @@ List Subnets for SourceRegion
 Returns an array of Subnet objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4399,6 +4546,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4416,12 +4564,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_vms
 
-# **list_source_region_vms**
 > VmsCollection list_source_region_vms(id, opts)
 
 List Vms for SourceRegion
@@ -4429,6 +4577,7 @@ List Vms for SourceRegion
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4458,6 +4607,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4475,12 +4625,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_region_volumes
 
-# **list_source_region_volumes**
 > VolumesCollection list_source_region_volumes(id, opts)
 
 List Volumes for SourceRegion
@@ -4488,6 +4638,7 @@ List Volumes for SourceRegion
 Returns an array of Volume objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4517,6 +4668,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4534,12 +4686,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_regions
 
-# **list_source_regions**
 > SourceRegionsCollection list_source_regions(opts)
 
 List SourceRegions
@@ -4547,6 +4699,7 @@ List SourceRegions
 Returns an array of SourceRegion objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4575,6 +4728,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -4591,12 +4745,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_security_groups
 
-# **list_source_security_groups**
 > SecurityGroupsCollection list_source_security_groups(id, opts)
 
 List SecurityGroups for Source
@@ -4604,6 +4758,7 @@ List SecurityGroups for Source
 Returns an array of SecurityGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4633,6 +4788,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4650,12 +4806,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_service_instances
 
-# **list_source_service_instances**
 > ServiceInstancesCollection list_source_service_instances(id, opts)
 
 List ServiceInstances for Source
@@ -4663,6 +4819,7 @@ List ServiceInstances for Source
 Returns an array of ServiceInstance objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4692,6 +4849,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4709,12 +4867,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_service_offerings
 
-# **list_source_service_offerings**
 > ServiceOfferingsCollection list_source_service_offerings(id, opts)
 
 List ServiceOfferings for Source
@@ -4722,6 +4880,7 @@ List ServiceOfferings for Source
 Returns an array of ServiceOffering objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4751,6 +4910,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4768,12 +4928,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_service_plans
 
-# **list_source_service_plans**
 > ServicePlansCollection list_source_service_plans(id, opts)
 
 List ServicePlans for Source
@@ -4781,6 +4941,7 @@ List ServicePlans for Source
 Returns an array of ServicePlan objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4810,6 +4971,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4827,12 +4989,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_source_regions
 
-# **list_source_source_regions**
 > SourceRegionsCollection list_source_source_regions(id, opts)
 
 List SourceRegions for Source
@@ -4840,6 +5002,7 @@ List SourceRegions for Source
 Returns an array of SourceRegion objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4869,6 +5032,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4886,12 +5050,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_subnets
 
-# **list_source_subnets**
 > SubnetsCollection list_source_subnets(id, opts)
 
 List Subnets for Source
@@ -4899,6 +5063,7 @@ List Subnets for Source
 Returns an array of Subnet objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4928,6 +5093,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -4945,12 +5111,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_subscriptions
 
-# **list_source_subscriptions**
 > SubscriptionsCollection list_source_subscriptions(id, opts)
 
 List Subscriptions for Source
@@ -4958,6 +5124,7 @@ List Subscriptions for Source
 Returns an array of Subscription objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -4987,6 +5154,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5004,12 +5172,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_vms
 
-# **list_source_vms**
 > VmsCollection list_source_vms(id, opts)
 
 List Vms for Source
@@ -5017,6 +5185,7 @@ List Vms for Source
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5046,6 +5215,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5063,12 +5233,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_volume_types
 
-# **list_source_volume_types**
 > VolumeTypesCollection list_source_volume_types(id, opts)
 
 List VolumeTypes for Source
@@ -5076,6 +5246,7 @@ List VolumeTypes for Source
 Returns an array of VolumeType objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5105,6 +5276,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5122,12 +5294,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_source_volumes
 
-# **list_source_volumes**
 > VolumesCollection list_source_volumes(id, opts)
 
 List Volumes for Source
@@ -5135,6 +5307,7 @@ List Volumes for Source
 Returns an array of Volume objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5164,6 +5337,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5181,12 +5355,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_sources
 
-# **list_sources**
 > SourcesCollection list_sources(opts)
 
 List Sources
@@ -5194,6 +5368,7 @@ List Sources
 Returns an array of Source objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5222,6 +5397,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -5238,12 +5414,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subnet_ipaddresses
 
-# **list_subnet_ipaddresses**
 > IpaddressesCollection list_subnet_ipaddresses(id, opts)
 
 List Ipaddresses for Subnet
@@ -5251,6 +5427,7 @@ List Ipaddresses for Subnet
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5280,6 +5457,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5297,12 +5475,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subnet_network_adapters
 
-# **list_subnet_network_adapters**
 > NetworkAdaptersCollection list_subnet_network_adapters(id, opts)
 
 List NetworkAdapters for Subnet
@@ -5310,6 +5488,7 @@ List NetworkAdapters for Subnet
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5339,6 +5518,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5356,12 +5536,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subnet_tags
 
-# **list_subnet_tags**
 > TagsCollection list_subnet_tags(id, opts)
 
 List Tags for Subnet
@@ -5369,6 +5549,7 @@ List Tags for Subnet
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5398,6 +5579,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5415,12 +5597,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subnets
 
-# **list_subnets**
 > SubnetsCollection list_subnets(opts)
 
 List Subnets
@@ -5428,6 +5610,7 @@ List Subnets
 Returns an array of Subnet objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5456,6 +5639,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -5472,12 +5656,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_ipaddresses
 
-# **list_subscription_ipaddresses**
 > IpaddressesCollection list_subscription_ipaddresses(id, opts)
 
 List Ipaddresses for Subscription
@@ -5485,6 +5669,7 @@ List Ipaddresses for Subscription
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5514,6 +5699,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5531,12 +5717,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_network_adapters
 
-# **list_subscription_network_adapters**
 > NetworkAdaptersCollection list_subscription_network_adapters(id, opts)
 
 List NetworkAdapters for Subscription
@@ -5544,6 +5730,7 @@ List NetworkAdapters for Subscription
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5573,6 +5760,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5590,12 +5778,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_networks
 
-# **list_subscription_networks**
 > NetworksCollection list_subscription_networks(id, opts)
 
 List Networks for Subscription
@@ -5603,6 +5791,7 @@ List Networks for Subscription
 Returns an array of Network objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5632,6 +5821,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5649,12 +5839,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_orchestration_stacks
 
-# **list_subscription_orchestration_stacks**
 > OrchestrationStacksCollection list_subscription_orchestration_stacks(id, opts)
 
 List OrchestrationStacks for Subscription
@@ -5662,6 +5852,7 @@ List OrchestrationStacks for Subscription
 Returns an array of OrchestrationStack objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5691,6 +5882,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5708,12 +5900,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_security_groups
 
-# **list_subscription_security_groups**
 > SecurityGroupsCollection list_subscription_security_groups(id, opts)
 
 List SecurityGroups for Subscription
@@ -5721,6 +5913,7 @@ List SecurityGroups for Subscription
 Returns an array of SecurityGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5750,6 +5943,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5767,12 +5961,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_service_instances
 
-# **list_subscription_service_instances**
 > ServiceInstancesCollection list_subscription_service_instances(id, opts)
 
 List ServiceInstances for Subscription
@@ -5780,6 +5974,7 @@ List ServiceInstances for Subscription
 Returns an array of ServiceInstance objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5809,6 +6004,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5826,12 +6022,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_service_offerings
 
-# **list_subscription_service_offerings**
 > ServiceOfferingsCollection list_subscription_service_offerings(id, opts)
 
 List ServiceOfferings for Subscription
@@ -5839,6 +6035,7 @@ List ServiceOfferings for Subscription
 Returns an array of ServiceOffering objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5868,6 +6065,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5885,12 +6083,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_service_plans
 
-# **list_subscription_service_plans**
 > ServicePlansCollection list_subscription_service_plans(id, opts)
 
 List ServicePlans for Subscription
@@ -5898,6 +6096,7 @@ List ServicePlans for Subscription
 Returns an array of ServicePlan objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5927,6 +6126,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -5944,12 +6144,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_subnets
 
-# **list_subscription_subnets**
 > SubnetsCollection list_subscription_subnets(id, opts)
 
 List Subnets for Subscription
@@ -5957,6 +6157,7 @@ List Subnets for Subscription
 Returns an array of Subnet objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -5986,6 +6187,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6003,12 +6205,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_vms
 
-# **list_subscription_vms**
 > VmsCollection list_subscription_vms(id, opts)
 
 List Vms for Subscription
@@ -6016,6 +6218,7 @@ List Vms for Subscription
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6045,6 +6248,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6062,12 +6266,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscription_volumes
 
-# **list_subscription_volumes**
 > VolumesCollection list_subscription_volumes(id, opts)
 
 List Volumes for Subscription
@@ -6075,6 +6279,7 @@ List Volumes for Subscription
 Returns an array of Volume objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6104,6 +6309,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6121,12 +6327,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_subscriptions
 
-# **list_subscriptions**
 > SubscriptionsCollection list_subscriptions(opts)
 
 List Subscriptions
@@ -6134,6 +6340,7 @@ List Subscriptions
 Returns an array of Subscription objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6162,6 +6369,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -6178,12 +6386,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_container_groups
 
-# **list_tag_container_groups**
 > ContainerGroupsCollection list_tag_container_groups(id, opts)
 
 List ContainerGroups for Tag
@@ -6191,6 +6399,7 @@ List ContainerGroups for Tag
 Returns an array of ContainerGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6220,6 +6429,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6237,12 +6447,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_container_images
 
-# **list_tag_container_images**
 > ContainerImagesCollection list_tag_container_images(id, opts)
 
 List ContainerImages for Tag
@@ -6250,6 +6460,7 @@ List ContainerImages for Tag
 Returns an array of ContainerImage objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6279,6 +6490,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6296,12 +6508,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_container_nodes
 
-# **list_tag_container_nodes**
 > ContainerNodesCollection list_tag_container_nodes(id, opts)
 
 List ContainerNodes for Tag
@@ -6309,6 +6521,7 @@ List ContainerNodes for Tag
 Returns an array of ContainerNode objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6338,6 +6551,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6355,12 +6569,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_container_projects
 
-# **list_tag_container_projects**
 > ContainerProjectsCollection list_tag_container_projects(id, opts)
 
 List ContainerProjects for Tag
@@ -6368,6 +6582,7 @@ List ContainerProjects for Tag
 Returns an array of ContainerProject objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6397,6 +6612,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6414,12 +6630,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_container_templates
 
-# **list_tag_container_templates**
 > ContainerTemplatesCollection list_tag_container_templates(id, opts)
 
 List ContainerTemplates for Tag
@@ -6427,6 +6643,7 @@ List ContainerTemplates for Tag
 Returns an array of ContainerTemplate objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6456,6 +6673,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6473,12 +6691,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_ipaddresses
 
-# **list_tag_ipaddresses**
 > IpaddressesCollection list_tag_ipaddresses(id, opts)
 
 List Ipaddresses for Tag
@@ -6486,6 +6704,7 @@ List Ipaddresses for Tag
 Returns an array of Ipaddress objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6515,6 +6734,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6532,12 +6752,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_network_adapters
 
-# **list_tag_network_adapters**
 > NetworkAdaptersCollection list_tag_network_adapters(id, opts)
 
 List NetworkAdapters for Tag
@@ -6545,6 +6765,7 @@ List NetworkAdapters for Tag
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6574,6 +6795,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6591,12 +6813,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_networks
 
-# **list_tag_networks**
 > NetworksCollection list_tag_networks(id, opts)
 
 List Networks for Tag
@@ -6604,6 +6826,7 @@ List Networks for Tag
 Returns an array of Network objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6633,6 +6856,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6650,12 +6874,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_security_groups
 
-# **list_tag_security_groups**
 > SecurityGroupsCollection list_tag_security_groups(id, opts)
 
 List SecurityGroups for Tag
@@ -6663,6 +6887,7 @@ List SecurityGroups for Tag
 Returns an array of SecurityGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6692,6 +6917,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6709,12 +6935,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_service_offerings
 
-# **list_tag_service_offerings**
 > ServiceOfferingsCollection list_tag_service_offerings(id, opts)
 
 List ServiceOfferings for Tag
@@ -6722,6 +6948,7 @@ List ServiceOfferings for Tag
 Returns an array of ServiceOffering objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6751,6 +6978,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6768,12 +6996,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_subnets
 
-# **list_tag_subnets**
 > SubnetsCollection list_tag_subnets(id, opts)
 
 List Subnets for Tag
@@ -6781,6 +7009,7 @@ List Subnets for Tag
 Returns an array of Subnet objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6810,6 +7039,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6827,12 +7057,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tag_vms
 
-# **list_tag_vms**
 > VmsCollection list_tag_vms(id, opts)
 
 List Vms for Tag
@@ -6840,6 +7070,7 @@ List Vms for Tag
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6869,6 +7100,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -6886,12 +7118,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tags
 
-# **list_tags**
 > TagsCollection list_tags(opts)
 
 List Tags
@@ -6899,6 +7131,7 @@ List Tags
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6927,6 +7160,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -6943,12 +7177,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_tasks
 
-# **list_tasks**
 > TasksCollection list_tasks(opts)
 
 List Tasks
@@ -6956,6 +7190,7 @@ List Tasks
 Returns an array of Task objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -6984,6 +7219,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -7000,12 +7236,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_vm_network_adapters
 
-# **list_vm_network_adapters**
 > NetworkAdaptersCollection list_vm_network_adapters(id, opts)
 
 List NetworkAdapters for Vm
@@ -7013,6 +7249,7 @@ List NetworkAdapters for Vm
 Returns an array of NetworkAdapter objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7042,6 +7279,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7059,12 +7297,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_vm_security_groups
 
-# **list_vm_security_groups**
 > SecurityGroupsCollection list_vm_security_groups(id, opts)
 
 List SecurityGroups for Vm
@@ -7072,6 +7310,7 @@ List SecurityGroups for Vm
 Returns an array of SecurityGroup objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7101,6 +7340,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7118,12 +7358,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_vm_tags
 
-# **list_vm_tags**
 > TagsCollection list_vm_tags(id, opts)
 
 List Tags for Vm
@@ -7131,6 +7371,7 @@ List Tags for Vm
 Returns an array of Tag objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7160,6 +7401,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7177,12 +7419,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_vm_volume_attachments
 
-# **list_vm_volume_attachments**
 > VolumeAttachmentsCollection list_vm_volume_attachments(id, opts)
 
 List VolumeAttachments for Vm
@@ -7190,6 +7432,7 @@ List VolumeAttachments for Vm
 Returns an array of VolumeAttachment objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7219,6 +7462,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7236,12 +7480,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_vm_volumes
 
-# **list_vm_volumes**
 > VolumesCollection list_vm_volumes(id, opts)
 
 List Volumes for Vm
@@ -7249,6 +7493,7 @@ List Volumes for Vm
 Returns an array of Volume objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7278,6 +7523,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7295,12 +7541,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_vms
 
-# **list_vms**
 > VmsCollection list_vms(opts)
 
 List Vms
@@ -7308,6 +7554,7 @@ List Vms
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7336,6 +7583,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -7352,12 +7600,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_volume_attachments
 
-# **list_volume_attachments**
 > VolumeAttachmentsCollection list_volume_attachments(opts)
 
 List VolumeAttachments
@@ -7365,6 +7613,7 @@ List VolumeAttachments
 Returns an array of VolumeAttachment objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7393,6 +7642,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -7409,12 +7659,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_volume_type_volumes
 
-# **list_volume_type_volumes**
 > VolumesCollection list_volume_type_volumes(id, opts)
 
 List Volumes for VolumeType
@@ -7422,6 +7672,7 @@ List Volumes for VolumeType
 Returns an array of Volume objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7451,6 +7702,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7468,12 +7720,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_volume_types
 
-# **list_volume_types**
 > VolumeTypesCollection list_volume_types(opts)
 
 List VolumeTypes
@@ -7481,6 +7733,7 @@ List VolumeTypes
 Returns an array of VolumeType objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7509,6 +7762,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -7525,12 +7779,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_volume_vms
 
-# **list_volume_vms**
 > VmsCollection list_volume_vms(id, opts)
 
 List Vms for Volume
@@ -7538,6 +7792,7 @@ List Vms for Volume
 Returns an array of Vm objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7567,6 +7822,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7584,12 +7840,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_volumes
 
-# **list_volumes**
 > VolumesCollection list_volumes(opts)
 
 List Volumes
@@ -7597,6 +7853,7 @@ List Volumes
 Returns an array of Volume objects
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7625,6 +7882,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
@@ -7641,12 +7899,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## order_service_offering
 
-# **order_service_offering**
 > InlineResponse200 order_service_offering(id, order_parameters)
 
 Order an existing ServiceOffering
@@ -7654,6 +7912,7 @@ Order an existing ServiceOffering
 Returns a Task id
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7679,6 +7938,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7694,12 +7954,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## order_service_plan
 
-# **order_service_plan**
 > InlineResponse200 order_service_plan(id, order_parameters)
 
 Order an existing ServicePlan
@@ -7707,6 +7967,7 @@ Order an existing ServicePlan
 Returns a Task id
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7732,6 +7993,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7747,19 +8009,20 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## post_graph_ql
 
-# **post_graph_ql**
-> GraphQLResponse post_graph_ql(opts)
+> GraphQLResponse post_graph_ql(inline_object)
 
 Perform a GraphQL Query
 
 Performs a GraphQL Query
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7771,13 +8034,11 @@ TopologicalInventoryApiClient.configure do |config|
 end
 
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
-opts = {
-  inline_object: TopologicalInventoryApiClient::InlineObject.new # InlineObject | 
-}
+inline_object = TopologicalInventoryApiClient::InlineObject.new # InlineObject | 
 
 begin
   #Perform a GraphQL Query
-  result = api_instance.post_graph_ql(opts)
+  result = api_instance.post_graph_ql(inline_object)
   p result
 rescue TopologicalInventoryApiClient::ApiError => e
   puts "Exception when calling DefaultApi->post_graph_ql: #{e}"
@@ -7786,9 +8047,10 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object** | [**InlineObject**](InlineObject.md)|  | [optional] 
+ **inline_object** | [**InlineObject**](InlineObject.md)|  | 
 
 ### Return type
 
@@ -7800,12 +8062,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## show_cluster
 
-# **show_cluster**
 > Cluster show_cluster(id)
 
 Show an existing Cluster
@@ -7813,6 +8075,7 @@ Show an existing Cluster
 Returns a Cluster object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7837,6 +8100,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7851,12 +8115,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_container
 
-# **show_container**
 > Container show_container(id)
 
 Show an existing Container
@@ -7864,6 +8128,7 @@ Show an existing Container
 Returns a Container object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7888,6 +8153,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7902,12 +8168,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_container_group
 
-# **show_container_group**
 > ContainerGroup show_container_group(id)
 
 Show an existing ContainerGroup
@@ -7915,6 +8181,7 @@ Show an existing ContainerGroup
 Returns a ContainerGroup object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7939,6 +8206,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -7953,12 +8221,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_container_image
 
-# **show_container_image**
 > ContainerImage show_container_image(id)
 
 Show an existing ContainerImage
@@ -7966,6 +8234,7 @@ Show an existing ContainerImage
 Returns a ContainerImage object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -7990,6 +8259,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8004,12 +8274,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_container_node
 
-# **show_container_node**
 > ContainerNode show_container_node(id)
 
 Show an existing ContainerNode
@@ -8017,6 +8287,7 @@ Show an existing ContainerNode
 Returns a ContainerNode object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8041,6 +8312,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8055,12 +8327,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_container_project
 
-# **show_container_project**
 > ContainerProject show_container_project(id)
 
 Show an existing ContainerProject
@@ -8068,6 +8340,7 @@ Show an existing ContainerProject
 Returns a ContainerProject object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8092,6 +8365,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8106,12 +8380,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_container_resource_quota
 
-# **show_container_resource_quota**
 > ContainerResourceQuota show_container_resource_quota(id)
 
 Show an existing ContainerResourceQuota
@@ -8119,6 +8393,7 @@ Show an existing ContainerResourceQuota
 Returns a ContainerResourceQuota object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8143,6 +8418,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8157,12 +8433,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_container_template
 
-# **show_container_template**
 > ContainerTemplate show_container_template(id)
 
 Show an existing ContainerTemplate
@@ -8170,6 +8446,7 @@ Show an existing ContainerTemplate
 Returns a ContainerTemplate object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8194,6 +8471,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8208,12 +8486,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_datastore
 
-# **show_datastore**
 > Datastore show_datastore(id)
 
 Show an existing Datastore
@@ -8221,6 +8499,7 @@ Show an existing Datastore
 Returns a Datastore object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8245,6 +8524,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8259,12 +8539,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_flavor
 
-# **show_flavor**
 > Flavor show_flavor(id)
 
 Show an existing Flavor
@@ -8272,6 +8552,7 @@ Show an existing Flavor
 Returns a Flavor object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8296,6 +8577,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8310,12 +8592,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_host
 
-# **show_host**
 > Host show_host(id)
 
 Show an existing Host
@@ -8323,6 +8605,7 @@ Show an existing Host
 Returns a Host object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8347,6 +8630,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8361,12 +8645,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_ipaddress
 
-# **show_ipaddress**
 > Ipaddress show_ipaddress(id)
 
 Show an existing Ipaddress
@@ -8374,6 +8658,7 @@ Show an existing Ipaddress
 Returns a Ipaddress object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8398,6 +8683,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8412,12 +8698,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_network
 
-# **show_network**
 > Network show_network(id)
 
 Show an existing Network
@@ -8425,6 +8711,7 @@ Show an existing Network
 Returns a Network object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8449,6 +8736,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8463,12 +8751,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_network_adapter
 
-# **show_network_adapter**
 > NetworkAdapter show_network_adapter(id)
 
 Show an existing NetworkAdapter
@@ -8476,6 +8764,7 @@ Show an existing NetworkAdapter
 Returns a NetworkAdapter object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8500,6 +8789,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8514,12 +8804,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_orchestration_stack
 
-# **show_orchestration_stack**
 > OrchestrationStack show_orchestration_stack(id)
 
 Show an existing OrchestrationStack
@@ -8527,6 +8817,7 @@ Show an existing OrchestrationStack
 Returns a OrchestrationStack object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8551,6 +8842,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8565,12 +8857,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_security_group
 
-# **show_security_group**
 > SecurityGroup show_security_group(id)
 
 Show an existing SecurityGroup
@@ -8578,6 +8870,7 @@ Show an existing SecurityGroup
 Returns a SecurityGroup object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8602,6 +8895,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8616,12 +8910,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_service_instance
 
-# **show_service_instance**
 > ServiceInstance show_service_instance(id)
 
 Show an existing ServiceInstance
@@ -8629,6 +8923,7 @@ Show an existing ServiceInstance
 Returns a ServiceInstance object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8653,6 +8948,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8667,12 +8963,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_service_offering
 
-# **show_service_offering**
 > ServiceOffering show_service_offering(id)
 
 Show an existing ServiceOffering
@@ -8680,6 +8976,7 @@ Show an existing ServiceOffering
 Returns a ServiceOffering object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8704,6 +9001,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8718,12 +9016,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_service_offering_icon
 
-# **show_service_offering_icon**
 > ServiceOfferingIcon show_service_offering_icon(id)
 
 Show an existing ServiceOfferingIcon
@@ -8731,6 +9029,7 @@ Show an existing ServiceOfferingIcon
 Returns a ServiceOfferingIcon object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8755,6 +9054,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8769,12 +9069,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_service_offering_icon_icon_data
 
-# **show_service_offering_icon_icon_data**
 > File show_service_offering_icon_icon_data(id)
 
 Show an existing ServiceOfferingIcon IconData
@@ -8782,6 +9082,7 @@ Show an existing ServiceOfferingIcon IconData
 Returns a ServiceOfferingIcon IconData
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8806,6 +9107,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8820,12 +9122,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: image/*
+- **Content-Type**: Not defined
+- **Accept**: image/*
 
 
+## show_service_plan
 
-# **show_service_plan**
 > ServicePlan show_service_plan(id)
 
 Show an existing ServicePlan
@@ -8833,6 +9135,7 @@ Show an existing ServicePlan
 Returns a ServicePlan object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8857,6 +9160,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8871,12 +9175,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_source
 
-# **show_source**
 > Source show_source(id)
 
 Show an existing Source
@@ -8884,6 +9188,7 @@ Show an existing Source
 Returns a Source object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8908,6 +9213,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8922,12 +9228,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_source_region
 
-# **show_source_region**
 > SourceRegion show_source_region(id)
 
 Show an existing SourceRegion
@@ -8935,6 +9241,7 @@ Show an existing SourceRegion
 Returns a SourceRegion object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -8959,6 +9266,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -8973,12 +9281,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_subnet
 
-# **show_subnet**
 > Subnet show_subnet(id)
 
 Show an existing Subnet
@@ -8986,6 +9294,7 @@ Show an existing Subnet
 Returns a Subnet object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9010,6 +9319,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9024,12 +9334,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_subscription
 
-# **show_subscription**
 > Subscription show_subscription(id)
 
 Show an existing Subscription
@@ -9037,6 +9347,7 @@ Show an existing Subscription
 Returns a Subscription object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9061,6 +9372,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9075,12 +9387,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_tag
 
-# **show_tag**
 > Tag show_tag(id)
 
 Show an existing Tag
@@ -9088,6 +9400,7 @@ Show an existing Tag
 Returns a Tag object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9112,6 +9425,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9126,12 +9440,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_task
 
-# **show_task**
 > Task show_task(id)
 
 Show an existing Task
@@ -9139,6 +9453,7 @@ Show an existing Task
 Returns a Task object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9163,6 +9478,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9177,12 +9493,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_vm
 
-# **show_vm**
 > Vm show_vm(id)
 
 Show an existing Vm
@@ -9190,6 +9506,7 @@ Show an existing Vm
 Returns a Vm object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9214,6 +9531,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9228,12 +9546,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_volume
 
-# **show_volume**
 > Volume show_volume(id)
 
 Show an existing Volume
@@ -9241,6 +9559,7 @@ Show an existing Volume
 Returns a Volume object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9265,6 +9584,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9279,12 +9599,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_volume_attachment
 
-# **show_volume_attachment**
 > VolumeAttachment show_volume_attachment(id)
 
 Show an existing VolumeAttachment
@@ -9292,6 +9612,7 @@ Show an existing VolumeAttachment
 Returns a VolumeAttachment object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9316,6 +9637,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9330,12 +9652,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## show_volume_type
 
-# **show_volume_type**
 > VolumeType show_volume_type(id)
 
 Show an existing VolumeType
@@ -9343,6 +9665,7 @@ Show an existing VolumeType
 Returns a VolumeType object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9367,6 +9690,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9381,12 +9705,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_task
 
-# **update_task**
 > update_task(id, task)
 
 Update an existing Task
@@ -9394,6 +9718,7 @@ Update an existing Task
 Updates a Task object
 
 ### Example
+
 ```ruby
 # load the gem
 require 'topological_inventory-api-client'
@@ -9418,6 +9743,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
@@ -9433,8 +9759,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-
+- **Content-Type**: application/json
+- **Accept**: Not defined
 

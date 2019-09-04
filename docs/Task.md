@@ -1,6 +1,7 @@
 # TopologicalInventoryApiClient::Task
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **completed_at** | **DateTime** |  | [optional] 
@@ -11,5 +12,20 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'TopologicalInventoryApiClient'
+
+instance = TopologicalInventoryApiClient::Task.new(completed_at: null,
+                                 context: Extra information about this task, e.g. new inventory items created by this task,
+                                 created_at: null,
+                                 id: null,
+                                 name: Order Service Plan,
+                                 state: Running,
+                                 status: Error,
+                                 updated_at: null)
+```
 
 
