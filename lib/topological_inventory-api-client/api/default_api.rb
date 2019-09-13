@@ -10920,21 +10920,21 @@ module TopologicalInventoryApiClient
     # Order an existing ServiceOffering
     # Returns a Task id
     # @param id [String] ID of the resource
-    # @param order_parameters [OrderParameters] Order parameters defining the service and provider control
+    # @param order_parameters_service_offering [OrderParametersServiceOffering] Order parameters defining the service and provider control
     # @param [Hash] opts the optional parameters
     # @return [InlineResponse200]
-    def order_service_offering(id, order_parameters, opts = {})
-      data, _status_code, _headers = order_service_offering_with_http_info(id, order_parameters, opts)
+    def order_service_offering(id, order_parameters_service_offering, opts = {})
+      data, _status_code, _headers = order_service_offering_with_http_info(id, order_parameters_service_offering, opts)
       data
     end
 
     # Order an existing ServiceOffering
     # Returns a Task id
     # @param id [String] ID of the resource
-    # @param order_parameters [OrderParameters] Order parameters defining the service and provider control
+    # @param order_parameters_service_offering [OrderParametersServiceOffering] Order parameters defining the service and provider control
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse200, Integer, Hash)>] InlineResponse200 data, response status code and response headers
-    def order_service_offering_with_http_info(id, order_parameters, opts = {})
+    def order_service_offering_with_http_info(id, order_parameters_service_offering, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.order_service_offering ...'
       end
@@ -10947,9 +10947,9 @@ module TopologicalInventoryApiClient
         fail ArgumentError, "invalid value for 'id' when calling DefaultApi.order_service_offering, must conform to the pattern #{pattern}."
       end
 
-      # verify the required parameter 'order_parameters' is set
-      if @api_client.config.client_side_validation && order_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'order_parameters' when calling DefaultApi.order_service_offering"
+      # verify the required parameter 'order_parameters_service_offering' is set
+      if @api_client.config.client_side_validation && order_parameters_service_offering.nil?
+        fail ArgumentError, "Missing the required parameter 'order_parameters_service_offering' when calling DefaultApi.order_service_offering"
       end
       # resource path
       local_var_path = '/service_offerings/{id}/order'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -10968,7 +10968,7 @@ module TopologicalInventoryApiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_parameters) 
+      post_body = opts[:body] || @api_client.object_to_http_body(order_parameters_service_offering) 
 
       # return_type
       return_type = opts[:return_type] || 'InlineResponse200' 
@@ -10995,21 +10995,21 @@ module TopologicalInventoryApiClient
     # Order an existing ServicePlan
     # Returns a Task id
     # @param id [String] ID of the resource
-    # @param order_parameters [OrderParameters] Order parameters defining the service and provider control
+    # @param order_parameters_service_plan [OrderParametersServicePlan] Order parameters defining the service and provider control
     # @param [Hash] opts the optional parameters
     # @return [InlineResponse200]
-    def order_service_plan(id, order_parameters, opts = {})
-      data, _status_code, _headers = order_service_plan_with_http_info(id, order_parameters, opts)
+    def order_service_plan(id, order_parameters_service_plan, opts = {})
+      data, _status_code, _headers = order_service_plan_with_http_info(id, order_parameters_service_plan, opts)
       data
     end
 
     # Order an existing ServicePlan
     # Returns a Task id
     # @param id [String] ID of the resource
-    # @param order_parameters [OrderParameters] Order parameters defining the service and provider control
+    # @param order_parameters_service_plan [OrderParametersServicePlan] Order parameters defining the service and provider control
     # @param [Hash] opts the optional parameters
     # @return [Array<(InlineResponse200, Integer, Hash)>] InlineResponse200 data, response status code and response headers
-    def order_service_plan_with_http_info(id, order_parameters, opts = {})
+    def order_service_plan_with_http_info(id, order_parameters_service_plan, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.order_service_plan ...'
       end
@@ -11022,9 +11022,9 @@ module TopologicalInventoryApiClient
         fail ArgumentError, "invalid value for 'id' when calling DefaultApi.order_service_plan, must conform to the pattern #{pattern}."
       end
 
-      # verify the required parameter 'order_parameters' is set
-      if @api_client.config.client_side_validation && order_parameters.nil?
-        fail ArgumentError, "Missing the required parameter 'order_parameters' when calling DefaultApi.order_service_plan"
+      # verify the required parameter 'order_parameters_service_plan' is set
+      if @api_client.config.client_side_validation && order_parameters_service_plan.nil?
+        fail ArgumentError, "Missing the required parameter 'order_parameters_service_plan' when calling DefaultApi.order_service_plan"
       end
       # resource path
       local_var_path = '/service_plans/{id}/order'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -11043,7 +11043,7 @@ module TopologicalInventoryApiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(order_parameters) 
+      post_body = opts[:body] || @api_client.object_to_http_body(order_parameters_service_plan) 
 
       # return_type
       return_type = opts[:return_type] || 'InlineResponse200' 

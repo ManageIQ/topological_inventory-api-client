@@ -7905,7 +7905,7 @@ Name | Type | Description  | Notes
 
 ## order_service_offering
 
-> InlineResponse200 order_service_offering(id, order_parameters)
+> InlineResponse200 order_service_offering(id, order_parameters_service_offering)
 
 Order an existing ServiceOffering
 
@@ -7925,11 +7925,11 @@ end
 
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
-order_parameters = TopologicalInventoryApiClient::OrderParameters.new # OrderParameters | Order parameters defining the service and provider control
+order_parameters_service_offering = TopologicalInventoryApiClient::OrderParametersServiceOffering.new # OrderParametersServiceOffering | Order parameters defining the service and provider control
 
 begin
   #Order an existing ServiceOffering
-  result = api_instance.order_service_offering(id, order_parameters)
+  result = api_instance.order_service_offering(id, order_parameters_service_offering)
   p result
 rescue TopologicalInventoryApiClient::ApiError => e
   puts "Exception when calling DefaultApi->order_service_offering: #{e}"
@@ -7942,7 +7942,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
- **order_parameters** | [**OrderParameters**](OrderParameters.md)| Order parameters defining the service and provider control | 
+ **order_parameters_service_offering** | [**OrderParametersServiceOffering**](OrderParametersServiceOffering.md)| Order parameters defining the service and provider control | 
 
 ### Return type
 
@@ -7960,7 +7960,7 @@ Name | Type | Description  | Notes
 
 ## order_service_plan
 
-> InlineResponse200 order_service_plan(id, order_parameters)
+> InlineResponse200 order_service_plan(id, order_parameters_service_plan)
 
 Order an existing ServicePlan
 
@@ -7980,11 +7980,11 @@ end
 
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
 id = 'id_example' # String | ID of the resource
-order_parameters = TopologicalInventoryApiClient::OrderParameters.new # OrderParameters | Order parameters defining the service and provider control
+order_parameters_service_plan = TopologicalInventoryApiClient::OrderParametersServicePlan.new # OrderParametersServicePlan | Order parameters defining the service and provider control
 
 begin
   #Order an existing ServicePlan
-  result = api_instance.order_service_plan(id, order_parameters)
+  result = api_instance.order_service_plan(id, order_parameters_service_plan)
   p result
 rescue TopologicalInventoryApiClient::ApiError => e
   puts "Exception when calling DefaultApi->order_service_plan: #{e}"
@@ -7997,7 +7997,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| ID of the resource | 
- **order_parameters** | [**OrderParameters**](OrderParameters.md)| Order parameters defining the service and provider control | 
+ **order_parameters_service_plan** | [**OrderParametersServicePlan**](OrderParametersServicePlan.md)| Order parameters defining the service and provider control | 
 
 ### Return type
 

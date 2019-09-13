@@ -13,18 +13,22 @@ OpenAPI Generator version: 4.1.1
 require 'date'
 
 module TopologicalInventoryApiClient
-  class OrderParameters
+  class OrderParametersServicePlan
     # JSON object with provisioning parameters
     attr_accessor :service_parameters
 
     # The provider specific parameters needed to provision this service. This might include namespaces, special keys
     attr_accessor :provider_control_parameters
 
+    # ID of the resource
+    attr_accessor :service_plan_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'service_parameters' => :'service_parameters',
-        :'provider_control_parameters' => :'provider_control_parameters'
+        :'provider_control_parameters' => :'provider_control_parameters',
+        :'service_plan_id' => :'service_plan_id'
       }
     end
 
@@ -32,7 +36,8 @@ module TopologicalInventoryApiClient
     def self.openapi_types
       {
         :'service_parameters' => :'Object',
-        :'provider_control_parameters' => :'Object'
+        :'provider_control_parameters' => :'Object',
+        :'service_plan_id' => :'String'
       }
     end
 
@@ -40,13 +45,13 @@ module TopologicalInventoryApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `TopologicalInventoryApiClient::OrderParameters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `TopologicalInventoryApiClient::OrderParametersServicePlan` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `TopologicalInventoryApiClient::OrderParameters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `TopologicalInventoryApiClient::OrderParametersServicePlan`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -58,19 +63,40 @@ module TopologicalInventoryApiClient
       if attributes.key?(:'provider_control_parameters')
         self.provider_control_parameters = attributes[:'provider_control_parameters']
       end
+
+      if attributes.key?(:'service_plan_id')
+        self.service_plan_id = attributes[:'service_plan_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      pattern = Regexp.new(/^\d+$/)
+      if !@service_plan_id.nil? && @service_plan_id !~ pattern
+        invalid_properties.push("invalid value for \"service_plan_id\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !@service_plan_id.nil? && @service_plan_id !~ Regexp.new(/^\d+$/)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] service_plan_id Value to be assigned
+    def service_plan_id=(service_plan_id)
+      pattern = Regexp.new(/^\d+$/)
+      if !service_plan_id.nil? && service_plan_id !~ pattern
+        fail ArgumentError, "invalid value for \"service_plan_id\", must conform to the pattern #{pattern}."
+      end
+
+      @service_plan_id = service_plan_id
     end
 
     # Checks equality by comparing each attribute.
@@ -79,7 +105,8 @@ module TopologicalInventoryApiClient
       return true if self.equal?(o)
       self.class == o.class &&
           service_parameters == o.service_parameters &&
-          provider_control_parameters == o.provider_control_parameters
+          provider_control_parameters == o.provider_control_parameters &&
+          service_plan_id == o.service_plan_id
     end
 
     # @see the `==` method
@@ -91,7 +118,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [service_parameters, provider_control_parameters].hash
+      [service_parameters, provider_control_parameters, service_plan_id].hash
     end
 
     # Builds the object from hash
