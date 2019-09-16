@@ -21,9 +21,6 @@ module TopologicalInventoryApiClient
     attr_accessor :provider_control_parameters
 
     # ID of the resource
-    attr_accessor :service_offering_id
-
-    # ID of the resource
     attr_accessor :service_plan_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -31,7 +28,6 @@ module TopologicalInventoryApiClient
       {
         :'service_parameters' => :'service_parameters',
         :'provider_control_parameters' => :'provider_control_parameters',
-        :'service_offering_id' => :'service_offering_id',
         :'service_plan_id' => :'service_plan_id'
       }
     end
@@ -41,7 +37,6 @@ module TopologicalInventoryApiClient
       {
         :'service_parameters' => :'Object',
         :'provider_control_parameters' => :'Object',
-        :'service_offering_id' => :'String',
         :'service_plan_id' => :'String'
       }
     end
@@ -69,10 +64,6 @@ module TopologicalInventoryApiClient
         self.provider_control_parameters = attributes[:'provider_control_parameters']
       end
 
-      if attributes.key?(:'service_offering_id')
-        self.service_offering_id = attributes[:'service_offering_id']
-      end
-
       if attributes.key?(:'service_plan_id')
         self.service_plan_id = attributes[:'service_plan_id']
       end
@@ -82,11 +73,6 @@ module TopologicalInventoryApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      pattern = Regexp.new(/^\d+$/)
-      if !@service_offering_id.nil? && @service_offering_id !~ pattern
-        invalid_properties.push("invalid value for \"service_offering_id\", must conform to the pattern #{pattern}.")
-      end
-
       pattern = Regexp.new(/^\d+$/)
       if !@service_plan_id.nil? && @service_plan_id !~ pattern
         invalid_properties.push("invalid value for \"service_plan_id\", must conform to the pattern #{pattern}.")
@@ -98,20 +84,8 @@ module TopologicalInventoryApiClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !@service_offering_id.nil? && @service_offering_id !~ Regexp.new(/^\d+$/)
       return false if !@service_plan_id.nil? && @service_plan_id !~ Regexp.new(/^\d+$/)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] service_offering_id Value to be assigned
-    def service_offering_id=(service_offering_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !service_offering_id.nil? && service_offering_id !~ pattern
-        fail ArgumentError, "invalid value for \"service_offering_id\", must conform to the pattern #{pattern}."
-      end
-
-      @service_offering_id = service_offering_id
     end
 
     # Custom attribute writer method with validation
@@ -132,7 +106,6 @@ module TopologicalInventoryApiClient
       self.class == o.class &&
           service_parameters == o.service_parameters &&
           provider_control_parameters == o.provider_control_parameters &&
-          service_offering_id == o.service_offering_id &&
           service_plan_id == o.service_plan_id
     end
 
@@ -145,7 +118,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [service_parameters, provider_control_parameters, service_offering_id, service_plan_id].hash
+      [service_parameters, provider_control_parameters, service_plan_id].hash
     end
 
     # Builds the object from hash
