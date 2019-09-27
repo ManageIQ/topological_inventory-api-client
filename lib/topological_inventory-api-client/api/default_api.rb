@@ -21,15 +21,15 @@ module TopologicalInventoryApiClient
     end
     # Return this API document in JSON format
     # @param [Hash] opts the optional parameters
-    # @return [nil]
+    # @return [Object]
     def get_documentation(opts = {})
-      get_documentation_with_http_info(opts)
-      nil
+      data, _status_code, _headers = get_documentation_with_http_info(opts)
+      data
     end
 
     # Return this API document in JSON format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
     def get_documentation_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.get_documentation ...'
@@ -42,6 +42,8 @@ module TopologicalInventoryApiClient
 
       # header parameters
       header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -50,7 +52,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] 
 
       # return_type
-      return_type = opts[:return_type] 
+      return_type = opts[:return_type] || 'Object' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **Integer** |  | [optional] 
-**offset** | **Integer** |  | [optional] 
 **limit** | **Integer** |  | [optional] 
+**offset** | **Integer** |  | [optional] 
 
 ## Code Sample
 
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 require 'TopologicalInventoryApiClient'
 
 instance = TopologicalInventoryApiClient::CollectionMetadata.new(count: null,
-                                 offset: null,
-                                 limit: null)
+                                 limit: null,
+                                 offset: null)
 ```
 
 
