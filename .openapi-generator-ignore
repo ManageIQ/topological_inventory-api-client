@@ -23,3 +23,5 @@
 #!docs/README.md
 README.md
 .rubocop.yml
+.gitignore
+.travis.yml
