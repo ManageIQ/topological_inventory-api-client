@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **last_seen_at** | **DateTime** |  | [optional] 
 **long_description** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
+**service_inventory_id** | **String** | ID of the resource | [optional] 
 **service_offering_icon_id** | **String** | ID of the resource | [optional] 
 **source_created_at** | **DateTime** |  | [optional] 
 **source_deleted_at** | **DateTime** |  | [optional] 
@@ -41,6 +42,7 @@ instance = TopologicalInventoryApiClient::ServiceOffering.new(archived_at: null,
                                  last_seen_at: null,
                                  long_description: This template provides a standalone MariaDB server with a database created...,
                                  name: Sample Service Offering,
+                                 service_inventory_id: null,
                                  service_offering_icon_id: null,
                                  source_created_at: null,
                                  source_deleted_at: null,

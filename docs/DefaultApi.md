@@ -46,9 +46,15 @@ Method | HTTP request | Description
 [**list_security_group_tags**](DefaultApi.md#list_security_group_tags) | **GET** /security_groups/{id}/tags | List Tags for SecurityGroup
 [**list_security_group_vms**](DefaultApi.md#list_security_group_vms) | **GET** /security_groups/{id}/vms | List Vms for SecurityGroup
 [**list_security_groups**](DefaultApi.md#list_security_groups) | **GET** /security_groups | List SecurityGroups
+[**list_service_instance_nodes**](DefaultApi.md#list_service_instance_nodes) | **GET** /service_instance_nodes | List ServiceInstanceNodes
+[**list_service_instance_service_instance_nodes**](DefaultApi.md#list_service_instance_service_instance_nodes) | **GET** /service_instances/{id}/service_instance_nodes | List ServiceInstanceNodes for ServiceInstance
 [**list_service_instances**](DefaultApi.md#list_service_instances) | **GET** /service_instances | List ServiceInstances
+[**list_service_inventories**](DefaultApi.md#list_service_inventories) | **GET** /service_inventories | List ServiceInventories
+[**list_service_inventory_tags**](DefaultApi.md#list_service_inventory_tags) | **GET** /service_inventories/{id}/tags | List Tags for ServiceInventory
 [**list_service_offering_icons**](DefaultApi.md#list_service_offering_icons) | **GET** /service_offering_icons | List ServiceOfferingIcons
+[**list_service_offering_nodes**](DefaultApi.md#list_service_offering_nodes) | **GET** /service_offering_nodes | List ServiceOfferingNodes
 [**list_service_offering_service_instances**](DefaultApi.md#list_service_offering_service_instances) | **GET** /service_offerings/{id}/service_instances | List ServiceInstances for ServiceOffering
+[**list_service_offering_service_offering_nodes**](DefaultApi.md#list_service_offering_service_offering_nodes) | **GET** /service_offerings/{id}/service_offering_nodes | List ServiceOfferingNodes for ServiceOffering
 [**list_service_offering_service_plans**](DefaultApi.md#list_service_offering_service_plans) | **GET** /service_offerings/{id}/service_plans | List ServicePlans for ServiceOffering
 [**list_service_offering_tags**](DefaultApi.md#list_service_offering_tags) | **GET** /service_offerings/{id}/tags | List Tags for ServiceOffering
 [**list_service_offerings**](DefaultApi.md#list_service_offerings) | **GET** /service_offerings | List ServiceOfferings
@@ -81,7 +87,10 @@ Method | HTTP request | Description
 [**list_source_region_volumes**](DefaultApi.md#list_source_region_volumes) | **GET** /source_regions/{id}/volumes | List Volumes for SourceRegion
 [**list_source_regions**](DefaultApi.md#list_source_regions) | **GET** /source_regions | List SourceRegions
 [**list_source_security_groups**](DefaultApi.md#list_source_security_groups) | **GET** /sources/{id}/security_groups | List SecurityGroups for Source
+[**list_source_service_instance_nodes**](DefaultApi.md#list_source_service_instance_nodes) | **GET** /sources/{id}/service_instance_nodes | List ServiceInstanceNodes for Source
 [**list_source_service_instances**](DefaultApi.md#list_source_service_instances) | **GET** /sources/{id}/service_instances | List ServiceInstances for Source
+[**list_source_service_inventories**](DefaultApi.md#list_source_service_inventories) | **GET** /sources/{id}/service_inventories | List ServiceInventories for Source
+[**list_source_service_offering_nodes**](DefaultApi.md#list_source_service_offering_nodes) | **GET** /sources/{id}/service_offering_nodes | List ServiceOfferingNodes for Source
 [**list_source_service_offerings**](DefaultApi.md#list_source_service_offerings) | **GET** /sources/{id}/service_offerings | List ServiceOfferings for Source
 [**list_source_service_plans**](DefaultApi.md#list_source_service_plans) | **GET** /sources/{id}/service_plans | List ServicePlans for Source
 [**list_source_source_regions**](DefaultApi.md#list_source_source_regions) | **GET** /sources/{id}/source_regions | List SourceRegions for Source
@@ -116,6 +125,7 @@ Method | HTTP request | Description
 [**list_tag_network_adapters**](DefaultApi.md#list_tag_network_adapters) | **GET** /tags/{id}/network_adapters | List NetworkAdapters for Tag
 [**list_tag_networks**](DefaultApi.md#list_tag_networks) | **GET** /tags/{id}/networks | List Networks for Tag
 [**list_tag_security_groups**](DefaultApi.md#list_tag_security_groups) | **GET** /tags/{id}/security_groups | List SecurityGroups for Tag
+[**list_tag_service_inventories**](DefaultApi.md#list_tag_service_inventories) | **GET** /tags/{id}/service_inventories | List ServiceInventories for Tag
 [**list_tag_service_offerings**](DefaultApi.md#list_tag_service_offerings) | **GET** /tags/{id}/service_offerings | List ServiceOfferings for Tag
 [**list_tag_subnets**](DefaultApi.md#list_tag_subnets) | **GET** /tags/{id}/subnets | List Subnets for Tag
 [**list_tag_vms**](DefaultApi.md#list_tag_vms) | **GET** /tags/{id}/vms | List Vms for Tag
@@ -152,9 +162,12 @@ Method | HTTP request | Description
 [**show_orchestration_stack**](DefaultApi.md#show_orchestration_stack) | **GET** /orchestration_stacks/{id} | Show an existing OrchestrationStack
 [**show_security_group**](DefaultApi.md#show_security_group) | **GET** /security_groups/{id} | Show an existing SecurityGroup
 [**show_service_instance**](DefaultApi.md#show_service_instance) | **GET** /service_instances/{id} | Show an existing ServiceInstance
+[**show_service_instance_node**](DefaultApi.md#show_service_instance_node) | **GET** /service_instance_nodes/{id} | Show an existing ServiceInstanceNode
+[**show_service_inventory**](DefaultApi.md#show_service_inventory) | **GET** /service_inventories/{id} | Show an existing ServiceInventory
 [**show_service_offering**](DefaultApi.md#show_service_offering) | **GET** /service_offerings/{id} | Show an existing ServiceOffering
 [**show_service_offering_icon**](DefaultApi.md#show_service_offering_icon) | **GET** /service_offering_icons/{id} | Show an existing ServiceOfferingIcon
 [**show_service_offering_icon_icon_data**](DefaultApi.md#show_service_offering_icon_icon_data) | **GET** /service_offering_icons/{id}/icon_data | Show an existing ServiceOfferingIcon IconData
+[**show_service_offering_node**](DefaultApi.md#show_service_offering_node) | **GET** /service_offering_nodes/{id} | Show an existing ServiceOfferingNode
 [**show_service_plan**](DefaultApi.md#show_service_plan) | **GET** /service_plans/{id} | Show an existing ServicePlan
 [**show_source**](DefaultApi.md#show_source) | **GET** /sources/{id} | Show an existing Source
 [**show_source_region**](DefaultApi.md#show_source_region) | **GET** /source_regions/{id} | Show an existing SourceRegion
@@ -2686,6 +2699,126 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## list_service_instance_nodes
+
+> ServiceInstanceNodesCollection list_service_instance_nodes(opts)
+
+List ServiceInstanceNodes
+
+Returns an array of ServiceInstanceNode objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInstanceNodes
+  result = api_instance.list_service_instance_nodes(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_instance_nodes: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInstanceNodesCollection**](ServiceInstanceNodesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_instance_service_instance_nodes
+
+> ServiceInstanceNodesCollection list_service_instance_service_instance_nodes(id, opts)
+
+List ServiceInstanceNodes for ServiceInstance
+
+Returns an array of ServiceInstanceNode objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInstanceNodes for ServiceInstance
+  result = api_instance.list_service_instance_service_instance_nodes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_instance_service_instance_nodes: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInstanceNodesCollection**](ServiceInstanceNodesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_service_instances
 
 > ServiceInstancesCollection list_service_instances(opts)
@@ -2734,6 +2867,126 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceInstancesCollection**](ServiceInstancesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_inventories
+
+> ServiceInventoriesCollection list_service_inventories(opts)
+
+List ServiceInventories
+
+Returns an array of ServiceInventory objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInventories
+  result = api_instance.list_service_inventories(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_inventories: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInventoriesCollection**](ServiceInventoriesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_inventory_tags
+
+> TagsCollection list_service_inventory_tags(id, opts)
+
+List Tags for ServiceInventory
+
+Returns an array of Tag objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List Tags for ServiceInventory
+  result = api_instance.list_service_inventory_tags(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_inventory_tags: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**TagsCollection**](TagsCollection.md)
 
 ### Authorization
 
@@ -2804,6 +3057,65 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## list_service_offering_nodes
+
+> ServiceOfferingNodesCollection list_service_offering_nodes(opts)
+
+List ServiceOfferingNodes
+
+Returns an array of ServiceOfferingNode objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceOfferingNodes
+  result = api_instance.list_service_offering_nodes(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_offering_nodes: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceOfferingNodesCollection**](ServiceOfferingNodesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_service_offering_service_instances
 
 > ServiceInstancesCollection list_service_offering_service_instances(id, opts)
@@ -2854,6 +3166,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceInstancesCollection**](ServiceInstancesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_offering_service_offering_nodes
+
+> ServiceOfferingNodesCollection list_service_offering_service_offering_nodes(id, opts)
+
+List ServiceOfferingNodes for ServiceOffering
+
+Returns an array of ServiceOfferingNode objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceOfferingNodes for ServiceOffering
+  result = api_instance.list_service_offering_service_offering_nodes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_offering_service_offering_nodes: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceOfferingNodesCollection**](ServiceOfferingNodesCollection.md)
 
 ### Authorization
 
@@ -4811,6 +5184,67 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## list_source_service_instance_nodes
+
+> ServiceInstanceNodesCollection list_source_service_instance_nodes(id, opts)
+
+List ServiceInstanceNodes for Source
+
+Returns an array of ServiceInstanceNode objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInstanceNodes for Source
+  result = api_instance.list_source_service_instance_nodes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_service_instance_nodes: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInstanceNodesCollection**](ServiceInstanceNodesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_source_service_instances
 
 > ServiceInstancesCollection list_source_service_instances(id, opts)
@@ -4861,6 +5295,128 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceInstancesCollection**](ServiceInstancesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_source_service_inventories
+
+> ServiceInventoriesCollection list_source_service_inventories(id, opts)
+
+List ServiceInventories for Source
+
+Returns an array of ServiceInventory objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInventories for Source
+  result = api_instance.list_source_service_inventories(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_service_inventories: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInventoriesCollection**](ServiceInventoriesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_source_service_offering_nodes
+
+> ServiceOfferingNodesCollection list_source_service_offering_nodes(id, opts)
+
+List ServiceOfferingNodes for Source
+
+Returns an array of ServiceOfferingNode objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceOfferingNodes for Source
+  result = api_instance.list_source_service_offering_nodes(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_source_service_offering_nodes: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceOfferingNodesCollection**](ServiceOfferingNodesCollection.md)
 
 ### Authorization
 
@@ -6940,6 +7496,67 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## list_tag_service_inventories
+
+> ServiceInventoriesCollection list_tag_service_inventories(id, opts)
+
+List ServiceInventories for Tag
+
+Returns an array of ServiceInventory objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil # Object | Filter for querying collections.
+}
+
+begin
+  #List ServiceInventories for Tag
+  result = api_instance.list_tag_service_inventories(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_tag_service_inventories: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+
+### Return type
+
+[**ServiceInventoriesCollection**](ServiceInventoriesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_tag_service_offerings
 
 > ServiceOfferingsCollection list_tag_service_offerings(id, opts)
@@ -8016,7 +8633,7 @@ Name | Type | Description  | Notes
 
 ## post_graph_ql
 
-> GraphQLResponse post_graph_ql(inline_object)
+> GraphQLResponse post_graph_ql(graph_ql_request)
 
 Perform a GraphQL Query
 
@@ -8035,11 +8652,11 @@ TopologicalInventoryApiClient.configure do |config|
 end
 
 api_instance = TopologicalInventoryApiClient::DefaultApi.new
-inline_object = TopologicalInventoryApiClient::InlineObject.new # InlineObject | 
+graph_ql_request = TopologicalInventoryApiClient::GraphQLRequest.new # GraphQLRequest | GraphQL Query Request
 
 begin
   #Perform a GraphQL Query
-  result = api_instance.post_graph_ql(inline_object)
+  result = api_instance.post_graph_ql(graph_ql_request)
   p result
 rescue TopologicalInventoryApiClient::ApiError => e
   puts "Exception when calling DefaultApi->post_graph_ql: #{e}"
@@ -8051,7 +8668,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object** | [**InlineObject**](InlineObject.md)|  | 
+ **graph_ql_request** | [**GraphQLRequest**](GraphQLRequest.md)| GraphQL Query Request | 
 
 ### Return type
 
@@ -8968,6 +9585,112 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## show_service_instance_node
+
+> ServiceInstanceNode show_service_instance_node(id)
+
+Show an existing ServiceInstanceNode
+
+Returns a ServiceInstanceNode object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ServiceInstanceNode
+  result = api_instance.show_service_instance_node(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_service_instance_node: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**ServiceInstanceNode**](ServiceInstanceNode.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## show_service_inventory
+
+> ServiceInventory show_service_inventory(id)
+
+Show an existing ServiceInventory
+
+Returns a ServiceInventory object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ServiceInventory
+  result = api_instance.show_service_inventory(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_service_inventory: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**ServiceInventory**](ServiceInventory.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## show_service_offering
 
 > ServiceOffering show_service_offering(id)
@@ -9125,6 +9848,59 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: image/*
+
+
+## show_service_offering_node
+
+> ServiceOfferingNode show_service_offering_node(id)
+
+Show an existing ServiceOfferingNode
+
+Returns a ServiceOfferingNode object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ServiceOfferingNode
+  result = api_instance.show_service_offering_node(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_service_offering_node: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**ServiceOfferingNode**](ServiceOfferingNode.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## show_service_plan

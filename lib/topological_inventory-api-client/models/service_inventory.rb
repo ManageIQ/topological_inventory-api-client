@@ -13,14 +13,13 @@ OpenAPI Generator version: 4.1.1
 require 'date'
 
 module TopologicalInventoryApiClient
-  class ServiceInstance
+  class ServiceInventory
     attr_accessor :archived_at
 
     attr_accessor :created_at
 
-    attr_accessor :external_url
+    attr_accessor :description
 
-    # Extra information about this object in JSON format
     attr_accessor :extra
 
     # ID of the resource
@@ -30,32 +29,14 @@ module TopologicalInventoryApiClient
 
     attr_accessor :name
 
-    # ID of the resource
-    attr_accessor :root_service_instance_id
-
-    # ID of the resource
-    attr_accessor :service_inventory_id
-
-    # ID of the resource
-    attr_accessor :service_offering_id
-
-    # ID of the resource
-    attr_accessor :service_plan_id
-
     attr_accessor :source_created_at
-
-    attr_accessor :source_deleted_at
 
     # ID of the resource
     attr_accessor :source_id
 
     attr_accessor :source_ref
 
-    # ID of the resource
-    attr_accessor :source_region_id
-
-    # ID of the resource
-    attr_accessor :subscription_id
+    attr_accessor :source_updated_at
 
     attr_accessor :updated_at
 
@@ -64,21 +45,15 @@ module TopologicalInventoryApiClient
       {
         :'archived_at' => :'archived_at',
         :'created_at' => :'created_at',
-        :'external_url' => :'external_url',
+        :'description' => :'description',
         :'extra' => :'extra',
         :'id' => :'id',
         :'last_seen_at' => :'last_seen_at',
         :'name' => :'name',
-        :'root_service_instance_id' => :'root_service_instance_id',
-        :'service_inventory_id' => :'service_inventory_id',
-        :'service_offering_id' => :'service_offering_id',
-        :'service_plan_id' => :'service_plan_id',
         :'source_created_at' => :'source_created_at',
-        :'source_deleted_at' => :'source_deleted_at',
         :'source_id' => :'source_id',
         :'source_ref' => :'source_ref',
-        :'source_region_id' => :'source_region_id',
-        :'subscription_id' => :'subscription_id',
+        :'source_updated_at' => :'source_updated_at',
         :'updated_at' => :'updated_at'
       }
     end
@@ -88,21 +63,15 @@ module TopologicalInventoryApiClient
       {
         :'archived_at' => :'DateTime',
         :'created_at' => :'DateTime',
-        :'external_url' => :'String',
+        :'description' => :'String',
         :'extra' => :'Object',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
         :'name' => :'String',
-        :'root_service_instance_id' => :'String',
-        :'service_inventory_id' => :'String',
-        :'service_offering_id' => :'String',
-        :'service_plan_id' => :'String',
         :'source_created_at' => :'DateTime',
-        :'source_deleted_at' => :'DateTime',
         :'source_id' => :'String',
         :'source_ref' => :'String',
-        :'source_region_id' => :'String',
-        :'subscription_id' => :'String',
+        :'source_updated_at' => :'DateTime',
         :'updated_at' => :'DateTime'
       }
     end
@@ -111,13 +80,13 @@ module TopologicalInventoryApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `TopologicalInventoryApiClient::ServiceInstance` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `TopologicalInventoryApiClient::ServiceInventory` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `TopologicalInventoryApiClient::ServiceInstance`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `TopologicalInventoryApiClient::ServiceInventory`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -130,8 +99,8 @@ module TopologicalInventoryApiClient
         self.created_at = attributes[:'created_at']
       end
 
-      if attributes.key?(:'external_url')
-        self.external_url = attributes[:'external_url']
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
       end
 
       if attributes.key?(:'extra')
@@ -150,28 +119,8 @@ module TopologicalInventoryApiClient
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'root_service_instance_id')
-        self.root_service_instance_id = attributes[:'root_service_instance_id']
-      end
-
-      if attributes.key?(:'service_inventory_id')
-        self.service_inventory_id = attributes[:'service_inventory_id']
-      end
-
-      if attributes.key?(:'service_offering_id')
-        self.service_offering_id = attributes[:'service_offering_id']
-      end
-
-      if attributes.key?(:'service_plan_id')
-        self.service_plan_id = attributes[:'service_plan_id']
-      end
-
       if attributes.key?(:'source_created_at')
         self.source_created_at = attributes[:'source_created_at']
-      end
-
-      if attributes.key?(:'source_deleted_at')
-        self.source_deleted_at = attributes[:'source_deleted_at']
       end
 
       if attributes.key?(:'source_id')
@@ -182,12 +131,8 @@ module TopologicalInventoryApiClient
         self.source_ref = attributes[:'source_ref']
       end
 
-      if attributes.key?(:'source_region_id')
-        self.source_region_id = attributes[:'source_region_id']
-      end
-
-      if attributes.key?(:'subscription_id')
-        self.subscription_id = attributes[:'subscription_id']
+      if attributes.key?(:'source_updated_at')
+        self.source_updated_at = attributes[:'source_updated_at']
       end
 
       if attributes.key?(:'updated_at')
@@ -205,38 +150,8 @@ module TopologicalInventoryApiClient
       end
 
       pattern = Regexp.new(/^\d+$/)
-      if !@root_service_instance_id.nil? && @root_service_instance_id !~ pattern
-        invalid_properties.push("invalid value for \"root_service_instance_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
-      if !@service_inventory_id.nil? && @service_inventory_id !~ pattern
-        invalid_properties.push("invalid value for \"service_inventory_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
-      if !@service_offering_id.nil? && @service_offering_id !~ pattern
-        invalid_properties.push("invalid value for \"service_offering_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
-      if !@service_plan_id.nil? && @service_plan_id !~ pattern
-        invalid_properties.push("invalid value for \"service_plan_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
       if !@source_id.nil? && @source_id !~ pattern
         invalid_properties.push("invalid value for \"source_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
-      if !@source_region_id.nil? && @source_region_id !~ pattern
-        invalid_properties.push("invalid value for \"source_region_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
-      if !@subscription_id.nil? && @subscription_id !~ pattern
-        invalid_properties.push("invalid value for \"subscription_id\", must conform to the pattern #{pattern}.")
       end
 
       invalid_properties
@@ -246,13 +161,7 @@ module TopologicalInventoryApiClient
     # @return true if the model is valid
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
-      return false if !@root_service_instance_id.nil? && @root_service_instance_id !~ Regexp.new(/^\d+$/)
-      return false if !@service_inventory_id.nil? && @service_inventory_id !~ Regexp.new(/^\d+$/)
-      return false if !@service_offering_id.nil? && @service_offering_id !~ Regexp.new(/^\d+$/)
-      return false if !@service_plan_id.nil? && @service_plan_id !~ Regexp.new(/^\d+$/)
       return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
-      return false if !@source_region_id.nil? && @source_region_id !~ Regexp.new(/^\d+$/)
-      return false if !@subscription_id.nil? && @subscription_id !~ Regexp.new(/^\d+$/)
       true
     end
 
@@ -268,50 +177,6 @@ module TopologicalInventoryApiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] root_service_instance_id Value to be assigned
-    def root_service_instance_id=(root_service_instance_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !root_service_instance_id.nil? && root_service_instance_id !~ pattern
-        fail ArgumentError, "invalid value for \"root_service_instance_id\", must conform to the pattern #{pattern}."
-      end
-
-      @root_service_instance_id = root_service_instance_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] service_inventory_id Value to be assigned
-    def service_inventory_id=(service_inventory_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !service_inventory_id.nil? && service_inventory_id !~ pattern
-        fail ArgumentError, "invalid value for \"service_inventory_id\", must conform to the pattern #{pattern}."
-      end
-
-      @service_inventory_id = service_inventory_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] service_offering_id Value to be assigned
-    def service_offering_id=(service_offering_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !service_offering_id.nil? && service_offering_id !~ pattern
-        fail ArgumentError, "invalid value for \"service_offering_id\", must conform to the pattern #{pattern}."
-      end
-
-      @service_offering_id = service_offering_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] service_plan_id Value to be assigned
-    def service_plan_id=(service_plan_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !service_plan_id.nil? && service_plan_id !~ pattern
-        fail ArgumentError, "invalid value for \"service_plan_id\", must conform to the pattern #{pattern}."
-      end
-
-      @service_plan_id = service_plan_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] source_id Value to be assigned
     def source_id=(source_id)
       pattern = Regexp.new(/^\d+$/)
@@ -322,28 +187,6 @@ module TopologicalInventoryApiClient
       @source_id = source_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] source_region_id Value to be assigned
-    def source_region_id=(source_region_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !source_region_id.nil? && source_region_id !~ pattern
-        fail ArgumentError, "invalid value for \"source_region_id\", must conform to the pattern #{pattern}."
-      end
-
-      @source_region_id = source_region_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] subscription_id Value to be assigned
-    def subscription_id=(subscription_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !subscription_id.nil? && subscription_id !~ pattern
-        fail ArgumentError, "invalid value for \"subscription_id\", must conform to the pattern #{pattern}."
-      end
-
-      @subscription_id = subscription_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -351,21 +194,15 @@ module TopologicalInventoryApiClient
       self.class == o.class &&
           archived_at == o.archived_at &&
           created_at == o.created_at &&
-          external_url == o.external_url &&
+          description == o.description &&
           extra == o.extra &&
           id == o.id &&
           last_seen_at == o.last_seen_at &&
           name == o.name &&
-          root_service_instance_id == o.root_service_instance_id &&
-          service_inventory_id == o.service_inventory_id &&
-          service_offering_id == o.service_offering_id &&
-          service_plan_id == o.service_plan_id &&
           source_created_at == o.source_created_at &&
-          source_deleted_at == o.source_deleted_at &&
           source_id == o.source_id &&
           source_ref == o.source_ref &&
-          source_region_id == o.source_region_id &&
-          subscription_id == o.subscription_id &&
+          source_updated_at == o.source_updated_at &&
           updated_at == o.updated_at
     end
 
@@ -378,7 +215,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [archived_at, created_at, external_url, extra, id, last_seen_at, name, root_service_instance_id, service_inventory_id, service_offering_id, service_plan_id, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, subscription_id, updated_at].hash
+      [archived_at, created_at, description, extra, id, last_seen_at, name, source_created_at, source_id, source_ref, source_updated_at, updated_at].hash
     end
 
     # Builds the object from hash
