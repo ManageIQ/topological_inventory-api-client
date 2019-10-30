@@ -3505,6 +3505,171 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List ServiceInstanceNodes
+    # Returns an array of ServiceInstanceNode objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInstanceNodesCollection]
+    def list_service_instance_nodes(opts = {})
+      data, _status_code, _headers = list_service_instance_nodes_with_http_info(opts)
+      data
+    end
+
+    # List ServiceInstanceNodes
+    # Returns an array of ServiceInstanceNode objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInstanceNodesCollection, Integer, Hash)>] ServiceInstanceNodesCollection data, response status code and response headers
+    def list_service_instance_nodes_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_instance_nodes ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_instance_nodes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_instance_nodes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_instance_nodes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_instance_nodes'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInstanceNodesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_instance_nodes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceInstanceNodes for ServiceInstance
+    # Returns an array of ServiceInstanceNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInstanceNodesCollection]
+    def list_service_instance_service_instance_nodes(id, opts = {})
+      data, _status_code, _headers = list_service_instance_service_instance_nodes_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceInstanceNodes for ServiceInstance
+    # Returns an array of ServiceInstanceNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInstanceNodesCollection, Integer, Hash)>] ServiceInstanceNodesCollection data, response status code and response headers
+    def list_service_instance_service_instance_nodes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_instance_service_instance_nodes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_service_instance_service_instance_nodes"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_service_instance_service_instance_nodes, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_instance_service_instance_nodes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_instance_service_instance_nodes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_instance_service_instance_nodes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_instances/{id}/service_instance_nodes'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInstanceNodesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_instance_service_instance_nodes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ServiceInstances
     # Returns an array of ServiceInstance objects
     # @param [Hash] opts the optional parameters
@@ -3582,6 +3747,171 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List ServiceInventories
+    # Returns an array of ServiceInventory objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInventoriesCollection]
+    def list_service_inventories(opts = {})
+      data, _status_code, _headers = list_service_inventories_with_http_info(opts)
+      data
+    end
+
+    # List ServiceInventories
+    # Returns an array of ServiceInventory objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInventoriesCollection, Integer, Hash)>] ServiceInventoriesCollection data, response status code and response headers
+    def list_service_inventories_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_inventories ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_inventories, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_inventories, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_inventories, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_inventories'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInventoriesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_inventories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List Tags for ServiceInventory
+    # Returns an array of Tag objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [TagsCollection]
+    def list_service_inventory_tags(id, opts = {})
+      data, _status_code, _headers = list_service_inventory_tags_with_http_info(id, opts)
+      data
+    end
+
+    # List Tags for ServiceInventory
+    # Returns an array of Tag objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(TagsCollection, Integer, Hash)>] TagsCollection data, response status code and response headers
+    def list_service_inventory_tags_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_inventory_tags ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_service_inventory_tags"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_service_inventory_tags, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_inventory_tags, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_inventory_tags, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_inventory_tags, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_inventories/{id}/tags'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'TagsCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_inventory_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ServiceOfferingIcons
     # Returns an array of ServiceOfferingIcon objects
     # @param [Hash] opts the optional parameters
@@ -3655,6 +3985,83 @@ module TopologicalInventoryApiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_service_offering_icons\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceOfferingNodes
+    # Returns an array of ServiceOfferingNode objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceOfferingNodesCollection]
+    def list_service_offering_nodes(opts = {})
+      data, _status_code, _headers = list_service_offering_nodes_with_http_info(opts)
+      data
+    end
+
+    # List ServiceOfferingNodes
+    # Returns an array of ServiceOfferingNode objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceOfferingNodesCollection, Integer, Hash)>] ServiceOfferingNodesCollection data, response status code and response headers
+    def list_service_offering_nodes_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_offering_nodes ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_offering_nodes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_offering_nodes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_offering_nodes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_offering_nodes'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceOfferingNodesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_offering_nodes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3743,6 +4150,94 @@ module TopologicalInventoryApiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_service_offering_service_instances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceOfferingNodes for ServiceOffering
+    # Returns an array of ServiceOfferingNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceOfferingNodesCollection]
+    def list_service_offering_service_offering_nodes(id, opts = {})
+      data, _status_code, _headers = list_service_offering_service_offering_nodes_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceOfferingNodes for ServiceOffering
+    # Returns an array of ServiceOfferingNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceOfferingNodesCollection, Integer, Hash)>] ServiceOfferingNodesCollection data, response status code and response headers
+    def list_service_offering_service_offering_nodes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_offering_service_offering_nodes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_service_offering_service_offering_nodes"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_service_offering_service_offering_nodes, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_offering_service_offering_nodes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_offering_service_offering_nodes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_offering_service_offering_nodes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_offerings/{id}/service_offering_nodes'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceOfferingNodesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_offering_service_offering_nodes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -6530,6 +7025,94 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List ServiceInstanceNodes for Source
+    # Returns an array of ServiceInstanceNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInstanceNodesCollection]
+    def list_source_service_instance_nodes(id, opts = {})
+      data, _status_code, _headers = list_source_service_instance_nodes_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceInstanceNodes for Source
+    # Returns an array of ServiceInstanceNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInstanceNodesCollection, Integer, Hash)>] ServiceInstanceNodesCollection data, response status code and response headers
+    def list_source_service_instance_nodes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_service_instance_nodes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_service_instance_nodes"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_service_instance_nodes, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_service_instance_nodes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_service_instance_nodes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_service_instance_nodes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/service_instance_nodes'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInstanceNodesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_service_instance_nodes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ServiceInstances for Source
     # Returns an array of ServiceInstance objects
     # @param id [String] ID of the resource
@@ -6614,6 +7197,182 @@ module TopologicalInventoryApiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_source_service_instances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceInventories for Source
+    # Returns an array of ServiceInventory objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInventoriesCollection]
+    def list_source_service_inventories(id, opts = {})
+      data, _status_code, _headers = list_source_service_inventories_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceInventories for Source
+    # Returns an array of ServiceInventory objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInventoriesCollection, Integer, Hash)>] ServiceInventoriesCollection data, response status code and response headers
+    def list_source_service_inventories_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_service_inventories ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_service_inventories"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_service_inventories, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_service_inventories, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_service_inventories, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_service_inventories, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/service_inventories'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInventoriesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_service_inventories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceOfferingNodes for Source
+    # Returns an array of ServiceOfferingNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceOfferingNodesCollection]
+    def list_source_service_offering_nodes(id, opts = {})
+      data, _status_code, _headers = list_source_service_offering_nodes_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceOfferingNodes for Source
+    # Returns an array of ServiceOfferingNode objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceOfferingNodesCollection, Integer, Hash)>] ServiceOfferingNodesCollection data, response status code and response headers
+    def list_source_service_offering_nodes_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_source_service_offering_nodes ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_source_service_offering_nodes"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_source_service_offering_nodes, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_service_offering_nodes, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_source_service_offering_nodes, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_source_service_offering_nodes, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/sources/{id}/service_offering_nodes'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceOfferingNodesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_source_service_offering_nodes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -9577,6 +10336,94 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List ServiceInventories for Tag
+    # Returns an array of ServiceInventory objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [ServiceInventoriesCollection]
+    def list_tag_service_inventories(id, opts = {})
+      data, _status_code, _headers = list_tag_service_inventories_with_http_info(id, opts)
+      data
+    end
+
+    # List ServiceInventories for Tag
+    # Returns an array of ServiceInventory objects
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @return [Array<(ServiceInventoriesCollection, Integer, Hash)>] ServiceInventoriesCollection data, response status code and response headers
+    def list_tag_service_inventories_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_tag_service_inventories ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.list_tag_service_inventories"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.list_tag_service_inventories, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_service_inventories, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_tag_service_inventories, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_tag_service_inventories, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/tags/{id}/service_inventories'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInventoriesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_tag_service_inventories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ServiceOfferings for Tag
     # Returns an array of ServiceOffering objects
     # @param id [String] ID of the resource
@@ -11071,26 +11918,26 @@ module TopologicalInventoryApiClient
 
     # Perform a GraphQL Query
     # Performs a GraphQL Query
-    # @param inline_object [InlineObject] 
+    # @param graph_ql_request [GraphQLRequest] GraphQL Query Request
     # @param [Hash] opts the optional parameters
     # @return [GraphQLResponse]
-    def post_graph_ql(inline_object, opts = {})
-      data, _status_code, _headers = post_graph_ql_with_http_info(inline_object, opts)
+    def post_graph_ql(graph_ql_request, opts = {})
+      data, _status_code, _headers = post_graph_ql_with_http_info(graph_ql_request, opts)
       data
     end
 
     # Perform a GraphQL Query
     # Performs a GraphQL Query
-    # @param inline_object [InlineObject] 
+    # @param graph_ql_request [GraphQLRequest] GraphQL Query Request
     # @param [Hash] opts the optional parameters
     # @return [Array<(GraphQLResponse, Integer, Hash)>] GraphQLResponse data, response status code and response headers
-    def post_graph_ql_with_http_info(inline_object, opts = {})
+    def post_graph_ql_with_http_info(graph_ql_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.post_graph_ql ...'
       end
-      # verify the required parameter 'inline_object' is set
-      if @api_client.config.client_side_validation && inline_object.nil?
-        fail ArgumentError, "Missing the required parameter 'inline_object' when calling DefaultApi.post_graph_ql"
+      # verify the required parameter 'graph_ql_request' is set
+      if @api_client.config.client_side_validation && graph_ql_request.nil?
+        fail ArgumentError, "Missing the required parameter 'graph_ql_request' when calling DefaultApi.post_graph_ql"
       end
       # resource path
       local_var_path = '/graphql'
@@ -11109,7 +11956,7 @@ module TopologicalInventoryApiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:body] || @api_client.object_to_http_body(inline_object) 
+      post_body = opts[:body] || @api_client.object_to_http_body(graph_ql_request) 
 
       # return_type
       return_type = opts[:return_type] || 'GraphQLResponse' 
@@ -12272,6 +13119,140 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # Show an existing ServiceInstanceNode
+    # Returns a ServiceInstanceNode object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [ServiceInstanceNode]
+    def show_service_instance_node(id, opts = {})
+      data, _status_code, _headers = show_service_instance_node_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing ServiceInstanceNode
+    # Returns a ServiceInstanceNode object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ServiceInstanceNode, Integer, Hash)>] ServiceInstanceNode data, response status code and response headers
+    def show_service_instance_node_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_service_instance_node ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_service_instance_node"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_service_instance_node, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/service_instance_nodes/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInstanceNode' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_service_instance_node\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing ServiceInventory
+    # Returns a ServiceInventory object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [ServiceInventory]
+    def show_service_inventory(id, opts = {})
+      data, _status_code, _headers = show_service_inventory_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing ServiceInventory
+    # Returns a ServiceInventory object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ServiceInventory, Integer, Hash)>] ServiceInventory data, response status code and response headers
+    def show_service_inventory_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_service_inventory ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_service_inventory"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_service_inventory, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/service_inventories/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceInventory' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_service_inventory\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show an existing ServiceOffering
     # Returns a ServiceOffering object
     # @param id [String] ID of the resource
@@ -12469,6 +13450,73 @@ module TopologicalInventoryApiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#show_service_offering_icon_icon_data\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing ServiceOfferingNode
+    # Returns a ServiceOfferingNode object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [ServiceOfferingNode]
+    def show_service_offering_node(id, opts = {})
+      data, _status_code, _headers = show_service_offering_node_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing ServiceOfferingNode
+    # Returns a ServiceOfferingNode object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ServiceOfferingNode, Integer, Hash)>] ServiceOfferingNode data, response status code and response headers
+    def show_service_offering_node_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_service_offering_node ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_service_offering_node"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_service_offering_node, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/service_offering_nodes/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceOfferingNode' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_service_offering_node\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
