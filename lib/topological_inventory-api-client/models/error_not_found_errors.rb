@@ -13,31 +13,24 @@ OpenAPI Generator version: 4.1.1
 require 'date'
 
 module TopologicalInventoryApiClient
-  class InlineObject
-    # The GraphQL query
-    attr_accessor :query
+  class ErrorNotFoundErrors
+    attr_accessor :status
 
-    # If the Query contains several named operations, the operationName controls which one should be executed
-    attr_accessor :operation_name
-
-    # Optional Query variables
-    attr_accessor :variables
+    attr_accessor :detail
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'query' => :'query',
-        :'operation_name' => :'operationName',
-        :'variables' => :'variables'
+        :'status' => :'status',
+        :'detail' => :'detail'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'query' => :'String',
-        :'operation_name' => :'String',
-        :'variables' => :'Object'
+        :'status' => :'Integer',
+        :'detail' => :'String'
       }
     end
 
@@ -45,31 +38,23 @@ module TopologicalInventoryApiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `TopologicalInventoryApiClient::InlineObject` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `TopologicalInventoryApiClient::ErrorNotFoundErrors` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `TopologicalInventoryApiClient::InlineObject`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `TopologicalInventoryApiClient::ErrorNotFoundErrors`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'query')
-        self.query = attributes[:'query']
-      else
-        self.query = '{}'
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
-      if attributes.key?(:'operation_name')
-        self.operation_name = attributes[:'operation_name']
-      else
-        self.operation_name = ''
-      end
-
-      if attributes.key?(:'variables')
-        self.variables = attributes[:'variables']
+      if attributes.key?(:'detail')
+        self.detail = attributes[:'detail']
       end
     end
 
@@ -77,17 +62,12 @@ module TopologicalInventoryApiClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @query.nil?
-        invalid_properties.push('invalid value for "query", query cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @query.nil?
       true
     end
 
@@ -96,9 +76,8 @@ module TopologicalInventoryApiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          query == o.query &&
-          operation_name == o.operation_name &&
-          variables == o.variables
+          status == o.status &&
+          detail == o.detail
     end
 
     # @see the `==` method
@@ -110,7 +89,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [query, operation_name, variables].hash
+      [status, detail].hash
     end
 
     # Builds the object from hash
