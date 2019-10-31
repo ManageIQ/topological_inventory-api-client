@@ -4,6 +4,7 @@ All URIs are relative to *https://cloud.redhat.com//api/topological-inventory/v1
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**applied_inventories_for_service_offering**](DefaultApi.md#applied_inventories_for_service_offering) | **POST** /service_offerings/{id}/applied_inventories | Invokes computing of ServiceInventories for given ServiceOffering
 [**get_documentation**](DefaultApi.md#get_documentation) | **GET** /openapi.json | Return this API document in JSON format
 [**list_cluster_hosts**](DefaultApi.md#list_cluster_hosts) | **GET** /clusters/{id}/hosts | List Hosts for Cluster
 [**list_clusters**](DefaultApi.md#list_clusters) | **GET** /clusters | List Clusters
@@ -181,6 +182,61 @@ Method | HTTP request | Description
 [**show_volume_type**](DefaultApi.md#show_volume_type) | **GET** /volume_types/{id} | Show an existing VolumeType
 [**update_task**](DefaultApi.md#update_task) | **PATCH** /tasks/{id} | Update an existing Task
 
+
+
+## applied_inventories_for_service_offering
+
+> InlineResponse200 applied_inventories_for_service_offering(id, applied_inventories_parameters_service_plan)
+
+Invokes computing of ServiceInventories for given ServiceOffering
+
+Returns a Task id
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+applied_inventories_parameters_service_plan = TopologicalInventoryApiClient::AppliedInventoriesParametersServicePlan.new # AppliedInventoriesParametersServicePlan | Parameters defining input data for computing inventories
+
+begin
+  #Invokes computing of ServiceInventories for given ServiceOffering
+  result = api_instance.applied_inventories_for_service_offering(id, applied_inventories_parameters_service_plan)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->applied_inventories_for_service_offering: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **applied_inventories_parameters_service_plan** | [**AppliedInventoriesParametersServicePlan**](AppliedInventoriesParametersServicePlan.md)| Parameters defining input data for computing inventories | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## get_documentation
@@ -10537,5 +10593,5 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
