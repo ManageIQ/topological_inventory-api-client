@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **DateTime** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
 **refresh_status** | **String** |  | [optional] 
-**uid** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**uid** | **String** |  | [optional] [readonly] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived_at** | **DateTime** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
+**archived_at** | **DateTime** |  | [optional] [readonly] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

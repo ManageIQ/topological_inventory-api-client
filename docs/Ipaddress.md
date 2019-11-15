@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived_at** | **DateTime** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
+**archived_at** | **DateTime** |  | [optional] [readonly] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
 **extra** | [**Object**](.md) |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
 **ipaddress** | **String** |  | [optional] 
 **kind** | **String** |  | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
-**network_adapter_id** | **String** | ID of the resource | [optional] 
-**orchestration_stack_id** | **String** | ID of the resource | [optional] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
+**network_adapter_id** | **String** | ID of the resource | [optional] [readonly] 
+**orchestration_stack_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_created_at** | **DateTime** |  | [optional] 
 **source_deleted_at** | **DateTime** |  | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] 
-**source_region_id** | **String** | ID of the resource | [optional] 
-**subnet_id** | **String** | ID of the resource | [optional] 
-**subscription_id** | **String** | ID of the resource | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**source_region_id** | **String** | ID of the resource | [optional] [readonly] 
+**subnet_id** | **String** | ID of the resource | [optional] [readonly] 
+**subscription_id** | **String** | ID of the resource | [optional] [readonly] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

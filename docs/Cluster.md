@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived_at** | **DateTime** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
+**archived_at** | **DateTime** |  | [optional] [readonly] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
 **extra** | [**Object**](.md) |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] 
 **source_created_at** | **DateTime** |  | [optional] 
 **source_deleted_at** | **DateTime** |  | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] 
 **uid_ems** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

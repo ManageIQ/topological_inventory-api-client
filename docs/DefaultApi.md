@@ -311,7 +311,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -332,6 +333,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -371,7 +373,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -391,6 +394,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -431,7 +435,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -452,6 +457,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -492,7 +498,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -513,6 +520,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -552,7 +560,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -572,6 +581,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -612,7 +622,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -633,6 +644,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -672,7 +684,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -692,6 +705,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -732,7 +746,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -753,6 +768,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -793,7 +809,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -814,6 +831,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -853,7 +871,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -873,6 +892,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -913,7 +933,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -934,6 +955,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -974,7 +996,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -995,6 +1018,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1035,7 +1059,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1056,6 +1081,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1096,7 +1122,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1117,6 +1144,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1156,7 +1184,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1176,6 +1205,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1215,7 +1245,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1235,6 +1266,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1275,7 +1307,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1296,6 +1329,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1335,7 +1369,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1355,6 +1390,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1394,7 +1430,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1414,6 +1451,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1453,7 +1491,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1473,6 +1512,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1512,7 +1552,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1532,6 +1573,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1571,7 +1613,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1591,6 +1634,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1631,7 +1675,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1652,6 +1697,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1691,7 +1737,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1711,6 +1758,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1751,7 +1799,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1772,6 +1821,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1812,7 +1862,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1833,6 +1884,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1872,7 +1924,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1892,6 +1945,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1932,7 +1986,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -1953,6 +2008,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -1993,7 +2049,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2014,6 +2071,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2053,7 +2111,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2073,6 +2132,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2113,7 +2173,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2134,6 +2195,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2174,7 +2236,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2195,6 +2258,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2235,7 +2299,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2256,6 +2321,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2296,7 +2362,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2317,6 +2384,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2357,7 +2425,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2378,6 +2447,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2418,7 +2488,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2439,6 +2510,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2479,7 +2551,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2500,6 +2573,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2539,7 +2613,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2559,6 +2634,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2599,7 +2675,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2620,6 +2697,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2660,7 +2738,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2681,6 +2760,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2720,7 +2800,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2740,6 +2821,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2779,7 +2861,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2799,6 +2882,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2839,7 +2923,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2860,6 +2945,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2899,7 +2985,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2919,6 +3006,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -2958,7 +3046,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -2978,6 +3067,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3018,7 +3108,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3039,6 +3130,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3078,7 +3170,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3098,6 +3191,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3137,7 +3231,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3157,6 +3252,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3197,7 +3293,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3218,6 +3315,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3258,7 +3356,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3279,6 +3378,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3319,7 +3419,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3340,6 +3441,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3380,7 +3482,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3401,6 +3504,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3440,7 +3544,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3460,6 +3565,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3500,7 +3606,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3521,6 +3628,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3560,7 +3668,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3580,6 +3689,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3620,7 +3730,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3641,6 +3752,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3681,7 +3793,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3702,6 +3815,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3742,7 +3856,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3763,6 +3878,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3803,7 +3919,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3824,6 +3941,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3864,7 +3982,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3885,6 +4004,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3925,7 +4045,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -3946,6 +4067,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -3986,7 +4108,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4007,6 +4130,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4047,7 +4171,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4068,6 +4193,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4108,7 +4234,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4129,6 +4256,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4169,7 +4297,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4190,6 +4319,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4230,7 +4360,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4251,6 +4382,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4291,7 +4423,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4312,6 +4445,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4352,7 +4486,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4373,6 +4508,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4413,7 +4549,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4434,6 +4571,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4474,7 +4612,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4495,6 +4634,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4535,7 +4675,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4556,6 +4697,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4596,7 +4738,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4617,6 +4760,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4657,7 +4801,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4678,6 +4823,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4718,7 +4864,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4739,6 +4886,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4779,7 +4927,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4800,6 +4949,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4840,7 +4990,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4861,6 +5012,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4901,7 +5053,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4922,6 +5075,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -4962,7 +5116,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -4983,6 +5138,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5023,7 +5179,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5044,6 +5201,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5084,7 +5242,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5105,6 +5264,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5144,7 +5304,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5164,6 +5325,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5204,7 +5366,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5225,6 +5388,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5265,7 +5429,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5286,6 +5451,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5326,7 +5492,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5347,6 +5514,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5387,7 +5555,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5408,6 +5577,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5448,7 +5618,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5469,6 +5640,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5509,7 +5681,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5530,6 +5703,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5570,7 +5744,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5591,6 +5766,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5631,7 +5807,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5652,6 +5829,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5692,7 +5870,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5713,6 +5892,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5753,7 +5933,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5774,6 +5955,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5814,7 +5996,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5835,6 +6018,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5875,7 +6059,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5896,6 +6081,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5936,7 +6122,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -5957,6 +6144,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -5996,7 +6184,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6016,6 +6205,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6056,7 +6246,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6077,6 +6268,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6117,7 +6309,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6138,6 +6331,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6178,7 +6372,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6199,6 +6394,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6238,7 +6434,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6258,6 +6455,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6298,7 +6496,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6319,6 +6518,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6359,7 +6559,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6380,6 +6581,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6420,7 +6622,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6441,6 +6644,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6481,7 +6685,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6502,6 +6707,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6542,7 +6748,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6563,6 +6770,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6603,7 +6811,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6624,6 +6833,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6664,7 +6874,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6685,6 +6896,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6725,7 +6937,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6746,6 +6959,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6786,7 +7000,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6807,6 +7022,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6847,7 +7063,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6868,6 +7085,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6908,7 +7126,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6929,6 +7148,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -6968,7 +7188,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -6988,6 +7209,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7028,7 +7250,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7049,6 +7272,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7089,7 +7313,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7110,6 +7335,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7150,7 +7376,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7171,6 +7398,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7211,7 +7439,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7232,6 +7461,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7272,7 +7502,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7293,6 +7524,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7333,7 +7565,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7354,6 +7587,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7394,7 +7628,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7415,6 +7650,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7455,7 +7691,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7476,6 +7713,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7516,7 +7754,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7537,6 +7776,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7577,7 +7817,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7598,6 +7839,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7638,7 +7880,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7659,6 +7902,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7699,7 +7943,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7720,6 +7965,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7760,7 +8006,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7781,6 +8028,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7820,7 +8068,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7840,6 +8089,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7879,7 +8129,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7899,6 +8150,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -7939,7 +8191,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -7960,6 +8213,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8000,7 +8254,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8021,6 +8276,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8061,7 +8317,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8082,6 +8339,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8122,7 +8380,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8143,6 +8402,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8183,7 +8443,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8204,6 +8465,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8243,7 +8505,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8263,6 +8526,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8302,7 +8566,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8322,6 +8587,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8362,7 +8628,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8383,6 +8650,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8422,7 +8690,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8442,6 +8711,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8482,7 +8752,8 @@ id = 'id_example' # String | ID of the resource
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8503,6 +8774,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 
@@ -8542,7 +8814,8 @@ api_instance = TopologicalInventoryApiClient::DefaultApi.new
 opts = {
   limit: 100, # Integer | The numbers of items to return per page.
   offset: 0, # Integer | The number of items to skip before starting to collect the result set.
-  filter: nil # Object | Filter for querying collections.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
 }
 
 begin
@@ -8562,6 +8835,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
  **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
  **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
 
 ### Return type
 

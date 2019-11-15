@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **DateTime** |  | [optional] 
-**description** | **String** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
-**name** | **String** |  | [optional] 
-**namespace** | **String** |  | [optional] 
-**value** | **String** |  | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**description** | **String** |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
+**name** | **String** |  | [optional] [readonly] 
+**namespace** | **String** |  | [optional] [readonly] 
+**value** | **String** |  | [optional] [readonly] 
 
 ## Code Sample
 

@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived_at** | **DateTime** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**device_id** | **String** | ID of the resource | [optional] 
+**archived_at** | **DateTime** |  | [optional] [readonly] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**device_id** | **String** | ID of the resource | [optional] [readonly] 
 **device_type** | **String** |  | [optional] 
 **extra** | [**Object**](.md) |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **mac_address** | **String** |  | [optional] 
-**orchestration_stack_id** | **String** | ID of the resource | [optional] 
+**orchestration_stack_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_created_at** | **DateTime** |  | [optional] 
 **source_deleted_at** | **DateTime** |  | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] 
-**source_region_id** | **String** | ID of the resource | [optional] 
-**subscription_id** | **String** | ID of the resource | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**source_region_id** | **String** | ID of the resource | [optional] [readonly] 
+**subscription_id** | **String** | ID of the resource | [optional] [readonly] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 
