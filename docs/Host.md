@@ -4,24 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived_at** | **DateTime** |  | [optional] 
-**cluster_id** | **String** | ID of the resource | [optional] 
+**archived_at** | **DateTime** |  | [optional] [readonly] 
+**cluster_id** | **String** | ID of the resource | [optional] [readonly] 
 **cpus** | **Integer** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
 **description** | **String** |  | [optional] 
 **extra** | [**Object**](.md) |  | [optional] 
 **hostname** | **String** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **memory** | **Integer** |  | [optional] 
 **name** | **String** |  | [optional] 
 **power_state** | **String** |  | [optional] 
 **source_created_at** | **DateTime** |  | [optional] 
 **source_deleted_at** | **DateTime** |  | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] 
 **uid_ems** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived_at** | **DateTime** |  | [optional] 
-**cpus** | **Integer** | Number of CPUs | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**disk_count** | **Integer** | The number of default disks | [optional] 
-**disk_size** | **Integer** | Size of the default disks in bytes | [optional] 
-**extra** | [**Object**](.md) |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
-**memory** | **Integer** | Amount of RAM in bytes | [optional] 
-**name** | **String** |  | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
-**source_ref** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**archived_at** | **DateTime** |  | [optional] [readonly] 
+**cpus** | **Integer** | Number of CPUs | [optional] [readonly] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**disk_count** | **Integer** | The number of default disks | [optional] [readonly] 
+**disk_size** | **Integer** | Size of the default disks in bytes | [optional] [readonly] 
+**extra** | [**Object**](.md) |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
+**memory** | **Integer** | Amount of RAM in bytes | [optional] [readonly] 
+**name** | **String** |  | [optional] [readonly] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
+**source_ref** | **String** |  | [optional] [readonly] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

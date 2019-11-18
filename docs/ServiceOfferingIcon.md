@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **DateTime** |  | [optional] 
-**data** | **String** | Raw icon data | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
-**source_id** | **String** | ID of the resource | [optional] 
-**source_ref** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**data** | **String** | Raw icon data | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
+**source_ref** | **String** |  | [optional] [readonly] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

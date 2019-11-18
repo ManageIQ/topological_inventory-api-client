@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device** | **String** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
-**state** | **String** |  | [optional] 
-**vm_id** | **String** | ID of the resource | [optional] 
-**volume_id** | **String** | ID of the resource | [optional] 
+**device** | **String** |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
+**state** | **String** |  | [optional] [readonly] 
+**vm_id** | **String** | ID of the resource | [optional] [readonly] 
+**volume_id** | **String** | ID of the resource | [optional] [readonly] 
 
 ## Code Sample
 

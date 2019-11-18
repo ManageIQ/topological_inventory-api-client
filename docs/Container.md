@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**archived_at** | **DateTime** |  | [optional] 
-**container_group_id** | **String** | ID of the resource | [optional] 
-**container_image_id** | **String** | ID of the resource | [optional] 
-**cpu_limit** | **Float** |  | [optional] 
-**cpu_request** | **Float** |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
-**last_seen_at** | **DateTime** |  | [optional] 
-**memory_limit** | **Integer** |  | [optional] 
-**memory_request** | **Integer** |  | [optional] 
-**name** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**archived_at** | **DateTime** |  | [optional] [readonly] 
+**container_group_id** | **String** | ID of the resource | [optional] [readonly] 
+**container_image_id** | **String** | ID of the resource | [optional] [readonly] 
+**cpu_limit** | **Float** |  | [optional] [readonly] 
+**cpu_request** | **Float** |  | [optional] [readonly] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
+**last_seen_at** | **DateTime** |  | [optional] [readonly] 
+**memory_limit** | **Integer** |  | [optional] [readonly] 
+**memory_request** | **Integer** |  | [optional] [readonly] 
+**name** | **String** |  | [optional] [readonly] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 

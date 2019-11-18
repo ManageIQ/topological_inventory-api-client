@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **completed_at** | **DateTime** |  | [optional] 
 **context** | [**Object**](.md) |  | [optional] 
-**created_at** | **DateTime** |  | [optional] 
-**id** | **String** | ID of the resource | [optional] 
+**created_at** | **DateTime** |  | [optional] [readonly] 
+**id** | **String** | ID of the resource | [optional] [readonly] 
 **name** | **String** |  | [optional] 
 **state** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
-**updated_at** | **DateTime** |  | [optional] 
+**updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
 
