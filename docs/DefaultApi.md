@@ -1,6 +1,6 @@
 # TopologicalInventoryApiClient::DefaultApi
 
-All URIs are relative to *https://cloud.redhat.com//api/topological-inventory/v1.0*
+All URIs are relative to *https://cloud.redhat.com//api/topological-inventory/v2.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -180,6 +180,32 @@ Method | HTTP request | Description
 [**show_volume**](DefaultApi.md#show_volume) | **GET** /volumes/{id} | Show an existing Volume
 [**show_volume_attachment**](DefaultApi.md#show_volume_attachment) | **GET** /volume_attachments/{id} | Show an existing VolumeAttachment
 [**show_volume_type**](DefaultApi.md#show_volume_type) | **GET** /volume_types/{id} | Show an existing VolumeType
+[**tag_container_group**](DefaultApi.md#tag_container_group) | **POST** /container_groups/{id}/tag | Tag a ContainerGroup
+[**tag_container_image**](DefaultApi.md#tag_container_image) | **POST** /container_images/{id}/tag | Tag a ContainerImage
+[**tag_container_node**](DefaultApi.md#tag_container_node) | **POST** /container_nodes/{id}/tag | Tag a ContainerNode
+[**tag_container_project**](DefaultApi.md#tag_container_project) | **POST** /container_projects/{id}/tag | Tag a ContainerProject
+[**tag_container_template**](DefaultApi.md#tag_container_template) | **POST** /container_templates/{id}/tag | Tag a ContainerTemplate
+[**tag_ipaddress**](DefaultApi.md#tag_ipaddress) | **POST** /ipaddresses/{id}/tag | Tag a Ipaddress
+[**tag_network**](DefaultApi.md#tag_network) | **POST** /networks/{id}/tag | Tag a Network
+[**tag_network_adapter**](DefaultApi.md#tag_network_adapter) | **POST** /network_adapters/{id}/tag | Tag a NetworkAdapter
+[**tag_security_group**](DefaultApi.md#tag_security_group) | **POST** /security_groups/{id}/tag | Tag a SecurityGroup
+[**tag_service_inventory**](DefaultApi.md#tag_service_inventory) | **POST** /service_inventories/{id}/tag | Tag a ServiceInventory
+[**tag_service_offering**](DefaultApi.md#tag_service_offering) | **POST** /service_offerings/{id}/tag | Tag a ServiceOffering
+[**tag_subnet**](DefaultApi.md#tag_subnet) | **POST** /subnets/{id}/tag | Tag a Subnet
+[**tag_vm**](DefaultApi.md#tag_vm) | **POST** /vms/{id}/tag | Tag a Vm
+[**untag_container_group**](DefaultApi.md#untag_container_group) | **POST** /container_groups/{id}/untag | Untag a ContainerGroup
+[**untag_container_image**](DefaultApi.md#untag_container_image) | **POST** /container_images/{id}/untag | Untag a ContainerImage
+[**untag_container_node**](DefaultApi.md#untag_container_node) | **POST** /container_nodes/{id}/untag | Untag a ContainerNode
+[**untag_container_project**](DefaultApi.md#untag_container_project) | **POST** /container_projects/{id}/untag | Untag a ContainerProject
+[**untag_container_template**](DefaultApi.md#untag_container_template) | **POST** /container_templates/{id}/untag | Untag a ContainerTemplate
+[**untag_ipaddress**](DefaultApi.md#untag_ipaddress) | **POST** /ipaddresses/{id}/untag | Untag a Ipaddress
+[**untag_network**](DefaultApi.md#untag_network) | **POST** /networks/{id}/untag | Untag a Network
+[**untag_network_adapter**](DefaultApi.md#untag_network_adapter) | **POST** /network_adapters/{id}/untag | Untag a NetworkAdapter
+[**untag_security_group**](DefaultApi.md#untag_security_group) | **POST** /security_groups/{id}/untag | Untag a SecurityGroup
+[**untag_service_inventory**](DefaultApi.md#untag_service_inventory) | **POST** /service_inventories/{id}/untag | Untag a ServiceInventory
+[**untag_service_offering**](DefaultApi.md#untag_service_offering) | **POST** /service_offerings/{id}/untag | Untag a ServiceOffering
+[**untag_subnet**](DefaultApi.md#untag_subnet) | **POST** /subnets/{id}/untag | Untag a Subnet
+[**untag_vm**](DefaultApi.md#untag_vm) | **POST** /vms/{id}/untag | Untag a Vm
 [**update_task**](DefaultApi.md#update_task) | **PATCH** /tasks/{id} | Update an existing Task
 
 
@@ -10814,6 +10840,1423 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## tag_container_group
+
+> Tag tag_container_group(id, tag)
+
+Tag a ContainerGroup
+
+Tags a ContainerGroup object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a ContainerGroup
+  result = api_instance.tag_container_group(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_container_group: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_container_image
+
+> Tag tag_container_image(id, tag)
+
+Tag a ContainerImage
+
+Tags a ContainerImage object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a ContainerImage
+  result = api_instance.tag_container_image(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_container_image: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_container_node
+
+> Tag tag_container_node(id, tag)
+
+Tag a ContainerNode
+
+Tags a ContainerNode object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a ContainerNode
+  result = api_instance.tag_container_node(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_container_node: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_container_project
+
+> Tag tag_container_project(id, tag)
+
+Tag a ContainerProject
+
+Tags a ContainerProject object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a ContainerProject
+  result = api_instance.tag_container_project(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_container_project: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_container_template
+
+> Tag tag_container_template(id, tag)
+
+Tag a ContainerTemplate
+
+Tags a ContainerTemplate object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a ContainerTemplate
+  result = api_instance.tag_container_template(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_container_template: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_ipaddress
+
+> Tag tag_ipaddress(id, tag)
+
+Tag a Ipaddress
+
+Tags a Ipaddress object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a Ipaddress
+  result = api_instance.tag_ipaddress(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_ipaddress: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_network
+
+> Tag tag_network(id, tag)
+
+Tag a Network
+
+Tags a Network object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a Network
+  result = api_instance.tag_network(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_network: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_network_adapter
+
+> Tag tag_network_adapter(id, tag)
+
+Tag a NetworkAdapter
+
+Tags a NetworkAdapter object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a NetworkAdapter
+  result = api_instance.tag_network_adapter(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_network_adapter: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_security_group
+
+> Tag tag_security_group(id, tag)
+
+Tag a SecurityGroup
+
+Tags a SecurityGroup object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a SecurityGroup
+  result = api_instance.tag_security_group(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_security_group: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_service_inventory
+
+> Tag tag_service_inventory(id, tag)
+
+Tag a ServiceInventory
+
+Tags a ServiceInventory object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a ServiceInventory
+  result = api_instance.tag_service_inventory(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_service_inventory: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_service_offering
+
+> Tag tag_service_offering(id, tag)
+
+Tag a ServiceOffering
+
+Tags a ServiceOffering object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a ServiceOffering
+  result = api_instance.tag_service_offering(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_service_offering: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_subnet
+
+> Tag tag_subnet(id, tag)
+
+Tag a Subnet
+
+Tags a Subnet object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a Subnet
+  result = api_instance.tag_subnet(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_subnet: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## tag_vm
+
+> Tag tag_vm(id, tag)
+
+Tag a Vm
+
+Tags a Vm object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to add
+
+begin
+  #Tag a Vm
+  result = api_instance.tag_vm(id, tag)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->tag_vm: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to add | 
+
+### Return type
+
+[**Tag**](Tag.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## untag_container_group
+
+> untag_container_group(id, tag)
+
+Untag a ContainerGroup
+
+Untags a ContainerGroup object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a ContainerGroup
+  api_instance.untag_container_group(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_container_group: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_container_image
+
+> untag_container_image(id, tag)
+
+Untag a ContainerImage
+
+Untags a ContainerImage object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a ContainerImage
+  api_instance.untag_container_image(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_container_image: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_container_node
+
+> untag_container_node(id, tag)
+
+Untag a ContainerNode
+
+Untags a ContainerNode object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a ContainerNode
+  api_instance.untag_container_node(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_container_node: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_container_project
+
+> untag_container_project(id, tag)
+
+Untag a ContainerProject
+
+Untags a ContainerProject object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a ContainerProject
+  api_instance.untag_container_project(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_container_project: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_container_template
+
+> untag_container_template(id, tag)
+
+Untag a ContainerTemplate
+
+Untags a ContainerTemplate object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a ContainerTemplate
+  api_instance.untag_container_template(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_container_template: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_ipaddress
+
+> untag_ipaddress(id, tag)
+
+Untag a Ipaddress
+
+Untags a Ipaddress object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a Ipaddress
+  api_instance.untag_ipaddress(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_ipaddress: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_network
+
+> untag_network(id, tag)
+
+Untag a Network
+
+Untags a Network object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a Network
+  api_instance.untag_network(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_network: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_network_adapter
+
+> untag_network_adapter(id, tag)
+
+Untag a NetworkAdapter
+
+Untags a NetworkAdapter object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a NetworkAdapter
+  api_instance.untag_network_adapter(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_network_adapter: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_security_group
+
+> untag_security_group(id, tag)
+
+Untag a SecurityGroup
+
+Untags a SecurityGroup object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a SecurityGroup
+  api_instance.untag_security_group(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_security_group: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_service_inventory
+
+> untag_service_inventory(id, tag)
+
+Untag a ServiceInventory
+
+Untags a ServiceInventory object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a ServiceInventory
+  api_instance.untag_service_inventory(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_service_inventory: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_service_offering
+
+> untag_service_offering(id, tag)
+
+Untag a ServiceOffering
+
+Untags a ServiceOffering object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a ServiceOffering
+  api_instance.untag_service_offering(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_service_offering: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_subnet
+
+> untag_subnet(id, tag)
+
+Untag a Subnet
+
+Untags a Subnet object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a Subnet
+  api_instance.untag_subnet(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_subnet: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## untag_vm
+
+> untag_vm(id, tag)
+
+Untag a Vm
+
+Untags a Vm object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+tag = [TopologicalInventoryApiClient::Tag.new] # Array<Tag> | Tag attributes to removed
+
+begin
+  #Untag a Vm
+  api_instance.untag_vm(id, tag)
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->untag_vm: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **tag** | [**Array&lt;Tag&gt;**](Tag.md)| Tag attributes to removed | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 
 ## update_task
