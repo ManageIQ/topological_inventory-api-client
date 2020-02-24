@@ -47,6 +47,8 @@ Method | HTTP request | Description
 [**list_security_group_tags**](DefaultApi.md#list_security_group_tags) | **GET** /security_groups/{id}/tags | List Tags for SecurityGroup
 [**list_security_group_vms**](DefaultApi.md#list_security_group_vms) | **GET** /security_groups/{id}/vms | List Vms for SecurityGroup
 [**list_security_groups**](DefaultApi.md#list_security_groups) | **GET** /security_groups | List SecurityGroups
+[**list_service_credential_types**](DefaultApi.md#list_service_credential_types) | **GET** /service_credential_types | List ServiceCredentialTypes
+[**list_service_credentials**](DefaultApi.md#list_service_credentials) | **GET** /service_credentials | List ServiceCredentials
 [**list_service_instance_nodes**](DefaultApi.md#list_service_instance_nodes) | **GET** /service_instance_nodes | List ServiceInstanceNodes
 [**list_service_instance_service_instance_nodes**](DefaultApi.md#list_service_instance_service_instance_nodes) | **GET** /service_instances/{id}/service_instance_nodes | List ServiceInstanceNodes for ServiceInstance
 [**list_service_instances**](DefaultApi.md#list_service_instances) | **GET** /service_instances | List ServiceInstances
@@ -162,6 +164,8 @@ Method | HTTP request | Description
 [**show_network_adapter**](DefaultApi.md#show_network_adapter) | **GET** /network_adapters/{id} | Show an existing NetworkAdapter
 [**show_orchestration_stack**](DefaultApi.md#show_orchestration_stack) | **GET** /orchestration_stacks/{id} | Show an existing OrchestrationStack
 [**show_security_group**](DefaultApi.md#show_security_group) | **GET** /security_groups/{id} | Show an existing SecurityGroup
+[**show_service_credential**](DefaultApi.md#show_service_credential) | **GET** /service_credentials/{id} | Show an existing ServiceCredential
+[**show_service_credential_type**](DefaultApi.md#show_service_credential_type) | **GET** /service_credential_types/{id} | Show an existing ServiceCredentialType
 [**show_service_instance**](DefaultApi.md#show_service_instance) | **GET** /service_instances/{id} | Show an existing ServiceInstance
 [**show_service_instance_node**](DefaultApi.md#show_service_instance_node) | **GET** /service_instance_nodes/{id} | Show an existing ServiceInstanceNode
 [**show_service_inventory**](DefaultApi.md#show_service_inventory) | **GET** /service_inventories/{id} | Show an existing ServiceInventory
@@ -2852,6 +2856,128 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SecurityGroupsCollection**](SecurityGroupsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_credential_types
+
+> ServiceCredentialTypesCollection list_service_credential_types(opts)
+
+List ServiceCredentialTypes
+
+Returns an array of ServiceCredentialType objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List ServiceCredentialTypes
+  result = api_instance.list_service_credential_types(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_credential_types: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**ServiceCredentialTypesCollection**](ServiceCredentialTypesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_credentials
+
+> ServiceCredentialsCollection list_service_credentials(opts)
+
+List ServiceCredentials
+
+Returns an array of ServiceCredential objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List ServiceCredentials
+  result = api_instance.list_service_credentials(opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_credentials: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**ServiceCredentialsCollection**](ServiceCredentialsCollection.md)
 
 ### Authorization
 
@@ -9888,6 +10014,112 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## show_service_credential
+
+> ServiceCredential show_service_credential(id)
+
+Show an existing ServiceCredential
+
+Returns a ServiceCredential object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ServiceCredential
+  result = api_instance.show_service_credential(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_service_credential: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**ServiceCredential**](ServiceCredential.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## show_service_credential_type
+
+> ServiceCredentialType show_service_credential_type(id)
+
+Show an existing ServiceCredentialType
+
+Returns a ServiceCredentialType object
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+
+begin
+  #Show an existing ServiceCredentialType
+  result = api_instance.show_service_credential_type(id)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->show_service_credential_type: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+
+### Return type
+
+[**ServiceCredentialType**](ServiceCredentialType.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## show_service_instance
 
 > ServiceInstance show_service_instance(id)
@@ -10844,7 +11076,7 @@ Name | Type | Description  | Notes
 
 ## tag_container_group
 
-> Tag tag_container_group(id, tag)
+> Array&lt;Tag&gt; tag_container_group(id, tag)
 
 Tag a ContainerGroup
 
@@ -10885,7 +11117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -10899,7 +11131,7 @@ Name | Type | Description  | Notes
 
 ## tag_container_image
 
-> Tag tag_container_image(id, tag)
+> Array&lt;Tag&gt; tag_container_image(id, tag)
 
 Tag a ContainerImage
 
@@ -10940,7 +11172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -10954,7 +11186,7 @@ Name | Type | Description  | Notes
 
 ## tag_container_node
 
-> Tag tag_container_node(id, tag)
+> Array&lt;Tag&gt; tag_container_node(id, tag)
 
 Tag a ContainerNode
 
@@ -10995,7 +11227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11009,7 +11241,7 @@ Name | Type | Description  | Notes
 
 ## tag_container_project
 
-> Tag tag_container_project(id, tag)
+> Array&lt;Tag&gt; tag_container_project(id, tag)
 
 Tag a ContainerProject
 
@@ -11050,7 +11282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11064,7 +11296,7 @@ Name | Type | Description  | Notes
 
 ## tag_container_template
 
-> Tag tag_container_template(id, tag)
+> Array&lt;Tag&gt; tag_container_template(id, tag)
 
 Tag a ContainerTemplate
 
@@ -11105,7 +11337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11119,7 +11351,7 @@ Name | Type | Description  | Notes
 
 ## tag_ipaddress
 
-> Tag tag_ipaddress(id, tag)
+> Array&lt;Tag&gt; tag_ipaddress(id, tag)
 
 Tag a Ipaddress
 
@@ -11160,7 +11392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11174,7 +11406,7 @@ Name | Type | Description  | Notes
 
 ## tag_network
 
-> Tag tag_network(id, tag)
+> Array&lt;Tag&gt; tag_network(id, tag)
 
 Tag a Network
 
@@ -11215,7 +11447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11229,7 +11461,7 @@ Name | Type | Description  | Notes
 
 ## tag_network_adapter
 
-> Tag tag_network_adapter(id, tag)
+> Array&lt;Tag&gt; tag_network_adapter(id, tag)
 
 Tag a NetworkAdapter
 
@@ -11270,7 +11502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11284,7 +11516,7 @@ Name | Type | Description  | Notes
 
 ## tag_security_group
 
-> Tag tag_security_group(id, tag)
+> Array&lt;Tag&gt; tag_security_group(id, tag)
 
 Tag a SecurityGroup
 
@@ -11325,7 +11557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11339,7 +11571,7 @@ Name | Type | Description  | Notes
 
 ## tag_service_inventory
 
-> Tag tag_service_inventory(id, tag)
+> Array&lt;Tag&gt; tag_service_inventory(id, tag)
 
 Tag a ServiceInventory
 
@@ -11380,7 +11612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11394,7 +11626,7 @@ Name | Type | Description  | Notes
 
 ## tag_service_offering
 
-> Tag tag_service_offering(id, tag)
+> Array&lt;Tag&gt; tag_service_offering(id, tag)
 
 Tag a ServiceOffering
 
@@ -11435,7 +11667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11449,7 +11681,7 @@ Name | Type | Description  | Notes
 
 ## tag_subnet
 
-> Tag tag_subnet(id, tag)
+> Array&lt;Tag&gt; tag_subnet(id, tag)
 
 Tag a Subnet
 
@@ -11490,7 +11722,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 
@@ -11504,7 +11736,7 @@ Name | Type | Description  | Notes
 
 ## tag_vm
 
-> Tag tag_vm(id, tag)
+> Array&lt;Tag&gt; tag_vm(id, tag)
 
 Tag a Vm
 
@@ -11545,7 +11777,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](Tag.md)
+[**Array&lt;Tag&gt;**](Tag.md)
 
 ### Authorization
 

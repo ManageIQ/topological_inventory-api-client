@@ -3703,6 +3703,166 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # List ServiceCredentialTypes
+    # Returns an array of ServiceCredentialType objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @option opts [OneOfstringarray] :sort_by The list of attribute and order to sort the result set by.
+    # @return [ServiceCredentialTypesCollection]
+    def list_service_credential_types(opts = {})
+      data, _status_code, _headers = list_service_credential_types_with_http_info(opts)
+      data
+    end
+
+    # List ServiceCredentialTypes
+    # Returns an array of ServiceCredentialType objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @option opts [OneOfstringarray] :sort_by The list of attribute and order to sort the result set by.
+    # @return [Array<(ServiceCredentialTypesCollection, Integer, Hash)>] ServiceCredentialTypesCollection data, response status code and response headers
+    def list_service_credential_types_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_credential_types ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_credential_types, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_credential_types, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_credential_types, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_credential_types'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceCredentialTypesCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_credential_types\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # List ServiceCredentials
+    # Returns an array of ServiceCredential objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page. (default to 100)
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set. (default to 0)
+    # @option opts [Object] :filter Filter for querying collections.
+    # @option opts [OneOfstringarray] :sort_by The list of attribute and order to sort the result set by.
+    # @return [ServiceCredentialsCollection]
+    def list_service_credentials(opts = {})
+      data, _status_code, _headers = list_service_credentials_with_http_info(opts)
+      data
+    end
+
+    # List ServiceCredentials
+    # Returns an array of ServiceCredential objects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit The numbers of items to return per page.
+    # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+    # @option opts [Object] :filter Filter for querying collections.
+    # @option opts [OneOfstringarray] :sort_by The list of attribute and order to sort the result set by.
+    # @return [Array<(ServiceCredentialsCollection, Integer, Hash)>] ServiceCredentialsCollection data, response status code and response headers
+    def list_service_credentials_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_service_credentials ...'
+      end
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] > 1000
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_credentials, must be smaller than or equal to 1000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'limit'].nil? && opts[:'limit'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling DefaultApi.list_service_credentials, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'offset'].nil? && opts[:'offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"offset"]" when calling DefaultApi.list_service_credentials, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/service_credentials'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceCredentialsCollection' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_service_credentials\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List ServiceInstanceNodes
     # Returns an array of ServiceInstanceNode objects
     # @param [Hash] opts the optional parameters
@@ -13538,6 +13698,140 @@ module TopologicalInventoryApiClient
       return data, status_code, headers
     end
 
+    # Show an existing ServiceCredential
+    # Returns a ServiceCredential object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [ServiceCredential]
+    def show_service_credential(id, opts = {})
+      data, _status_code, _headers = show_service_credential_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing ServiceCredential
+    # Returns a ServiceCredential object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ServiceCredential, Integer, Hash)>] ServiceCredential data, response status code and response headers
+    def show_service_credential_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_service_credential ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_service_credential"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_service_credential, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/service_credentials/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceCredential' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_service_credential\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Show an existing ServiceCredentialType
+    # Returns a ServiceCredentialType object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [ServiceCredentialType]
+    def show_service_credential_type(id, opts = {})
+      data, _status_code, _headers = show_service_credential_type_with_http_info(id, opts)
+      data
+    end
+
+    # Show an existing ServiceCredentialType
+    # Returns a ServiceCredentialType object
+    # @param id [String] ID of the resource
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ServiceCredentialType, Integer, Hash)>] ServiceCredentialType data, response status code and response headers
+    def show_service_credential_type_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.show_service_credential_type ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.show_service_credential_type"
+      end
+      pattern = Regexp.new(/^\d+$/)
+      if @api_client.config.client_side_validation && id !~ pattern
+        fail ArgumentError, "invalid value for 'id' when calling DefaultApi.show_service_credential_type, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/service_credential_types/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      # return_type
+      return_type = opts[:return_type] || 'ServiceCredentialType' 
+
+      # auth_names
+      auth_names = opts[:auth_names] || ['UserSecurity']
+
+      new_options = opts.merge(
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#show_service_credential_type\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Show an existing ServiceInstance
     # Returns a ServiceInstance object
     # @param id [String] ID of the resource
@@ -14749,7 +15043,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_container_group(id, tag, opts = {})
       data, _status_code, _headers = tag_container_group_with_http_info(id, tag, opts)
       data
@@ -14760,7 +15054,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_container_group_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_container_group ...'
@@ -14798,7 +15092,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -14824,7 +15118,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_container_image(id, tag, opts = {})
       data, _status_code, _headers = tag_container_image_with_http_info(id, tag, opts)
       data
@@ -14835,7 +15129,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_container_image_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_container_image ...'
@@ -14873,7 +15167,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -14899,7 +15193,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_container_node(id, tag, opts = {})
       data, _status_code, _headers = tag_container_node_with_http_info(id, tag, opts)
       data
@@ -14910,7 +15204,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_container_node_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_container_node ...'
@@ -14948,7 +15242,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -14974,7 +15268,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_container_project(id, tag, opts = {})
       data, _status_code, _headers = tag_container_project_with_http_info(id, tag, opts)
       data
@@ -14985,7 +15279,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_container_project_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_container_project ...'
@@ -15023,7 +15317,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15049,7 +15343,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_container_template(id, tag, opts = {})
       data, _status_code, _headers = tag_container_template_with_http_info(id, tag, opts)
       data
@@ -15060,7 +15354,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_container_template_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_container_template ...'
@@ -15098,7 +15392,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15124,7 +15418,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_ipaddress(id, tag, opts = {})
       data, _status_code, _headers = tag_ipaddress_with_http_info(id, tag, opts)
       data
@@ -15135,7 +15429,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_ipaddress_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_ipaddress ...'
@@ -15173,7 +15467,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15199,7 +15493,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_network(id, tag, opts = {})
       data, _status_code, _headers = tag_network_with_http_info(id, tag, opts)
       data
@@ -15210,7 +15504,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_network_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_network ...'
@@ -15248,7 +15542,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15274,7 +15568,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_network_adapter(id, tag, opts = {})
       data, _status_code, _headers = tag_network_adapter_with_http_info(id, tag, opts)
       data
@@ -15285,7 +15579,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_network_adapter_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_network_adapter ...'
@@ -15323,7 +15617,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15349,7 +15643,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_security_group(id, tag, opts = {})
       data, _status_code, _headers = tag_security_group_with_http_info(id, tag, opts)
       data
@@ -15360,7 +15654,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_security_group_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_security_group ...'
@@ -15398,7 +15692,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15424,7 +15718,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_service_inventory(id, tag, opts = {})
       data, _status_code, _headers = tag_service_inventory_with_http_info(id, tag, opts)
       data
@@ -15435,7 +15729,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_service_inventory_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_service_inventory ...'
@@ -15473,7 +15767,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15499,7 +15793,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_service_offering(id, tag, opts = {})
       data, _status_code, _headers = tag_service_offering_with_http_info(id, tag, opts)
       data
@@ -15510,7 +15804,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_service_offering_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_service_offering ...'
@@ -15548,7 +15842,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15574,7 +15868,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_subnet(id, tag, opts = {})
       data, _status_code, _headers = tag_subnet_with_http_info(id, tag, opts)
       data
@@ -15585,7 +15879,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_subnet_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_subnet ...'
@@ -15623,7 +15917,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
@@ -15649,7 +15943,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Tag]
+    # @return [Array<Tag>]
     def tag_vm(id, tag, opts = {})
       data, _status_code, _headers = tag_vm_with_http_info(id, tag, opts)
       data
@@ -15660,7 +15954,7 @@ module TopologicalInventoryApiClient
     # @param id [String] ID of the resource
     # @param tag [Array<Tag>] Tag attributes to add
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Tag, Integer, Hash)>] Tag data, response status code and response headers
+    # @return [Array<(Array<Tag>, Integer, Hash)>] Array<Tag> data, response status code and response headers
     def tag_vm_with_http_info(id, tag, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.tag_vm ...'
@@ -15698,7 +15992,7 @@ module TopologicalInventoryApiClient
       post_body = opts[:body] || @api_client.object_to_http_body(tag) 
 
       # return_type
-      return_type = opts[:return_type] || 'Tag' 
+      return_type = opts[:return_type] || 'Array<Tag>' 
 
       # auth_names
       auth_names = opts[:auth_names] || ['UserSecurity']
