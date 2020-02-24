@@ -34,9 +34,6 @@ module TopologicalInventoryApiClient
     attr_accessor :root_service_instance_id
 
     # ID of the resource
-    attr_accessor :service_credential_id
-
-    # ID of the resource
     attr_accessor :service_inventory_id
 
     # ID of the resource
@@ -73,7 +70,6 @@ module TopologicalInventoryApiClient
         :'last_seen_at' => :'last_seen_at',
         :'name' => :'name',
         :'root_service_instance_id' => :'root_service_instance_id',
-        :'service_credential_id' => :'service_credential_id',
         :'service_inventory_id' => :'service_inventory_id',
         :'service_offering_id' => :'service_offering_id',
         :'service_plan_id' => :'service_plan_id',
@@ -98,7 +94,6 @@ module TopologicalInventoryApiClient
         :'last_seen_at' => :'DateTime',
         :'name' => :'String',
         :'root_service_instance_id' => :'String',
-        :'service_credential_id' => :'String',
         :'service_inventory_id' => :'String',
         :'service_offering_id' => :'String',
         :'service_plan_id' => :'String',
@@ -165,10 +160,6 @@ module TopologicalInventoryApiClient
         self.root_service_instance_id = attributes[:'root_service_instance_id']
       end
 
-      if attributes.key?(:'service_credential_id')
-        self.service_credential_id = attributes[:'service_credential_id']
-      end
-
       if attributes.key?(:'service_inventory_id')
         self.service_inventory_id = attributes[:'service_inventory_id']
       end
@@ -225,11 +216,6 @@ module TopologicalInventoryApiClient
       end
 
       pattern = Regexp.new(/^\d+$/)
-      if !@service_credential_id.nil? && @service_credential_id !~ pattern
-        invalid_properties.push("invalid value for \"service_credential_id\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\d+$/)
       if !@service_inventory_id.nil? && @service_inventory_id !~ pattern
         invalid_properties.push("invalid value for \"service_inventory_id\", must conform to the pattern #{pattern}.")
       end
@@ -267,7 +253,6 @@ module TopologicalInventoryApiClient
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       return false if !@root_service_instance_id.nil? && @root_service_instance_id !~ Regexp.new(/^\d+$/)
-      return false if !@service_credential_id.nil? && @service_credential_id !~ Regexp.new(/^\d+$/)
       return false if !@service_inventory_id.nil? && @service_inventory_id !~ Regexp.new(/^\d+$/)
       return false if !@service_offering_id.nil? && @service_offering_id !~ Regexp.new(/^\d+$/)
       return false if !@service_plan_id.nil? && @service_plan_id !~ Regexp.new(/^\d+$/)
@@ -297,17 +282,6 @@ module TopologicalInventoryApiClient
       end
 
       @root_service_instance_id = root_service_instance_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] service_credential_id Value to be assigned
-    def service_credential_id=(service_credential_id)
-      pattern = Regexp.new(/^\d+$/)
-      if !service_credential_id.nil? && service_credential_id !~ pattern
-        fail ArgumentError, "invalid value for \"service_credential_id\", must conform to the pattern #{pattern}."
-      end
-
-      @service_credential_id = service_credential_id
     end
 
     # Custom attribute writer method with validation
@@ -389,7 +363,6 @@ module TopologicalInventoryApiClient
           last_seen_at == o.last_seen_at &&
           name == o.name &&
           root_service_instance_id == o.root_service_instance_id &&
-          service_credential_id == o.service_credential_id &&
           service_inventory_id == o.service_inventory_id &&
           service_offering_id == o.service_offering_id &&
           service_plan_id == o.service_plan_id &&
@@ -411,7 +384,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [archived_at, created_at, external_url, extra, id, last_seen_at, name, root_service_instance_id, service_credential_id, service_inventory_id, service_offering_id, service_plan_id, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, subscription_id, updated_at].hash
+      [archived_at, created_at, external_url, extra, id, last_seen_at, name, root_service_instance_id, service_inventory_id, service_offering_id, service_plan_id, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, subscription_id, updated_at].hash
     end
 
     # Builds the object from hash

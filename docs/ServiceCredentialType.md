@@ -1,4 +1,4 @@
-# TopologicalInventoryApiClient::ServiceInstanceNode
+# TopologicalInventoryApiClient::ServiceCredentialType
 
 ## Properties
 
@@ -6,17 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived_at** | **DateTime** |  | [optional] [readonly] 
 **created_at** | **DateTime** |  | [optional] [readonly] 
-**extra** | [**Object**](.md) |  | [optional] 
+**description** | **String** |  | [optional] [readonly] 
 **id** | **String** | ID of the resource | [optional] [readonly] 
+**kind** | **String** |  | [optional] [readonly] 
 **last_seen_at** | **DateTime** |  | [optional] [readonly] 
-**name** | **String** |  | [optional] 
-**root_service_instance_id** | **String** | ID of the resource | [optional] [readonly] 
-**service_instance_id** | **String** | ID of the resource | [optional] [readonly] 
-**service_inventory_id** | **String** | ID of the resource | [optional] [readonly] 
-**source_created_at** | **DateTime** |  | [optional] 
+**name** | **String** |  | [optional] [readonly] 
+**namespace** | **String** |  | [optional] [readonly] 
+**source_created_at** | **DateTime** |  | [optional] [readonly] 
+**source_deleted_at** | **DateTime** |  | [optional] [readonly] 
 **source_id** | **String** | ID of the resource | [optional] [readonly] 
-**source_ref** | **String** |  | [optional] 
-**source_updated_at** | **DateTime** |  | [optional] 
+**source_ref** | **String** |  | [optional] [readonly] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
@@ -24,19 +23,18 @@ Name | Type | Description | Notes
 ```ruby
 require 'TopologicalInventoryApiClient'
 
-instance = TopologicalInventoryApiClient::ServiceInstanceNode.new(archived_at: null,
+instance = TopologicalInventoryApiClient::ServiceCredentialType.new(archived_at: null,
                                  created_at: null,
-                                 extra: null,
+                                 description: null,
                                  id: null,
+                                 kind: null,
                                  last_seen_at: null,
                                  name: null,
-                                 root_service_instance_id: null,
-                                 service_instance_id: null,
-                                 service_inventory_id: null,
+                                 namespace: null,
                                  source_created_at: null,
+                                 source_deleted_at: null,
                                  source_id: null,
                                  source_ref: null,
-                                 source_updated_at: null,
                                  updated_at: null)
 ```
 

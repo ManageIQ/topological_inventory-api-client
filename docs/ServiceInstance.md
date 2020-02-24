@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] [readonly] 
 **root_service_instance_id** | **String** | ID of the resource | [optional] [readonly] 
-**service_credential_id** | **String** | ID of the resource | [optional] [readonly] 
 **service_inventory_id** | **String** | ID of the resource | [optional] [readonly] 
 **service_offering_id** | **String** | ID of the resource | [optional] [readonly] 
 **service_plan_id** | **String** | ID of the resource | [optional] [readonly] 
@@ -37,7 +36,6 @@ instance = TopologicalInventoryApiClient::ServiceInstance.new(archived_at: null,
                                  last_seen_at: null,
                                  name: Sample ServiceInstance,
                                  root_service_instance_id: null,
-                                 service_credential_id: null,
                                  service_inventory_id: null,
                                  service_offering_id: null,
                                  service_plan_id: null,

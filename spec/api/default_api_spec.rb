@@ -695,6 +695,36 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for list_service_credential_types
+  # List ServiceCredentialTypes
+  # Returns an array of ServiceCredentialType objects
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit The numbers of items to return per page.
+  # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+  # @option opts [Object] :filter Filter for querying collections.
+  # @option opts [OneOfstringarray] :sort_by The list of attribute and order to sort the result set by.
+  # @return [ServiceCredentialTypesCollection]
+  describe 'list_service_credential_types test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for list_service_credentials
+  # List ServiceCredentials
+  # Returns an array of ServiceCredential objects
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit The numbers of items to return per page.
+  # @option opts [Integer] :offset The number of items to skip before starting to collect the result set.
+  # @option opts [Object] :filter Filter for querying collections.
+  # @option opts [OneOfstringarray] :sort_by The list of attribute and order to sort the result set by.
+  # @return [ServiceCredentialsCollection]
+  describe 'list_service_credentials test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for list_service_instance_nodes
   # List ServiceInstanceNodes
   # Returns an array of ServiceInstanceNode objects
@@ -2444,6 +2474,30 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for show_service_credential
+  # Show an existing ServiceCredential
+  # Returns a ServiceCredential object
+  # @param id ID of the resource
+  # @param [Hash] opts the optional parameters
+  # @return [ServiceCredential]
+  describe 'show_service_credential test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for show_service_credential_type
+  # Show an existing ServiceCredentialType
+  # Returns a ServiceCredentialType object
+  # @param id ID of the resource
+  # @param [Hash] opts the optional parameters
+  # @return [ServiceCredentialType]
+  describe 'show_service_credential_type test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for show_service_instance
   # Show an existing ServiceInstance
   # Returns a ServiceInstance object
@@ -2666,7 +2720,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_container_group test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2679,7 +2733,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_container_image test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2692,7 +2746,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_container_node test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2705,7 +2759,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_container_project test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2718,7 +2772,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_container_template test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2731,7 +2785,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_ipaddress test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2744,7 +2798,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_network test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2757,7 +2811,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_network_adapter test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2770,7 +2824,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_security_group test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2783,7 +2837,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_service_inventory test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2796,7 +2850,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_service_offering test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2809,7 +2863,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_subnet test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -2822,7 +2876,7 @@ describe 'DefaultApi' do
   # @param id ID of the resource
   # @param tag Tag attributes to add
   # @param [Hash] opts the optional parameters
-  # @return [Tag]
+  # @return [Array<Tag>]
   describe 'tag_vm test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
