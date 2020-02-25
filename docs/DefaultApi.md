@@ -49,15 +49,20 @@ Method | HTTP request | Description
 [**list_security_groups**](DefaultApi.md#list_security_groups) | **GET** /security_groups | List SecurityGroups
 [**list_service_credential_types**](DefaultApi.md#list_service_credential_types) | **GET** /service_credential_types | List ServiceCredentialTypes
 [**list_service_credentials**](DefaultApi.md#list_service_credentials) | **GET** /service_credentials | List ServiceCredentials
+[**list_service_instance_node_service_credentials**](DefaultApi.md#list_service_instance_node_service_credentials) | **GET** /service_instance_nodes/{id}/service_credentials | List ServiceCredentials for ServiceInstanceNode
 [**list_service_instance_nodes**](DefaultApi.md#list_service_instance_nodes) | **GET** /service_instance_nodes | List ServiceInstanceNodes
+[**list_service_instance_service_credentials**](DefaultApi.md#list_service_instance_service_credentials) | **GET** /service_instances/{id}/service_credentials | List ServiceCredentials for ServiceInstance
 [**list_service_instance_service_instance_nodes**](DefaultApi.md#list_service_instance_service_instance_nodes) | **GET** /service_instances/{id}/service_instance_nodes | List ServiceInstanceNodes for ServiceInstance
 [**list_service_instances**](DefaultApi.md#list_service_instances) | **GET** /service_instances | List ServiceInstances
 [**list_service_inventories**](DefaultApi.md#list_service_inventories) | **GET** /service_inventories | List ServiceInventories
 [**list_service_inventory_tags**](DefaultApi.md#list_service_inventory_tags) | **GET** /service_inventories/{id}/tags | List Tags for ServiceInventory
 [**list_service_offering_icons**](DefaultApi.md#list_service_offering_icons) | **GET** /service_offering_icons | List ServiceOfferingIcons
+[**list_service_offering_node_service_credentials**](DefaultApi.md#list_service_offering_node_service_credentials) | **GET** /service_offering_nodes/{id}/service_credentials | List ServiceCredentials for ServiceOfferingNode
 [**list_service_offering_nodes**](DefaultApi.md#list_service_offering_nodes) | **GET** /service_offering_nodes | List ServiceOfferingNodes
+[**list_service_offering_service_credentials**](DefaultApi.md#list_service_offering_service_credentials) | **GET** /service_offerings/{id}/service_credentials | List ServiceCredentials for ServiceOffering
 [**list_service_offering_service_instances**](DefaultApi.md#list_service_offering_service_instances) | **GET** /service_offerings/{id}/service_instances | List ServiceInstances for ServiceOffering
 [**list_service_offering_service_offering_nodes**](DefaultApi.md#list_service_offering_service_offering_nodes) | **GET** /service_offerings/{id}/service_offering_nodes | List ServiceOfferingNodes for ServiceOffering
+[**list_service_offering_service_offering_service_credentials**](DefaultApi.md#list_service_offering_service_offering_service_credentials) | **GET** /service_offerings/{id}/service_offering_service_credentials | List ServiceOfferingServiceCredentials for ServiceOffering
 [**list_service_offering_service_plans**](DefaultApi.md#list_service_offering_service_plans) | **GET** /service_offerings/{id}/service_plans | List ServicePlans for ServiceOffering
 [**list_service_offering_tags**](DefaultApi.md#list_service_offering_tags) | **GET** /service_offerings/{id}/tags | List Tags for ServiceOffering
 [**list_service_offerings**](DefaultApi.md#list_service_offerings) | **GET** /service_offerings | List ServiceOfferings
@@ -2989,6 +2994,69 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## list_service_instance_node_service_credentials
+
+> ServiceCredentialsCollection list_service_instance_node_service_credentials(id, opts)
+
+List ServiceCredentials for ServiceInstanceNode
+
+Returns an array of ServiceCredential objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List ServiceCredentials for ServiceInstanceNode
+  result = api_instance.list_service_instance_node_service_credentials(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_instance_node_service_credentials: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**ServiceCredentialsCollection**](ServiceCredentialsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_service_instance_nodes
 
 > ServiceInstanceNodesCollection list_service_instance_nodes(opts)
@@ -3039,6 +3107,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceInstanceNodesCollection**](ServiceInstanceNodesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_instance_service_credentials
+
+> ServiceCredentialsCollection list_service_instance_service_credentials(id, opts)
+
+List ServiceCredentials for ServiceInstance
+
+Returns an array of ServiceCredential objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List ServiceCredentials for ServiceInstance
+  result = api_instance.list_service_instance_service_credentials(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_instance_service_credentials: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**ServiceCredentialsCollection**](ServiceCredentialsCollection.md)
 
 ### Authorization
 
@@ -3359,6 +3490,69 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## list_service_offering_node_service_credentials
+
+> ServiceCredentialsCollection list_service_offering_node_service_credentials(id, opts)
+
+List ServiceCredentials for ServiceOfferingNode
+
+Returns an array of ServiceCredential objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List ServiceCredentials for ServiceOfferingNode
+  result = api_instance.list_service_offering_node_service_credentials(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_offering_node_service_credentials: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**ServiceCredentialsCollection**](ServiceCredentialsCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_service_offering_nodes
 
 > ServiceOfferingNodesCollection list_service_offering_nodes(opts)
@@ -3409,6 +3603,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceOfferingNodesCollection**](ServiceOfferingNodesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_offering_service_credentials
+
+> ServiceCredentialsCollection list_service_offering_service_credentials(id, opts)
+
+List ServiceCredentials for ServiceOffering
+
+Returns an array of ServiceCredential objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List ServiceCredentials for ServiceOffering
+  result = api_instance.list_service_offering_service_credentials(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_offering_service_credentials: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**ServiceCredentialsCollection**](ServiceCredentialsCollection.md)
 
 ### Authorization
 
@@ -3535,6 +3792,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceOfferingNodesCollection**](ServiceOfferingNodesCollection.md)
+
+### Authorization
+
+[UserSecurity](../README.md#UserSecurity)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_service_offering_service_offering_service_credentials
+
+> ServiceOfferingServiceCredentialsCollection list_service_offering_service_offering_service_credentials(id, opts)
+
+List ServiceOfferingServiceCredentials for ServiceOffering
+
+Returns an array of ServiceOfferingServiceCredential objects
+
+### Example
+
+```ruby
+# load the gem
+require 'topological_inventory-api-client'
+# setup authorization
+TopologicalInventoryApiClient.configure do |config|
+  # Configure HTTP basic authorization: UserSecurity
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TopologicalInventoryApiClient::DefaultApi.new
+id = 'id_example' # String | ID of the resource
+opts = {
+  limit: 100, # Integer | The numbers of items to return per page.
+  offset: 0, # Integer | The number of items to skip before starting to collect the result set.
+  filter: nil, # Object | Filter for querying collections.
+  sort_by: TopologicalInventoryApiClient::OneOfstringarray.new # OneOfstringarray | The list of attribute and order to sort the result set by.
+}
+
+begin
+  #List ServiceOfferingServiceCredentials for ServiceOffering
+  result = api_instance.list_service_offering_service_offering_service_credentials(id, opts)
+  p result
+rescue TopologicalInventoryApiClient::ApiError => e
+  puts "Exception when calling DefaultApi->list_service_offering_service_offering_service_credentials: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| ID of the resource | 
+ **limit** | **Integer**| The numbers of items to return per page. | [optional] [default to 100]
+ **offset** | **Integer**| The number of items to skip before starting to collect the result set. | [optional] [default to 0]
+ **filter** | [**Object**](.md)| Filter for querying collections. | [optional] 
+ **sort_by** | [**OneOfstringarray**](.md)| The list of attribute and order to sort the result set by. | [optional] 
+
+### Return type
+
+[**ServiceOfferingServiceCredentialsCollection**](ServiceOfferingServiceCredentialsCollection.md)
 
 ### Authorization
 
