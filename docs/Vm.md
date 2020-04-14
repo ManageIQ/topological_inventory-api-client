@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] [readonly] 
 **orchestration_stack_id** | **String** | ID of the resource | [optional] [readonly] 
 **power_state** | **String** |  | [optional] [readonly] 
+**refresh_state_part_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_created_at** | **DateTime** |  | [optional] [readonly] 
 **source_deleted_at** | **DateTime** |  | [optional] [readonly] 
 **source_id** | **String** | ID of the resource | [optional] [readonly] 
@@ -50,6 +51,7 @@ instance = TopologicalInventoryApiClient::Vm.new(archived_at: null,
                                  name: Sample Vm,
                                  orchestration_stack_id: null,
                                  power_state: running,
+                                 refresh_state_part_id: null,
                                  source_created_at: null,
                                  source_deleted_at: null,
                                  source_id: null,

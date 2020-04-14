@@ -48,6 +48,9 @@ module TopologicalInventoryApiClient
 
     attr_accessor :pods
 
+    # ID of the resource
+    attr_accessor :refresh_state_part_id
+
     attr_accessor :resource_version
 
     attr_accessor :source_created_at
@@ -80,6 +83,7 @@ module TopologicalInventoryApiClient
         :'name' => :'name',
         :'node_info' => :'node_info',
         :'pods' => :'pods',
+        :'refresh_state_part_id' => :'refresh_state_part_id',
         :'resource_version' => :'resource_version',
         :'source_created_at' => :'source_created_at',
         :'source_deleted_at' => :'source_deleted_at',
@@ -108,6 +112,7 @@ module TopologicalInventoryApiClient
         :'name' => :'String',
         :'node_info' => :'Object',
         :'pods' => :'Integer',
+        :'refresh_state_part_id' => :'String',
         :'resource_version' => :'String',
         :'source_created_at' => :'DateTime',
         :'source_deleted_at' => :'DateTime',
@@ -202,6 +207,10 @@ module TopologicalInventoryApiClient
         self.pods = attributes[:'pods']
       end
 
+      if attributes.key?(:'refresh_state_part_id')
+        self.refresh_state_part_id = attributes[:'refresh_state_part_id']
+      end
+
       if attributes.key?(:'resource_version')
         self.resource_version = attributes[:'resource_version']
       end
@@ -242,6 +251,11 @@ module TopologicalInventoryApiClient
       end
 
       pattern = Regexp.new(/^\d+$/)
+      if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ pattern
+        invalid_properties.push("invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^\d+$/)
       if !@source_id.nil? && @source_id !~ pattern
         invalid_properties.push("invalid value for \"source_id\", must conform to the pattern #{pattern}.")
       end
@@ -254,6 +268,7 @@ module TopologicalInventoryApiClient
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       return false if !@lives_on_id.nil? && @lives_on_id !~ Regexp.new(/^\d+$/)
+      return false if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ Regexp.new(/^\d+$/)
       return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
       true
     end
@@ -278,6 +293,17 @@ module TopologicalInventoryApiClient
       end
 
       @lives_on_id = lives_on_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] refresh_state_part_id Value to be assigned
+    def refresh_state_part_id=(refresh_state_part_id)
+      pattern = Regexp.new(/^\d+$/)
+      if !refresh_state_part_id.nil? && refresh_state_part_id !~ pattern
+        fail ArgumentError, "invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}."
+      end
+
+      @refresh_state_part_id = refresh_state_part_id
     end
 
     # Custom attribute writer method with validation
@@ -312,6 +338,7 @@ module TopologicalInventoryApiClient
           name == o.name &&
           node_info == o.node_info &&
           pods == o.pods &&
+          refresh_state_part_id == o.refresh_state_part_id &&
           resource_version == o.resource_version &&
           source_created_at == o.source_created_at &&
           source_deleted_at == o.source_deleted_at &&
@@ -329,7 +356,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [addresses, allocatable_cpus, allocatable_memory, allocatable_pods, archived_at, conditions, cpus, created_at, id, last_seen_at, lives_on_id, lives_on_type, memory, name, node_info, pods, resource_version, source_created_at, source_deleted_at, source_id, source_ref, updated_at].hash
+      [addresses, allocatable_cpus, allocatable_memory, allocatable_pods, archived_at, conditions, cpus, created_at, id, last_seen_at, lives_on_id, lives_on_type, memory, name, node_info, pods, refresh_state_part_id, resource_version, source_created_at, source_deleted_at, source_id, source_ref, updated_at].hash
     end
 
     # Builds the object from hash

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] [readonly] 
 **orchestration_stack_id** | **String** | ID of the resource | [optional] [readonly] 
+**refresh_state_part_id** | **String** | ID of the resource | [optional] [readonly] 
 **size** | **Integer** | Size of the volume in bytes | [optional] [readonly] 
 **source_created_at** | **DateTime** |  | [optional] [readonly] 
 **source_deleted_at** | **DateTime** |  | [optional] [readonly] 
@@ -34,6 +35,7 @@ instance = TopologicalInventoryApiClient::Volume.new(archived_at: null,
                                  last_seen_at: null,
                                  name: vol-00627bf31217a7bc0,
                                  orchestration_stack_id: null,
+                                 refresh_state_part_id: null,
                                  size: 8589934592,
                                  source_created_at: null,
                                  source_deleted_at: null,

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] [readonly] 
 **node_info** | [**Object**](.md) |  | [optional] [readonly] 
 **pods** | **Integer** |  | [optional] [readonly] 
+**refresh_state_part_id** | **String** | ID of the resource | [optional] [readonly] 
 **resource_version** | **String** |  | [optional] [readonly] 
 **source_created_at** | **DateTime** |  | [optional] [readonly] 
 **source_deleted_at** | **DateTime** |  | [optional] [readonly] 
@@ -48,6 +49,7 @@ instance = TopologicalInventoryApiClient::ContainerNode.new(addresses: null,
                                  name: Sample Group,
                                  node_info: null,
                                  pods: null,
+                                 refresh_state_part_id: null,
                                  resource_version: null,
                                  source_created_at: null,
                                  source_deleted_at: null,

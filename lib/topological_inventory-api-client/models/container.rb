@@ -39,6 +39,9 @@ module TopologicalInventoryApiClient
 
     attr_accessor :name
 
+    # ID of the resource
+    attr_accessor :refresh_state_part_id
+
     attr_accessor :updated_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -55,6 +58,7 @@ module TopologicalInventoryApiClient
         :'memory_limit' => :'memory_limit',
         :'memory_request' => :'memory_request',
         :'name' => :'name',
+        :'refresh_state_part_id' => :'refresh_state_part_id',
         :'updated_at' => :'updated_at'
       }
     end
@@ -73,6 +77,7 @@ module TopologicalInventoryApiClient
         :'memory_limit' => :'Integer',
         :'memory_request' => :'Integer',
         :'name' => :'String',
+        :'refresh_state_part_id' => :'String',
         :'updated_at' => :'DateTime'
       }
     end
@@ -142,6 +147,10 @@ module TopologicalInventoryApiClient
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'refresh_state_part_id')
+        self.refresh_state_part_id = attributes[:'refresh_state_part_id']
+      end
+
       if attributes.key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
@@ -166,6 +175,11 @@ module TopologicalInventoryApiClient
         invalid_properties.push("invalid value for \"id\", must conform to the pattern #{pattern}.")
       end
 
+      pattern = Regexp.new(/^\d+$/)
+      if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ pattern
+        invalid_properties.push("invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -175,6 +189,7 @@ module TopologicalInventoryApiClient
       return false if !@container_group_id.nil? && @container_group_id !~ Regexp.new(/^\d+$/)
       return false if !@container_image_id.nil? && @container_image_id !~ Regexp.new(/^\d+$/)
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
+      return false if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ Regexp.new(/^\d+$/)
       true
     end
 
@@ -211,6 +226,17 @@ module TopologicalInventoryApiClient
       @id = id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] refresh_state_part_id Value to be assigned
+    def refresh_state_part_id=(refresh_state_part_id)
+      pattern = Regexp.new(/^\d+$/)
+      if !refresh_state_part_id.nil? && refresh_state_part_id !~ pattern
+        fail ArgumentError, "invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}."
+      end
+
+      @refresh_state_part_id = refresh_state_part_id
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -227,6 +253,7 @@ module TopologicalInventoryApiClient
           memory_limit == o.memory_limit &&
           memory_request == o.memory_request &&
           name == o.name &&
+          refresh_state_part_id == o.refresh_state_part_id &&
           updated_at == o.updated_at
     end
 
@@ -239,7 +266,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [archived_at, container_group_id, container_image_id, cpu_limit, cpu_request, created_at, id, last_seen_at, memory_limit, memory_request, name, updated_at].hash
+      [archived_at, container_group_id, container_image_id, cpu_limit, cpu_request, created_at, id, last_seen_at, memory_limit, memory_request, name, refresh_state_part_id, updated_at].hash
     end
 
     # Builds the object from hash
