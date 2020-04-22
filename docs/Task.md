@@ -9,8 +9,11 @@ Name | Type | Description | Notes
 **created_at** | **DateTime** |  | [optional] [readonly] 
 **id** | **String** | ID of the resource | [optional] [readonly] 
 **name** | **String** |  | [optional] 
+**source_id** | **String** | ID of the resource | [optional] [readonly] 
 **state** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
+**target_source_ref** | **String** |  | [optional] 
+**target_type** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
@@ -23,8 +26,11 @@ instance = TopologicalInventoryApiClient::Task.new(completed_at: null,
                                  created_at: null,
                                  id: null,
                                  name: Order Service Plan,
+                                 source_id: null,
                                  state: Running,
                                  status: Error,
+                                 target_source_ref: null,
+                                 target_type: null,
                                  updated_at: null)
 ```
 

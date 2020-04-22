@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **id** | **String** | ID of the resource | [optional] [readonly] 
 **last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] [readonly] 
+**refresh_state_part_id** | **String** | ID of the resource | [optional] [readonly] 
 **resource_version** | **String** |  | [optional] [readonly] 
 **service_offering_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_created_at** | **DateTime** |  | [optional] [readonly] 
@@ -36,6 +37,7 @@ instance = TopologicalInventoryApiClient::ServicePlan.new(archived_at: null,
                                  id: null,
                                  last_seen_at: null,
                                  name: Sample Provider,
+                                 refresh_state_part_id: null,
                                  resource_version: null,
                                  service_offering_id: null,
                                  source_created_at: null,

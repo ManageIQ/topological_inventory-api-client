@@ -21,6 +21,9 @@ module TopologicalInventoryApiClient
 
     attr_accessor :last_seen_at
 
+    # ID of the resource
+    attr_accessor :refresh_state_part_id
+
     attr_accessor :state
 
     # ID of the resource
@@ -35,6 +38,7 @@ module TopologicalInventoryApiClient
         :'device' => :'device',
         :'id' => :'id',
         :'last_seen_at' => :'last_seen_at',
+        :'refresh_state_part_id' => :'refresh_state_part_id',
         :'state' => :'state',
         :'vm_id' => :'vm_id',
         :'volume_id' => :'volume_id'
@@ -47,6 +51,7 @@ module TopologicalInventoryApiClient
         :'device' => :'String',
         :'id' => :'String',
         :'last_seen_at' => :'DateTime',
+        :'refresh_state_part_id' => :'String',
         :'state' => :'String',
         :'vm_id' => :'String',
         :'volume_id' => :'String'
@@ -86,6 +91,10 @@ module TopologicalInventoryApiClient
         self.last_seen_at = attributes[:'last_seen_at']
       end
 
+      if attributes.key?(:'refresh_state_part_id')
+        self.refresh_state_part_id = attributes[:'refresh_state_part_id']
+      end
+
       if attributes.key?(:'state')
         self.state = attributes[:'state']
       end
@@ -109,6 +118,11 @@ module TopologicalInventoryApiClient
       end
 
       pattern = Regexp.new(/^\d+$/)
+      if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ pattern
+        invalid_properties.push("invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^\d+$/)
       if !@vm_id.nil? && @vm_id !~ pattern
         invalid_properties.push("invalid value for \"vm_id\", must conform to the pattern #{pattern}.")
       end
@@ -125,6 +139,7 @@ module TopologicalInventoryApiClient
     # @return true if the model is valid
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
+      return false if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ Regexp.new(/^\d+$/)
       return false if !@vm_id.nil? && @vm_id !~ Regexp.new(/^\d+$/)
       return false if !@volume_id.nil? && @volume_id !~ Regexp.new(/^\d+$/)
       true
@@ -139,6 +154,17 @@ module TopologicalInventoryApiClient
       end
 
       @id = id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] refresh_state_part_id Value to be assigned
+    def refresh_state_part_id=(refresh_state_part_id)
+      pattern = Regexp.new(/^\d+$/)
+      if !refresh_state_part_id.nil? && refresh_state_part_id !~ pattern
+        fail ArgumentError, "invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}."
+      end
+
+      @refresh_state_part_id = refresh_state_part_id
     end
 
     # Custom attribute writer method with validation
@@ -171,6 +197,7 @@ module TopologicalInventoryApiClient
           device == o.device &&
           id == o.id &&
           last_seen_at == o.last_seen_at &&
+          refresh_state_part_id == o.refresh_state_part_id &&
           state == o.state &&
           vm_id == o.vm_id &&
           volume_id == o.volume_id
@@ -185,7 +212,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [device, id, last_seen_at, state, vm_id, volume_id].hash
+      [device, id, last_seen_at, refresh_state_part_id, state, vm_id, volume_id].hash
     end
 
     # Builds the object from hash

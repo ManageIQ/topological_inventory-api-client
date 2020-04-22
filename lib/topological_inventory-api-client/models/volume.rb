@@ -30,6 +30,9 @@ module TopologicalInventoryApiClient
     # ID of the resource
     attr_accessor :orchestration_stack_id
 
+    # ID of the resource
+    attr_accessor :refresh_state_part_id
+
     # Size of the volume in bytes
     attr_accessor :size
 
@@ -65,6 +68,7 @@ module TopologicalInventoryApiClient
         :'last_seen_at' => :'last_seen_at',
         :'name' => :'name',
         :'orchestration_stack_id' => :'orchestration_stack_id',
+        :'refresh_state_part_id' => :'refresh_state_part_id',
         :'size' => :'size',
         :'source_created_at' => :'source_created_at',
         :'source_deleted_at' => :'source_deleted_at',
@@ -88,6 +92,7 @@ module TopologicalInventoryApiClient
         :'last_seen_at' => :'DateTime',
         :'name' => :'String',
         :'orchestration_stack_id' => :'String',
+        :'refresh_state_part_id' => :'String',
         :'size' => :'Integer',
         :'source_created_at' => :'DateTime',
         :'source_deleted_at' => :'DateTime',
@@ -150,6 +155,10 @@ module TopologicalInventoryApiClient
         self.orchestration_stack_id = attributes[:'orchestration_stack_id']
       end
 
+      if attributes.key?(:'refresh_state_part_id')
+        self.refresh_state_part_id = attributes[:'refresh_state_part_id']
+      end
+
       if attributes.key?(:'size')
         self.size = attributes[:'size']
       end
@@ -206,6 +215,11 @@ module TopologicalInventoryApiClient
       end
 
       pattern = Regexp.new(/^\d+$/)
+      if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ pattern
+        invalid_properties.push("invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^\d+$/)
       if !@source_id.nil? && @source_id !~ pattern
         invalid_properties.push("invalid value for \"source_id\", must conform to the pattern #{pattern}.")
       end
@@ -233,6 +247,7 @@ module TopologicalInventoryApiClient
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
       return false if !@orchestration_stack_id.nil? && @orchestration_stack_id !~ Regexp.new(/^\d+$/)
+      return false if !@refresh_state_part_id.nil? && @refresh_state_part_id !~ Regexp.new(/^\d+$/)
       return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
       return false if !@source_region_id.nil? && @source_region_id !~ Regexp.new(/^\d+$/)
       return false if !@subscription_id.nil? && @subscription_id !~ Regexp.new(/^\d+$/)
@@ -260,6 +275,17 @@ module TopologicalInventoryApiClient
       end
 
       @orchestration_stack_id = orchestration_stack_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] refresh_state_part_id Value to be assigned
+    def refresh_state_part_id=(refresh_state_part_id)
+      pattern = Regexp.new(/^\d+$/)
+      if !refresh_state_part_id.nil? && refresh_state_part_id !~ pattern
+        fail ArgumentError, "invalid value for \"refresh_state_part_id\", must conform to the pattern #{pattern}."
+      end
+
+      @refresh_state_part_id = refresh_state_part_id
     end
 
     # Custom attribute writer method with validation
@@ -318,6 +344,7 @@ module TopologicalInventoryApiClient
           last_seen_at == o.last_seen_at &&
           name == o.name &&
           orchestration_stack_id == o.orchestration_stack_id &&
+          refresh_state_part_id == o.refresh_state_part_id &&
           size == o.size &&
           source_created_at == o.source_created_at &&
           source_deleted_at == o.source_deleted_at &&
@@ -339,7 +366,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [archived_at, created_at, extra, id, last_seen_at, name, orchestration_stack_id, size, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, state, subscription_id, updated_at, volume_type_id].hash
+      [archived_at, created_at, extra, id, last_seen_at, name, orchestration_stack_id, refresh_state_part_id, size, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, state, subscription_id, updated_at, volume_type_id].hash
     end
 
     # Builds the object from hash

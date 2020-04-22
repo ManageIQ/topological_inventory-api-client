@@ -25,9 +25,16 @@ module TopologicalInventoryApiClient
 
     attr_accessor :name
 
+    # ID of the resource
+    attr_accessor :source_id
+
     attr_accessor :state
 
     attr_accessor :status
+
+    attr_accessor :target_source_ref
+
+    attr_accessor :target_type
 
     attr_accessor :updated_at
 
@@ -39,8 +46,11 @@ module TopologicalInventoryApiClient
         :'created_at' => :'created_at',
         :'id' => :'id',
         :'name' => :'name',
+        :'source_id' => :'source_id',
         :'state' => :'state',
         :'status' => :'status',
+        :'target_source_ref' => :'target_source_ref',
+        :'target_type' => :'target_type',
         :'updated_at' => :'updated_at'
       }
     end
@@ -53,8 +63,11 @@ module TopologicalInventoryApiClient
         :'created_at' => :'DateTime',
         :'id' => :'String',
         :'name' => :'String',
+        :'source_id' => :'String',
         :'state' => :'String',
         :'status' => :'String',
+        :'target_source_ref' => :'String',
+        :'target_type' => :'String',
         :'updated_at' => :'DateTime'
       }
     end
@@ -100,12 +113,24 @@ module TopologicalInventoryApiClient
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'source_id')
+        self.source_id = attributes[:'source_id']
+      end
+
       if attributes.key?(:'state')
         self.state = attributes[:'state']
       end
 
       if attributes.key?(:'status')
         self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'target_source_ref')
+        self.target_source_ref = attributes[:'target_source_ref']
+      end
+
+      if attributes.key?(:'target_type')
+        self.target_type = attributes[:'target_type']
       end
 
       if attributes.key?(:'updated_at')
@@ -122,6 +147,11 @@ module TopologicalInventoryApiClient
         invalid_properties.push("invalid value for \"id\", must conform to the pattern #{pattern}.")
       end
 
+      pattern = Regexp.new(/^\d+$/)
+      if !@source_id.nil? && @source_id !~ pattern
+        invalid_properties.push("invalid value for \"source_id\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -129,6 +159,7 @@ module TopologicalInventoryApiClient
     # @return true if the model is valid
     def valid?
       return false if !@id.nil? && @id !~ Regexp.new(/^\d+$/)
+      return false if !@source_id.nil? && @source_id !~ Regexp.new(/^\d+$/)
       true
     end
 
@@ -143,6 +174,17 @@ module TopologicalInventoryApiClient
       @id = id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] source_id Value to be assigned
+    def source_id=(source_id)
+      pattern = Regexp.new(/^\d+$/)
+      if !source_id.nil? && source_id !~ pattern
+        fail ArgumentError, "invalid value for \"source_id\", must conform to the pattern #{pattern}."
+      end
+
+      @source_id = source_id
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -153,8 +195,11 @@ module TopologicalInventoryApiClient
           created_at == o.created_at &&
           id == o.id &&
           name == o.name &&
+          source_id == o.source_id &&
           state == o.state &&
           status == o.status &&
+          target_source_ref == o.target_source_ref &&
+          target_type == o.target_type &&
           updated_at == o.updated_at
     end
 
@@ -167,7 +212,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [completed_at, context, created_at, id, name, state, status, updated_at].hash
+      [completed_at, context, created_at, id, name, source_id, state, status, target_source_ref, target_type, updated_at].hash
     end
 
     # Builds the object from hash

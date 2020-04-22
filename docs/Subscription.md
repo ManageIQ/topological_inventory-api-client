@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id** | **String** | ID of the resource | [optional] [readonly] 
 **last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] 
+**refresh_state_part_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
@@ -23,6 +24,7 @@ instance = TopologicalInventoryApiClient::Subscription.new(archived_at: null,
                                  id: null,
                                  last_seen_at: null,
                                  name: null,
+                                 refresh_state_part_id: null,
                                  source_id: null,
                                  source_ref: null,
                                  updated_at: null)

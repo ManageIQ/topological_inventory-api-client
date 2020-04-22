@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **last_seen_at** | **DateTime** |  | [optional] [readonly] 
 **memory** | **Integer** | Amount of RAM in bytes | [optional] [readonly] 
 **name** | **String** |  | [optional] [readonly] 
+**refresh_state_part_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] [readonly] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
@@ -33,6 +34,7 @@ instance = TopologicalInventoryApiClient::Flavor.new(archived_at: null,
                                  last_seen_at: null,
                                  memory: 17179869184,
                                  name: null,
+                                 refresh_state_part_id: null,
                                  source_id: null,
                                  source_ref: null,
                                  updated_at: null)

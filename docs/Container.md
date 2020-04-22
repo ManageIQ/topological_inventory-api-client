@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **memory_limit** | **Integer** |  | [optional] [readonly] 
 **memory_request** | **Integer** |  | [optional] [readonly] 
 **name** | **String** |  | [optional] [readonly] 
+**refresh_state_part_id** | **String** | ID of the resource | [optional] [readonly] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
 
 ## Code Sample
@@ -33,6 +34,7 @@ instance = TopologicalInventoryApiClient::Container.new(archived_at: null,
                                  memory_limit: null,
                                  memory_request: null,
                                  name: docker-build,
+                                 refresh_state_part_id: null,
                                  updated_at: null)
 ```
 
