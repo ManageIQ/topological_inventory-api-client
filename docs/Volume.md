@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **source_id** | **String** | ID of the resource | [optional] [readonly] 
 **source_ref** | **String** |  | [optional] [readonly] 
 **source_region_id** | **String** | ID of the resource | [optional] [readonly] 
+**source_updated_at** | **DateTime** |  | [optional] [readonly] 
 **state** | **String** |  | [optional] [readonly] 
 **subscription_id** | **String** | ID of the resource | [optional] [readonly] 
 **updated_at** | **DateTime** |  | [optional] [readonly] 
@@ -42,6 +43,7 @@ instance = TopologicalInventoryApiClient::Volume.new(archived_at: null,
                                  source_id: null,
                                  source_ref: null,
                                  source_region_id: null,
+                                 source_updated_at: null,
                                  state: in-use,
                                  subscription_id: null,
                                  updated_at: null,

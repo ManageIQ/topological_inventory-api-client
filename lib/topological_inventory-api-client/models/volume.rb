@@ -48,6 +48,8 @@ module TopologicalInventoryApiClient
     # ID of the resource
     attr_accessor :source_region_id
 
+    attr_accessor :source_updated_at
+
     attr_accessor :state
 
     # ID of the resource
@@ -75,6 +77,7 @@ module TopologicalInventoryApiClient
         :'source_id' => :'source_id',
         :'source_ref' => :'source_ref',
         :'source_region_id' => :'source_region_id',
+        :'source_updated_at' => :'source_updated_at',
         :'state' => :'state',
         :'subscription_id' => :'subscription_id',
         :'updated_at' => :'updated_at',
@@ -99,6 +102,7 @@ module TopologicalInventoryApiClient
         :'source_id' => :'String',
         :'source_ref' => :'String',
         :'source_region_id' => :'String',
+        :'source_updated_at' => :'DateTime',
         :'state' => :'String',
         :'subscription_id' => :'String',
         :'updated_at' => :'DateTime',
@@ -181,6 +185,10 @@ module TopologicalInventoryApiClient
 
       if attributes.key?(:'source_region_id')
         self.source_region_id = attributes[:'source_region_id']
+      end
+
+      if attributes.key?(:'source_updated_at')
+        self.source_updated_at = attributes[:'source_updated_at']
       end
 
       if attributes.key?(:'state')
@@ -351,6 +359,7 @@ module TopologicalInventoryApiClient
           source_id == o.source_id &&
           source_ref == o.source_ref &&
           source_region_id == o.source_region_id &&
+          source_updated_at == o.source_updated_at &&
           state == o.state &&
           subscription_id == o.subscription_id &&
           updated_at == o.updated_at &&
@@ -366,7 +375,7 @@ module TopologicalInventoryApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [archived_at, created_at, extra, id, last_seen_at, name, orchestration_stack_id, refresh_state_part_id, size, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, state, subscription_id, updated_at, volume_type_id].hash
+      [archived_at, created_at, extra, id, last_seen_at, name, orchestration_stack_id, refresh_state_part_id, size, source_created_at, source_deleted_at, source_id, source_ref, source_region_id, source_updated_at, state, subscription_id, updated_at, volume_type_id].hash
     end
 
     # Builds the object from hash
