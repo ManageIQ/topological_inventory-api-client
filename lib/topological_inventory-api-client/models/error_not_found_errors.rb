@@ -29,7 +29,7 @@ module TopologicalInventoryApiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'status' => :'Integer',
+        :'status' => :'String',
         :'detail' => :'String'
       }
     end
