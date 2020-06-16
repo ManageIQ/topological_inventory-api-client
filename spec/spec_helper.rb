@@ -10,6 +10,11 @@ OpenAPI Generator version: 4.2.3
 
 =end
 
+if ENV['CI']
+  require 'simplecov'
+  SimpleCov.start
+end
+
 # load the gem
 require 'topological_inventory-api-client'
 
