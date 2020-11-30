@@ -1,6 +1,6 @@
 # topological_inventory-api-client
 
-[![Build Status](https://travis-ci.org/RedHatInsights/topological_inventory-api-client-ruby.svg?branch=master)](https://travis-ci.org/RedHatInsights/topological_inventory-api-client-ruby)
+[![Build Status](https://travis-ci.com/RedHatInsights/topological_inventory-api-client-ruby.svg?branch=master)](https://travis-ci.com/RedHatInsights/topological_inventory-api-client-ruby)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ae0a09f704877cb2ff80/maintainability)](https://codeclimate.com/github/RedHatInsights/topological_inventory-api-client-ruby/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ae0a09f704877cb2ff80/test_coverage)](https://codeclimate.com/github/RedHatInsights/topological_inventory-api-client-ruby/test_coverage)
 [![Security](https://hakiri.io/github/ManageIQ/topological_inventory-api-client-ruby/master.svg)](https://hakiri.io/github/ManageIQ/topological_inventory-api-client-ruby/master)
