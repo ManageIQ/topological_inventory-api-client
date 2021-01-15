@@ -11,5 +11,5 @@ OpenAPI Generator version: 4.2.3
 =end
 
 module TopologicalInventoryApiClient
-  VERSION = '3.0.2'
+  VERSION = '3.0.3'
 end
