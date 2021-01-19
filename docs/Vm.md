@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description of the Vm | [optional] [readonly] 
 **extra** | [**Object**](.md) |  | [optional] [readonly] 
 **flavor_id** | **String** | ID of the resource | [optional] [readonly] 
+**guest_info** | **String** |  | [optional] [readonly] 
 **host_id** | **String** | ID of the resource | [optional] [readonly] 
 **host_inventory_uuid** | **String** |  | [optional] [readonly] 
 **hostname** | **String** |  | [optional] [readonly] 
@@ -41,6 +42,7 @@ instance = TopologicalInventoryApiClient::Vm.new(archived_at: null,
                                  description: null,
                                  extra: null,
                                  flavor_id: null,
+                                 guest_info: null,
                                  host_id: null,
                                  host_inventory_uuid: null,
                                  hostname: localhost.localdomain,
